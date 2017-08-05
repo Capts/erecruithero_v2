@@ -14,20 +14,20 @@
     <!-- Scripts -->
     <script src="{{ asset('applicant/js/app.js') }}"></script>
 
-    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="/applicant/bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.min.js"></script>
+    <script src="/applicant/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
+    <script src="/applicant/dist/js/demo.js"></script>
 
     <!-- Javascript files-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="applicant/applicanthome/js/jquery.cookie.js"> </script>
-    <script src="applicant/applicanthome/js/ekko-lightbox.js"></script>
-    <script src="applicant/applicanthome/js/jquery.simple-text-rotator.min.js"></script>
-    <script src="applicant/applicanthome/js/jquery.scrollTo.min.js"></script>
-    <script src="applicant/applicanthome/js/owl.carousel.min.js"></script>
-    <script src="applicant/applicanthome/js/front.js"></script>
+    <script src="/applicant/js/jquery.min.js"></script>
+    <script src="/applicant/applicanthome/js/jquery.cookie.js"> </script>
+    <script src="/applicant/applicanthome/js/ekko-lightbox.js"></script>
+    <script src="/applicant/applicanthome/js/jquery.simple-text-rotator.min.js"></script>
+    <script src="/applicant/applicanthome/js/jquery.scrollTo.min.js"></script>
+    <script src="/applicant/applicanthome/js/owl.carousel.min.js"></script>
+    <script src="/applicant/applicanthome/js/front.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
     <!---->
     <script>

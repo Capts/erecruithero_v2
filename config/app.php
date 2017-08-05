@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Monarobase\CountryList\CountryListServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -229,6 +230,8 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'Countries' => Monarobase\CountryList\CountryListFacade::class,
 
     ],
 

@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Job;
 
-class JobController extends Controller
+class ApplicantSchoolController extends Controller
 {
+    
+    public function __construct(){
+        $this->middleware('auth');
+    }    
 
 
     public function index()
     {
-        $jobs = Job::orderBy('created_at', 'desc')->paginate(5);
-        return view('view_employer.job.index', compact('jobs'));
+        //
     }
 
     /**
@@ -22,7 +24,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('view_employer.job.create');
+        //
     }
 
     /**
@@ -44,9 +46,7 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        $job = Job::find($id);
-
-        return view('view_employer.job.show', compact('job')); 
+        //
     }
 
     /**
@@ -57,9 +57,7 @@ class JobController extends Controller
      */
     public function edit($id)
     {
-        $job = Job::find($id);
-
-        return view('view_employer.job.edit', compact('job'));
+        //
     }
 
     /**
@@ -71,7 +69,7 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+        //
     }
 
     /**

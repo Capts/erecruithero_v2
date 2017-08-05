@@ -20,6 +20,14 @@ class User extends Authenticatable
         return $this
         ->hasOne(Profile::class);
     }
+    public function school(){
+        return $this
+        ->hasOne(School::class);
+    }
+    public function address(){
+        return $this
+        ->hasOne(Address::class);
+    }
 
 
     protected $fillable = [

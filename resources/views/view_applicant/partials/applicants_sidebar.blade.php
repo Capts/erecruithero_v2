@@ -6,6 +6,9 @@
               <img class="profile-user-img img-responsive img-circle" src="{{ Storage::url(Auth::user()->avatar) }}" alt="User profile picture">
 
               <h3 class="profile-username text-center">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h3>
+              <h5 class="text-center">Graduated at {{ Auth::user()->school->school }}</h5>
+              <h5 class="text-center">Studied {{ Auth::user()->school->field_of_study }}</h5>
+              <h5 class="text-center">Focused on {{Auth::user()->school->major}}</h5>
 
               <p class="text-muted text-center"></p>
 
@@ -30,7 +33,7 @@
                 </li>
               </ul> --}}
 
-              <a href="#" class="btn btn-flat bg-navy btn-block"><b>Edit your profile</b></a>
+            {{--   <a href="{{ route('profile.edit', Auth::user()->id ) }}" class="btn btn-flat btn-default btn-sm btn-block"><b>Edit your profile</b></a> --}}
             </div>
             <!-- /.box-body -->
           </div>

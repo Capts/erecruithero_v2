@@ -36,9 +36,9 @@
 
                         <ul class="dropdown-menu" role="menu">
                             @if (Auth::user()->roles()->first()->name == 'applicant')
-                                <li><a href="{{ route('applicant.profile') }}">Profile</a></li>
+                                <li><a href="{{ route('profile.index') }}">Profile</a></li>
                             @else
-                                <li><a href="{{ route('employer.profile') }}">Profile</a></li>
+                                <li><a href="#">Profile</a></li>
                             @endif
                             <li>
                                 <a href="{{ route('logout') }}"

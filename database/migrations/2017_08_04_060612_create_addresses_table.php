@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfilesTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('age');
-            $table->text('bio');
-            $table->string('bday');
-            
-            $table->text('civil_status');
+            $table->text('street');
+            $table->text('barangay');
+            $table->text('city');
+            $table->text('province');
+            $table->text('country');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('addresses');
     }
 }

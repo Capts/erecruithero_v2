@@ -18,7 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 // Applicant Routes
-Route::get('applicant/profile', 'ApplicantController@getApplicantProfile')->name('applicant.profile');
+// Route::get('applicant/profile/{profile}', 'ApplicantProfileController@index', ['except' => ['index']] )->name('profile.index');
+Route::resource('applicant/profile', 'ApplicantProfileController');
+Route::resource('applicant/address', 'ApplicantAddressController');
+Route::resource('applicant/school', 'ApplicantSchoolController');
 
 
 
@@ -28,7 +31,8 @@ Route::get('employer/profile', 'EmployerController@getEmployerProfile')->name('e
 	Route::resource('employer/job', 'JobController');
 	
 
-
+//route modals
+	Route::get('/applicant/profile/{id}', 'ModalEditController@get_modal_personal')->name('personal');
 
 
 // Route::get('/home', 'HomeController@index')->name('home');

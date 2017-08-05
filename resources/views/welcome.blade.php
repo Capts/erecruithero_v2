@@ -35,9 +35,7 @@
 
             {!! Form::close() !!}
           </div>
-          <div class="col-md-12 col-lg-8 col-lg-offset-2">
-            <p class="margin-bottom--zero"><img alt="" src="img/features3.png" class="img-responsive"></p>
-          </div>
+         
         </div>
       </div>
 

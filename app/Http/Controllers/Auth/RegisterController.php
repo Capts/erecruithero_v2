@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 use App\Role;
 use App\Profile;
+use App\Address;
+use App\School;
 
 class RegisterController extends Controller
 {
@@ -84,7 +86,7 @@ class RegisterController extends Controller
             'avatar' => $avatar
         ]);
 
-        $this->assignRole($user)->createprofile($user);
+        $this->assignRole($user)->createprofile($user)->createAddress($user)->createSchool($user);
         return $user;
     }
 
@@ -100,21 +102,49 @@ class RegisterController extends Controller
         $profile = new Profile();
         $profile->user_id = $user->id;
         $profile->age = 0;
-        $profile->bio = 'not yet specified';
-        $profile->bday ='not yet specified';
-        $profile->street = 'not yet specified';
-        $profile->barangay = 'not yet specified';
-        $profile->city = 'not yet specified';
-        $profile->province = 'not yet specified';
-        $profile->country = 'not yet specified';
-        $profile->civil_status = 'not yet specified';
-        $profile->school_attended = 'not yet specified';
-        $profile->course = 'not yet specified';
-        $profile->major = 'not yet specified';
-        $profile->school_status = 'not yet specified';
+        $profile->bio = 'n/a';
+        $profile->bday ='n/a';
+        $profile->civil_status = 'n/a';
 
         $user->profile()->save($profile);
 
         return $this;
+    }
+
+    public function createAddress($user){
+
+        $address = new Address();
+
+        $address->user_id = $user->id;
+        $address->street = 'n/a';
+        $address->barangay = 'n/a';
+        $address->city = 'n/a';
+        $address->province = 'n/a';
+        $address->country = 'n/a';
+
+        $user->address()->save($address);
+
+
+        return $this;
+    }
+    public function createSchool($user){
+
+        $school = new School();
+
+        $school->user_id = $user->id;        
+        $school->school = 'n/a';
+        $school->degree = 'n/a';
+        $school->field_of_study = 'n/a';
+        $school->major = 'n/a';
+        $school->school_status = 'n/a';
+        $school->start_year = 'n/a';
+        $school->end_year = 'n/a';
+        $school->activities = 'n/a';
+
+        $user->school()->save($school);
+
+
+        return $this;
+
     }
 }

@@ -25,8 +25,6 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-
-
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Login</a></li>
@@ -171,7 +169,7 @@
                         <!-- Menu Footer-->
                         <li class="user-footer"  style='background-color: #fcfcfc;'>
                             <div class="pull-left">
-                                <a href="#" class="btn bg-navy btn-flat">Profile</a>
+                                <a href="{{ route('profile.index') }}" class="btn bg-navy btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                  <a href="{{ route('logout') }}" class="btn btn-flat btn-danger"
