@@ -34,14 +34,27 @@ class ProfileTableSeeder extends Seeder
 
         $school_applicant = new School();
         $school_applicant->user_id = 1;
-        $school_applicant->school = 'n/a';
-        $school_applicant->degree = 'n/a';
-        $school_applicant->field_of_study = 'n/a';
-        $school_applicant->major = 'n/a';
-        $school_applicant->school_status = 'n/a';
-        $school_applicant->start_year = 'n/a';
-        $school_applicant->end_year = 'n/a';
-        $school_applicant->activities = 'n/a';
+
+        //elem
+        $school_applicant->elem_school = 'school name elementary';
+        $school_applicant->elem_address = 'school address elementary';
+        $school_applicant->elem_start = 'school start elementary';
+        $school_applicant->elem_end = 'school end elementary';
+
+        //sec
+        $school_applicant->sec_school = 'school name secondary';
+        $school_applicant->sec_address = 'school address secondary';
+        $school_applicant->sec_start = 'school start secondary';
+        $school_applicant->sec_end = 'school end secondary';
+        //ter
+               
+        $school_applicant->ter_school = 'n/a';
+        $school_applicant->ter_degree = 'n/a';
+        $school_applicant->ter_field_of_study = 'n/a';
+        $school_applicant->ter_major = 'n/a';
+        $school_applicant->ter_start_year = 'n/a';
+        $school_applicant->ter_end_year = 'n/a';
+
         $school_applicant->save();
         
 
@@ -64,17 +77,28 @@ class ProfileTableSeeder extends Seeder
         $address_employer->country = 'n/a';
         $address_employer->save();
 
-        $schoo_employer = new School();
-        $schoo_employer->user_id = 2;
-        $schoo_employer->school = 'n/a';
-        $schoo_employer->degree = 'n/a';
-        $schoo_employer->field_of_study = 'n/a';
-        $schoo_employer->major = 'n/a';
-        $schoo_employer->school_status = 'n/a';
-        $schoo_employer->start_year = 'n/a';
-        $schoo_employer->end_year = 'n/a';
-        $schoo_employer->activities = 'n/a';
-        $schoo_employer->save();
+        $school_employer = new School();
+        $school_employer->user_id = 2;
+        //elem
+        $school_employer->elem_school = 'school name elementary';
+        $school_employer->elem_address = 'school address elementary';
+        $school_employer->elem_start = 'school start elementary';
+        $school_employer->elem_end = 'school end elementary';
+
+        //sec
+        $school_employer->sec_school = 'school name secondary';
+        $school_employer->sec_address = 'school address secondary';
+        $school_employer->sec_start = 'school start secondary';
+        $school_employer->sec_end = 'school end secondary';
+        //ter
+               
+        $school_employer->ter_school = 'n/a';
+        $school_employer->ter_degree = 'n/a';
+        $school_employer->ter_field_of_study = 'n/a';
+        $school_employer->ter_major = 'n/a';
+        $school_employer->ter_start_year = 'n/a';
+        $school_employer->ter_end_year = 'n/a';
+        $school_employer->save();
 
 
 

@@ -8,8 +8,9 @@
 <title>@yield('title')</title>
 
 <!-- Styles -->
-<link href="{{ asset('applicant/css/app.css') }}" rel="stylesheet">
-<link href="{{ asset('applicant/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('/applicant/css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('/applicant/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('/applicant/css/homecss.css') }}" rel="stylesheet">
 
 <link rel="stylesheet" href="/applicant/bower_components/font-awesome/css/font-awesome.min.css">
 <!-- Ionicons -->

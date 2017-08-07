@@ -11,45 +11,23 @@ use App\Role;
 use App\Profile;
 use App\Address;
 use App\School;
+use App\Skill;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
+    
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = 'applicant/profile';
+   
+    protected $redirectTo = 'applicant/newsfeed';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+   
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -76,17 +54,22 @@ class RegisterController extends Controller
             $avatar = 'public/default/avatars/female.png';
         }
 
+        $first = $data['firstname'];
+        $last = $data['lastname'];
+        $slug = $first . '-' . $last;
+
+
         $user = User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'gender' => $data['gender'],
-            'slug' => str_slug($data['firstname']),
+            'slug' => str_slug($slug),
             'avatar' => $avatar
         ]);
 
-        $this->assignRole($user)->createprofile($user)->createAddress($user)->createSchool($user);
+        $this->assignRole($user)->createprofile($user);
         return $user;
     }
 
@@ -102,49 +85,62 @@ class RegisterController extends Controller
         $profile = new Profile();
         $profile->user_id = $user->id;
         $profile->age = 0;
-        $profile->bio = 'n/a';
-        $profile->bday ='n/a';
-        $profile->civil_status = 'n/a';
+        $profile->bio = 'not specified';
+        $profile->bday ='not specified';
+        $profile->civil_status = 'not specified';
 
         $user->profile()->save($profile);
 
         return $this;
     }
 
-    public function createAddress($user){
+    // public function createAddress($user){
 
-        $address = new Address();
+    //     $address = new Address();
 
-        $address->user_id = $user->id;
-        $address->street = 'n/a';
-        $address->barangay = 'n/a';
-        $address->city = 'n/a';
-        $address->province = 'n/a';
-        $address->country = 'n/a';
+    //     $address->user_id = $user->id;
+    //     $address->street = 'not specified';
+    //     $address->barangay = 'not specified';
+    //     $address->city = 'not specified';
+    //     $address->province = 'not specified';
+    //     $address->country = 'not specified';
 
-        $user->address()->save($address);
-
-
-        return $this;
-    }
-    public function createSchool($user){
-
-        $school = new School();
-
-        $school->user_id = $user->id;        
-        $school->school = 'n/a';
-        $school->degree = 'n/a';
-        $school->field_of_study = 'n/a';
-        $school->major = 'n/a';
-        $school->school_status = 'n/a';
-        $school->start_year = 'n/a';
-        $school->end_year = 'n/a';
-        $school->activities = 'n/a';
-
-        $user->school()->save($school);
+    //     $user->address()->save($address);
 
 
-        return $this;
+    //     return $this;
+    // }
+    // public function createSchool($user){
 
-    }
+    //     $school = new School();
+    //     $school->user_id = $user->id; 
+
+    //     //elem
+    //     $school->elem_school = 'school name elementary';
+    //     $school->elem_address = 'school address elementary';
+    //     $school->elem_start = 'school start elementary';
+    //     $school->elem_end = 'school end elementary';
+
+    //     //sec
+    //     $school->sec_school = 'school name secondary';
+    //     $school->sec_address = 'school address secondary';
+    //     $school->sec_start = 'school start secondary';
+    //     $school->sec_end = 'school end secondary';
+    //     //ter
+               
+    //     $school->ter_school = 'not specified';
+    //     $school->ter_degree = 'not specified';
+    //     $school->ter_field_of_study = 'not specified';
+    //     $school->ter_major = 'not specified';
+    //     $school->ter_start_year = 'not specified';
+    //     $school->ter_end_year = 'not specified';
+
+    //     $user->school()->save($school);
+
+
+    //     return $this;
+
+    // }
+
+    
 }

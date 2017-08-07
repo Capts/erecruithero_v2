@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Job;
+use App\User;
 use App\Profile;
 use App\Country;
 use App\School;
@@ -17,12 +18,22 @@ class ApplicantProfileController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
-    {
-        $profile = Profile::all();
-        $jobs = Job::orderBy('created_at', 'desc')->paginate(10);
+    public function index($id, $slug)
+    {       
+        $id = User::find($id);
 
-        return view('view_applicant.profile', compact('jobs', 'profile'));
+        // $school_id = School::where('user_id', $user_id)->get();
+        $slug = User::find($slug);
+
+       $checkRelatedTables = User::where(function($query) { 
+            $query->has('address')
+                ->orHas('school')
+                ->orHas('skill');
+        })->find(1);
+
+       dd($checkRelatedTables);
+
+        return view('view_applicant.profile.index',compact('id', 'slug'));
     }
 
     public function create()

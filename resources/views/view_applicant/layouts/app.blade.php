@@ -5,12 +5,10 @@
 </head>
 <body class="hold-transition skin-green sidebar-mini">
     <div id="app">
-       @include('view_applicant.partials.nav')
+       {{-- @include('view_applicant.partials.nav') --}}
 
         @yield('content')
     </div>
-    @include('view_applicant.partials.footer')
-
     <!-- Scripts -->
     <script src="{{ asset('applicant/js/app.js') }}"></script>
 
