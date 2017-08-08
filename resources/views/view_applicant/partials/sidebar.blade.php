@@ -64,14 +64,14 @@
           </ul>
         </li>
 
-        <li class="divider"></li>
+       
         <br>
 
-        <li>
+        <li class="treeview">
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">
-                <i class="fa fa-sign-out"></i>Logout
+                <i class="fa fa-sign-out"></i><span>Logout</span>
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

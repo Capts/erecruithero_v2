@@ -19,16 +19,15 @@ Auth::routes();
 
 // Applicant Routes
 
-// Route::get('applicant/home', 'ApplicantController@home')->name('applicant.home');
 Route::get('applicant/newsfeed', 'ApplicantController@feed')->name('applicant.feed');
-// Route::get('applicant/profile', 'ApplicantController@profile')->name('applicant.profile');
+Route::get('applicant/newsfeed', 'ApplicantController@feed')->name('applicant.feed');
 
-// Route::get('applicant/profile/{profile}', 'ApplicantProfileController@index', ['except' => ['index']] )->name('profile.index');
 Route::get('applicant/profile/id/{id}/{slug}', 'ApplicantProfileController@index')->name('profile.index');
 
 Route::resource('applicant/profile', 'ApplicantProfileController', ['except' => ['index', 'show', 'destroy', 'create']]);
 Route::resource('applicant/address', 'ApplicantAddressController', ['except' =>  ['index', 'destroy']]);
 Route::resource('applicant/school', 'ApplicantSchoolController', ['except' =>  ['index', 'destroy', 'create']]);
+Route::resource('applicant/skill', 'ApplicantSchoolController', ['except' =>  ['index', 'show']]);
 
 
 

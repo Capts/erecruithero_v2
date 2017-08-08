@@ -6,7 +6,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-graduation-cap fa-2x"></i>Add school<small> | select school to add</small></h4>
+	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-graduation-cap fa-2x"></i>Add school<small> | select level</small></h4>
 	      </div>
 	      <div class="modal-body">
 	      	<div class="row">
@@ -21,7 +21,7 @@
 	      				</ul>
 	      				<div class="tab-content">
 	      					<div class="tab-pane" id="tertiary">
-
+								<h4 class="text-center">Tertiary Level</h4>
 	      						{!! Form::open(['method' => 'POST', 'route' => 'school.store']) !!}
 	      							    
       							    <div class="form-group{{ $errors->has('invi') ? ' has-error' : '' }}">
@@ -84,6 +84,7 @@
 	      					<!-- /.tab-pane -->
 
 	      					<div class="tab-pane" id="secondary">
+	      						<h4 class="text-center">Secondary Level</h4>
 	      						{!! Form::open(['method' => 'POST', 'route' => 'school.store']) !!}
 	      							    
       							    <div class="form-group{{ $errors->has('invi') ? ' has-error' : '' }}">
@@ -94,7 +95,7 @@
 
 	      						    <div class="form-group{{ $errors->has('sec_school') ? ' has-error' : '' }}">
 	      						        {!! Form::label('sec_school', 'Name of School') !!}
-	      						        {!! Form::text('sec_school', null, ['class' => 'form-control', 'autofocus' => 'autofocus','required' => 'required']) !!}
+	      						        {!! Form::text('sec_school', null, ['class' => 'form-control','required' => 'required']) !!}
 	      						        <small class="text-danger">{{ $errors->first('sec_school') }}</small>
 	      						    </div>
 
@@ -126,6 +127,7 @@
 
 
 	      					<div class="tab-pane" id="primary">
+	      						<h4 class="text-center">Primary Level</h4>
 	      						{!! Form::open(['method' => 'POST', 'route' => 'school.store']) !!}
 	      							    
       							    <div class="form-group{{ $errors->has('invi') ? ' has-error' : '' }}">
@@ -136,7 +138,7 @@
 
 	      						    <div class="form-group{{ $errors->has('pri_school') ? ' has-error' : '' }}">
 	      						        {!! Form::label('pri_school', 'Name of School') !!}
-	      						        {!! Form::text('pri_school', null, ['class' => 'form-control', 'autofocus' => 'autofocus','required' => 'required']) !!}
+	      						        {!! Form::text('pri_school', null, ['class' => 'form-control','required' => 'required']) !!}
 	      						        <small class="text-danger">{{ $errors->first('pri_school') }}</small>
 	      						    </div>
 

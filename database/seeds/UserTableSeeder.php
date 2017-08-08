@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder
         $employer->email = 'employer@gmail.com';
         $employer->password = bcrypt('secret');
         $employer->avatar = 'public/default/avatars/female.png';
-        $employer->slug = str_slug('firstname');
+        $employer->slug = str_slug('ana-employer');
         $employer->gender = "female";
         $employer->save();
         $employer->roles()->attach($role_employer);
@@ -36,7 +36,7 @@ class UserTableSeeder extends Seeder
         $applicant->email = 'applicant@gmail.com';
         $applicant->password = bcrypt('secret');
         $applicant->avatar = 'public/default/avatars/female.png';
-        $applicant->slug = str_slug('firstname');
+        $applicant->slug = str_slug('charina-applicant');
         $applicant->gender = "female";
         $applicant->save();
         $applicant->roles()->attach($role_applicant);

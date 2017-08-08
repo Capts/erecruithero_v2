@@ -19,7 +19,6 @@
     <script src="/applicant/dist/js/demo.js"></script>
 
     <!-- Javascript files-->
-    <script src="/applicant/js/jquery.min.js"></script>
     <script src="/applicant/applicanthome/js/jquery.cookie.js"> </script>
     <script src="/applicant/applicanthome/js/ekko-lightbox.js"></script>
     <script src="/applicant/applicanthome/js/jquery.simple-text-rotator.min.js"></script>
@@ -35,6 +34,10 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $("#myModal").modal('show');
+      $("#modalUpdate").modal('show');
+   
+        
+      
     });
   </script>
 

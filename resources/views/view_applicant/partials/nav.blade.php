@@ -1,4 +1,4 @@
-<a href="/" class="logo">
+<a href="{{ url('/') }}" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>:)</b></span>
     <!-- logo for regular state and mobile devices -->
@@ -100,7 +100,7 @@
             </ul>
         </li>
         <!-- User Account: style can be found in dropdown.less -->
-        <li class="dropdown user user-menu">
+        <li class="dropdown user user-menu" style="margin-right: 120px;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{ Storage::url(Auth::user()->avatar)}}" class="user-image" alt="User Image">
                 <span class="hidden-xs">{{ Auth::user()->firstname }} &nbsp;{{ Auth::user()->lastname }}</span>

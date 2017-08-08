@@ -18,7 +18,7 @@ class User extends Authenticatable
     }
     public function profile(){
         return $this
-        ->hasOne(Profile::class);
+        ->hasOne('App\Profile');
     }
     public function school(){
         return $this

@@ -23,27 +23,35 @@
 		<!-- Main content -->
 		<section class="content">
 
+			@if (is_null($users->profile->age))
+				<div class="box box-danger">
+					<div class="box-header with-border">
+						
+						<h5 class="box-title" style="font-size: 16px;color:orange;"><i class="fa fa-exclamation-circle" style="color:red;"></i> &nbsp;Please edit your profile to automize the job search and matchmaking.</h5>
+						<div class="box-tools pull-right">
+							<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
 
-			<div class="box box-danger">
-				<div class="box-header with-border">
-					<h5 class="box-title" style="font-size: 16px;color:orange;"><i class="fa fa-exclamation-circle" style="color:red;"></i> &nbsp;Please edit your profile to automize the job search and matchmaking.</h5>
+						</div>
+						<!-- /.box-tools -->
+					</div>
+				</div>
+			@else
+			@endif
+			
+			@if (Session::has('success'))
+
+				<div class="alert alert-success" role="alert">
 					<div class="box-tools pull-right">
 						<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
 
 					</div>
-					<!-- /.box-tools -->
-				</div>
-			</div>
-			@if (Session::has('success'))
-
-				<div class="alert alert-success" role="alert">
 					<strong>Success! </strong> {{ Session::get('success')}}&nbsp; <i class="fa fa-check"></i>
 				</div>
 
 			@endif 
-			<div class="box box-success">
-				<div class="box-header">
-					<h4>Welcome to your profile</h4>
+			<div class="box box-success" >
+				<div class="box-header with-border box-success" >
+					<h4 class="text-center">Welcome to your profile</h4>
 
 					{{-- <div class="box-tools pull-right">
 						<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -52,17 +60,18 @@
 
 					</div> --}}
 				</div>
-				<div class="box-body">
+				<div class="box-body" style="padding:20px 20px 50px;background-color: #222d32; color:white;">
 
 					
 
 					<div class="col-md-4" style="padding:10px 10px">
-						<p class="text-center"><img src="{{Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p><a href="{{ route('profile.edit', Auth::user()->id) }}" class="btn btn-flat btn-xs btn-default pull-right"><span class="i fa fa-pencil"></span></a>
-						 <b><p class="text-center">{{ ucfirst(Auth::user()->firstname)}} &nbsp;{{ ucfirst(Auth::user()->lastname)}}</b></p>
+					<div class="col-xs-12"><a href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-pencil pull-right"></i></a></div>
+						<p class="text-center" ><img src="{{Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
+						<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}}</p>
 						 <hr>
 						<span>
 							<h5>
-								<i class="fa fa-envelope-o pull-right"></i>
+								<i class="fa fa-google-plus pull-right"></i>
 
 								<b>{{ Auth::user()->email}}</b>
 							</h5>
@@ -71,7 +80,7 @@
 						<span>
 							<h5>
 								<i class="fa fa-birthday-cake pull-right"></i>
-								<p>{{ date('M j,Y', strtotime(Auth::user()->bday)) }}</p>
+								<p>{{ date('M j,Y', strtotime(Auth::user()->profile->bday)) }}</p>
 								<p>{{ Auth::user()->profile->age . ' years old'}}</p>
 							</h5>
 						</span>
@@ -94,14 +103,14 @@
 						</span>
 						
 					
-						<div class="box-footer">
+						<div class="box-footer" style="color:white;background-color: #222d32;">
 							<p class="text-left">{{ ucfirst(Auth::user()->profile->bio) }}</p>
 						</div>
 						
 					</div>
 
 					<div class="col-md-8">
-						<div class="nav-tabs-custom">
+						<div class="nav-tabs-custom" style="background-color: #222d32;">
 							<ul class="nav nav-tabs" style="font-size:18px;">
 								<li class="active"><a href="#education" data-toggle="tab">Education</a></li>
 								<li><a href="#skills" data-toggle="tab">Skills</a></li>
@@ -110,87 +119,11 @@
 							</ul>
 							<div class="tab-content">
 								<div class="active tab-pane" id="education">
-								@include('view_applicant.school.terModal')
-									<div class="box-body">
-										<div class="row">
-											<div class="colmd-12">
-												<button type="button" class="btn btn-box-tool pull-right" title="Add school" data-toggle="modal" data-target="#terModal-{{ Auth::user()->id }}"><i class="fa fa-plus fa-2x"></i></button>
-											</div>
-											<div class="col-md-12">
-												
-												@if (is_null($schoolT))
-												@else
-													<p style="font-size: 16px;" class="label label-primary">Tertiary</p>
-													
-													@foreach ($getAndLoopT as $loopTer)
-
-														<div class="box-body">
-															<div class="box-header  with-border">
-																{{ $loopTer->ter_school }}<br>
-																{{ $loopTer->ter_address }} <br> 
-																{{ ucfirst($loopTer->ter_degree) . ' in '  . ucfirst($loopTer->ter_field_of_study) }} <br> 
-																{{ $loopTer->ter_major }} <br> 
-																{{ $loopTer->ter_address }} <br> 
-																{{ $loopTer->ter_start_year. ' - ' .$loopTer->ter_end_year }} <br> 
-																<div class="box-tools pull-right">
-																	<button class="btn btn-flat btn-xs btn-default" title="edit"><i class="fa fa-pencil"></i></button>
-																</div>
-															</div>
-														</div>
-													@endforeach
-													
-												@endif
-
-
-												
-												@if (is_null($schoolS))
-												@else
-													<p style="font-size: 16px;" class="label label-primary">Secondary</p>
-													@foreach ($getAndLoopS as $loopSec)
-														<div class="box-body">
-															<div class="box-header  with-border">
-																{{ $loopSec->sec_school }}<br>
-																{{ $loopSec->sec_address }}<br>
-																{{ $loopSec->sec_start . ' - ' . $loopSec->sec_end }} 
-																<div class="box-tools pull-right">
-																	<button class="btn btn-flat btn-xs btn-default" title="edit"><i class="fa fa-pencil"></i></button>
-																</div>
-															</div>
-															
-															
-														</div>
-													@endforeach
-												@endif
-
-												
-												@if (is_null($schoolP))
-												@else
-													<p style="font-size: 16px;" class="label label-primary">Primary</p>
-													@foreach ($getAndLoopP as $loopPri)
-														<div class="box-body">
-															<div class="box-header  with-border">
-		
-																{{ $loopPri->pri_school }} <br>
-																{{ $loopPri->pri_address }}<br>
-																{{ $loopPri->pri_start . ' - ' . $loopPri->pri_end }}
-																<div class="box-tools pull-right">
-																	<button class="btn btn-flat btn-xs btn-default" title="edit"><i class="fa fa-pencil"></i></button>
-																</div>
-															</div>
-														</div>
-													@endforeach
-												@endif
-
-													
-											</div>
-										</div>
-
-									</div>
+									@include('view_applicant.school.tab_index')
 								</div>
-								<!-- /.tab-pane -->
 
 								<div class="tab-pane" id="skills">
-
+									@include('view_applicant.skill.tab_index')
 								</div>
 
 
