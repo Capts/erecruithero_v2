@@ -30,8 +30,21 @@ class User extends Authenticatable
     }
     public function skill(){
         return $this
-        ->belongsToMany('App\Skill');
+        ->hasMany('App\Skill');
     }
+    public function schoolPrimary(){
+        return $this
+        ->hasMany('App\SchoolPrimary');
+    }
+    public function schoolSecondary(){
+        return $this
+        ->hasMany('App\SchoolSecondary');
+    }
+    public function schoolTertiary(){
+        return $this
+        ->hasMany('App\SchoolTertiary');
+    }
+
 
 
     protected $fillable = [

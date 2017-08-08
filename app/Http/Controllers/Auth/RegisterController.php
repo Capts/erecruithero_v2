@@ -48,7 +48,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if($data['gender']){
-
             $avatar = 'public/default/avatars/male.png';
         }else{
             $avatar = 'public/default/avatars/female.png';
@@ -84,10 +83,10 @@ class RegisterController extends Controller
 
         $profile = new Profile();
         $profile->user_id = $user->id;
-        $profile->age = 0;
-        $profile->bio = 'not specified';
-        $profile->bday ='not specified';
-        $profile->civil_status = 'not specified';
+        // $profile->age = null;
+        // $profile->bio = '';
+        // $profile->bday ='';
+        // $profile->civil_status = '';
 
         $user->profile()->save($profile);
 

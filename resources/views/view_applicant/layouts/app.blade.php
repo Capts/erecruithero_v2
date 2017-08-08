@@ -26,6 +26,34 @@
     <script src="/applicant/applicanthome/js/jquery.scrollTo.min.js"></script>
     <script src="/applicant/applicanthome/js/owl.carousel.min.js"></script>
     <script src="/applicant/applicanthome/js/front.js"></script>
+    <script src="/applicant/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#myModal").modal('show');
+    });
+  </script>
+
+  <script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+
+    
+      //Date picker
+      $('#datepicker').datepicker({
+        autoclose: true
+      })
+
+    
+    })
+  </script>
+
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
     <!---->
     <script>

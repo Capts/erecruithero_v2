@@ -7,9 +7,12 @@ use App\Job;
 use App\User;
 use App\Profile;
 use App\Country;
-use App\School;
+use App\SchoolPrimary;
+use App\SchoolSecondary;
+use App\SchoolTertiary;
 use App\Address;
 use Session;
+use Auth;
 
 class ApplicantProfileController extends Controller
 {
@@ -20,20 +23,33 @@ class ApplicantProfileController extends Controller
     
     public function index($id, $slug)
     {       
-        $id = User::find($id);
+        // $user = User::all();
+        // $schoolPfind = SchoolPrimary::find($id);
+        $schoolP = SchoolPrimary::find($id);
 
-        // $school_id = School::where('user_id', $user_id)->get();
+        // $schoolSfind = SchoolSecondary::find($id);
+        $schoolS = SchoolSecondary::find($id);
+
+
+        $schoolT = SchoolTertiary::find($id);
+
+
+        $getAndLoopT = SchoolTertiary::where('user_id', $id)->get();
+        $getAndLoopS = SchoolSecondary::where('user_id', $id)->get();
+        $getAndLoopP = SchoolPrimary::where('user_id', $id)->get();
+
+        $profile = Profile::find($id);
+        $id = User::find($id);
         $slug = User::find($slug);
 
-       $checkRelatedTables = User::where(function($query) { 
-            $query->has('address')
-                ->orHas('school')
-                ->orHas('skill');
-        })->find(1);
-
-       dd($checkRelatedTables);
-
-        return view('view_applicant.profile.index',compact('id', 'slug'));
+        if (is_null($profile->bday) && is_null($profile->age) && is_null($profile->bio) && is_null($profile->civil_status)) {
+            return view('view_applicant.profile.edit', compact('profile'));
+        } else{
+            
+            return view('view_applicant.profile.index', compact('id', 'slug', 'schoolP', 'schoolS', 'schoolT', 'getAndLoopT','getAndLoopS', 'getAndLoopP'));
+        }
+        
+        
     }
 
     public function create()
@@ -59,45 +75,50 @@ class ApplicantProfileController extends Controller
         $profile = Profile::find($id);
         $countries = Country::find($id);
 
-        return view('view_applicant.edit_profile', compact('profile', 'countries'));
+        return view('view_applicant.profile.edit', compact('profile', 'countries'));
     }
 
 
     public function update(Request $request, $id)
     {
+        $user = User::find($id);
+
         $profile = Profile::find($id);
+        if (isset($profile)) {
+            $profile->bio = $request->input('bio');
+            $profile->civil_status = $request->input('civil_status');
+            $profile->age = $request->input('age');
+            $profile->bday = $request->input('bday');
 
-        $profile->bio = $request->input('bio');
-        $profile->civil_status = $request->input('civil_status');
-        $profile->bday = $request->input('bday');
+            $profile->save();
+        }
+        
 
-        $profile->save();
+        // $address = Address::find($id);
 
-        $address = Address::find($id);
+        // $address->street = $request->input('street');
+        // $address->barangay = $request->input('barangay');
+        // $address->city = $request->input('city');
+        // $address->province = $request->input('province');
+        // $address->country = $request->input('country');
+        // $address->save();
 
-        $address->street = $request->input('street');
-        $address->barangay = $request->input('barangay');
-        $address->city = $request->input('city');
-        $address->province = $request->input('province');
-        $address->country = $request->input('country');
-        $address->save();
+        // $school = School::find($id);
 
-        $school = School::find($id);
+        // $school->school = $request->input('school');
+        // $school->degree = $request->input('degree');
+        // $school->field_of_study = $request->input('field_of_study');
+        // $school->major = $request->input('major');
+        // $school->start_year = $request->input('start_year');
+        // $school->end_year = $request->input('end_year');
+        // $school->end_year = $request->input('activities');
+        // $school->end_year = $request->input('school_status');
 
-        $school->school = $request->input('school');
-        $school->degree = $request->input('degree');
-        $school->field_of_study = $request->input('field_of_study');
-        $school->major = $request->input('major');
-        $school->start_year = $request->input('start_year');
-        $school->end_year = $request->input('end_year');
-        $school->end_year = $request->input('activities');
-        $school->end_year = $request->input('school_status');
-
-        $school->save();
-
+        // $school->save();
+         // dd($user);
         Session::flash('success', 'You updated your profile!' );
 
-        return redirect()->route('profile.index', $profile->id);
+        return redirect()->route('profile.index', [$user->id,$user->slug]);
     }
 
  
