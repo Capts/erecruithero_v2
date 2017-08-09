@@ -20,7 +20,6 @@ Auth::routes();
 // Applicant Routes
 
 Route::get('applicant/newsfeed', 'ApplicantController@feed')->name('applicant.feed');
-Route::get('applicant/newsfeed', 'ApplicantController@feed')->name('applicant.feed');
 
 Route::get('applicant/profile/id/{id}/{slug}', 'ApplicantProfileController@index')->name('profile.index');
 
@@ -32,6 +31,8 @@ Route::resource('applicant/skill', 'ApplicantSchoolController', ['except' =>  ['
 
 
 //Employer Route
+Route::get('employer/newsfeed', 'EmployerController@feed')->name('employer.feed');
+
 Route::get('employer/profile', 'EmployerController@getEmployerProfile')->name('employer.profile');
 	//resource routes for employer
 	Route::resource('employer/job', 'JobController');

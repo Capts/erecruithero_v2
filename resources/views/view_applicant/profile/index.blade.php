@@ -70,7 +70,7 @@
 						<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}}</p>
 						 <hr>
 						<span>
-							<h5>
+							<h5> 
 								<i class="fa fa-google-plus pull-right"></i>
 
 								<b>{{ Auth::user()->email}}</b>

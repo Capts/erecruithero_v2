@@ -9,8 +9,10 @@
 
         @yield('content')
     </div>
+</body>
     <!-- Scripts -->
-    <script src="{{ asset('applicant/js/app.js') }}"></script>
+    <script src="{{ asset('/applicant/js/app.js') }}"></script>
+    <script src="/applicant/js/jquery.min.js"></script>
 
     <script src="/applicant/bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
@@ -19,13 +21,13 @@
     <script src="/applicant/dist/js/demo.js"></script>
 
     <!-- Javascript files-->
-    <script src="/applicant/applicanthome/js/jquery.cookie.js"> </script>
-    <script src="/applicant/applicanthome/js/ekko-lightbox.js"></script>
-    <script src="/applicant/applicanthome/js/jquery.simple-text-rotator.min.js"></script>
-    <script src="/applicant/applicanthome/js/jquery.scrollTo.min.js"></script>
-    <script src="/applicant/applicanthome/js/owl.carousel.min.js"></script>
-    <script src="/applicant/applicanthome/js/front.js"></script>
-    <script src="/applicant/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="landingpage/js/jquery.cookie.js"> </script>
+    <script src="landingpage/js/ekko-lightbox.js"></script>
+    <script src="landingpage/js/jquery.simple-text-rotator.min.js"></script>
+    <script src="landingpage/js/jquery.scrollTo.min.js"></script>
+    <script src="landingpage/js/owl.carousel.min.js"></script>
+    <script src="landingpage/js/front.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="/bower_components/select2/dist/js/select2.full.min.js"></script>
     <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
@@ -67,5 +69,5 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-</body>
+
 </html>

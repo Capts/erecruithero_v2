@@ -27,14 +27,14 @@
 <!-- home css -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
 <!-- Stroke 7 font by Pixeden (http://www.pixeden.com/icon-fonts/stroke-7-icon-font-set)-->
-<link rel="stylesheet" href="/applicant/applicanthome/css/pe-icon-7-stroke.css">
-<link rel="stylesheet" href="/applicant/applicanthome/css/helper.css">
+<link rel="stylesheet" href="/landingpage/css/fonts/pe-icon-7-stroke.css">
+<link rel="stylesheet" href="/landingpage/css/helper.css">
 <!-- theme stylesheet-->
-<link rel="stylesheet" href="/applicant/applicanthome/css/style.default.css" id="theme-stylesheet">
+<link rel="stylesheet" href="/landingpage/css/style.default.css" id="theme-stylesheet">
 <!-- owl carousel-->
-<link rel="stylesheet" href="/applicant/applicanthome/css/owl.carousel.css">
-<link rel="stylesheet" href="/applicant/applicanthome/css/owl.theme.css">
+<link rel="stylesheet" href="/landingpage/css/owl.carousel.css">
+<link rel="stylesheet" href="/landingpage/css/owl.theme.css">
 <!-- plugins-->
-<link rel="stylesheet" href="/applicant/applicanthome/css/simpletextrotator">
+<link rel="stylesheet" href="/landingpage/css/simpletextrotator">
 <!-- Custom stylesheet - for your changes-->
-<link rel="stylesheet" href="/applicant/applicanthome/css/custom.css">
+<link rel="stylesheet" href="/landingpage/css/custom.css">

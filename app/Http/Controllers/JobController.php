@@ -8,6 +8,9 @@ use App\Job;
 class JobController extends Controller
 {
 
+    public function __construct(){
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -36,13 +39,7 @@ class JobController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+     public function show($id)
     {
         $job = Job::find($id);
 
