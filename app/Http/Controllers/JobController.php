@@ -17,13 +17,13 @@ class JobController extends Controller
     public function index()
     {   
         $search = \Request::get('search');
-        $searchJob = Job::where('job_title', 'like','%'.$search.'%')->orderBy('id', 'desc')->paginate(10);
+        // $searchJob = Job::where('job_title', 'like','%'.$search.'%')->orderBy('created_at', 'desc')->paginate(10);
 
 
        
 
         $countJob = Job::count();
-        $jobs = Job::orderBy('created_at', 'desc')->paginate(30);
+        $jobs = Job::where('job_title', 'like','%'.$search.'%')->orderBy('created_at', 'desc')->paginate(30);
         return view('view_employer.job.index', compact('jobs', 'countJob', 'searchJob'));
     }
 

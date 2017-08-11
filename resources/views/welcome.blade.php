@@ -28,6 +28,7 @@
               {!! Form::text('search', null, ['class' => 'form-control input-lg', 'required' => 'required', 'placeholder'=> 'Search jobs..']) !!}
               <small class="text-danger">{{ $errors->first('search') }}</small>
             </div>
+            
 
             <div class="btn-group" style="padding-left: 0px;">
               {!! Form::button("<i class='fa fa-search'></i> &nbsp;Find now", ['type' => 'submit', 'class' => 'btn btn-flat bg-olive']) !!}
