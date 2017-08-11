@@ -23,15 +23,9 @@
 
 <!-- home css -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
-<!-- Stroke 7 font by Pixeden (http://www.pixeden.com/icon-fonts/stroke-7-icon-font-set)-->
-<link rel="stylesheet" href="/employer/applicanthome/css/pe-icon-7-stroke.css">
-<link rel="stylesheet" href="/employer/applicanthome/css/helper.css">
-<!-- theme stylesheet-->
-<link rel="stylesheet" href="/employer/applicanthome/css/style.default.css" id="theme-stylesheet">
-<!-- owl carousel-->
-<link rel="stylesheet" href="/employer/applicanthome/css/owl.carousel.css">
-<link rel="stylesheet" href="/employer/applicanthome/css/owl.theme.css">
-<!-- plugins-->
-<link rel="stylesheet" href="/employer/applicanthome/css/simpletextrotator">
-<!-- Custom stylesheet - for your changes-->
-<link rel="stylesheet" href="/employer/applicanthome/css/custom.css">
+
+<link rel="stylesheet" href="/landingpage/css/helper.css">
+
+
+<link rel="stylesheet" href="/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="/bower_components/bootstrap-daterangepicker/daterangepicker.css">

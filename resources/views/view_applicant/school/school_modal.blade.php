@@ -1,7 +1,7 @@
 <!-- Modal for tertiary-->
 
 	<!-- Modal -->
-	<div class="modal fade" id="terModal-{{ Auth::user()->id }}" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade" id="school_modal-{{ Auth::user()->id }}" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -61,17 +61,23 @@
 	      						        <small class="text-danger">{{ $errors->first('ter_major') }}</small>
 	      						    </div>
 
-	      						    <div class="form-group{{ $errors->has('ter_start_year') ? ' has-error' : '' }}">
-	      						        {!! Form::label('ter_start_year', 'Year Started') !!}
-	      						        {!! Form::text('ter_start_year', null, ['class' => 'form-control', 'required' => 'required']) !!}
-	      						        <small class="text-danger">{{ $errors->first('ter_start_year') }}</small>
-	      						    </div>
-
-	      						    <div class="form-group{{ $errors->has('ter_end_year') ? ' has-error' : '' }}">
-	      						        {!! Form::label('ter_end_year', 'Year Graduated') !!}
-	      						        {!! Form::text('ter_end_year', null, ['class' => 'form-control', 'required' => 'required']) !!}
-	      						        <small class="text-danger">{{ $errors->first('ter_end_year') }}</small>
-	      						    </div>
+	      						  	<div class="row">
+	      						  		<div class="col-xs-6">
+	      						  			<div class="form-group{{ $errors->has('ter_start_year') ? ' has-error' : '' }}">
+	      						  			    {!! Form::label('ter_start_year', 'Year Started') !!}
+	      						  			    {!! Form::text('ter_start_year', null, ['class' => 'form-control', 'required' => 'required']) !!}
+	      						  			    <small class="text-danger">{{ $errors->first('ter_start_year') }}</small>
+	      						  			</div>
+	      						  			
+	      						  		</div>
+	      						  		<div class="col-xs-6">
+	      						  			<div class="form-group{{ $errors->has('ter_end_year') ? ' has-error' : '' }}">
+	      						  			    {!! Form::label('ter_end_year', 'Year Graduated') !!}
+	      						  			    {!! Form::text('ter_end_year', null, ['class' => 'form-control', 'required' => 'required']) !!}
+	      						  			    <small class="text-danger">{{ $errors->first('ter_end_year') }}</small>
+	      						  			</div>
+	      						  		</div>
+	      						  	</div>
 	      						    <div class="section">
 	      						    	
 	      						    	{!! Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']) !!}
@@ -105,17 +111,24 @@
 	      						        <small class="text-danger">{{ $errors->first('sec_address') }}</small>
 	      						    </div>
 
-	      						    <div class="form-group{{ $errors->has('sec_start') ? ' has-error' : '' }}">
-	      						        {!! Form::label('sec_start', 'Year Started') !!}
-	      						        {!! Form::text('sec_start', null, ['class' => 'form-control', 'required' => 'required']) !!}
-	      						        <small class="text-danger">{{ $errors->first('sec_start') }}</small>
-	      						    </div>
+	      						   <div class="row">
+	      						   	<div class="col-xs-6">
+	      						   		<div class="form-group{{ $errors->has('sec_start') ? ' has-error' : '' }}">
+	      						   		    {!! Form::label('sec_start', 'Year Started') !!}
+	      						   		    {!! Form::text('sec_start', null, ['class' => 'form-control', 'required' => 'required']) !!}
+	      						   		    <small class="text-danger">{{ $errors->first('sec_start') }}</small>
+	      						   		</div>
 
-	      						    <div class="form-group{{ $errors->has('sec_end') ? ' has-error' : '' }}">
-	      						        {!! Form::label('sec_end', 'Year Graduated') !!}
-	      						        {!! Form::text('sec_end', null, ['class' => 'form-control', 'required' => 'required']) !!}
-	      						        <small class="text-danger">{{ $errors->first('sec_end') }}</small>
-	      						    </div>
+	      						   		
+	      						   	</div>
+	      						   	<div class="col-xs-6">
+	      						   		<div class="form-group{{ $errors->has('sec_end') ? ' has-error' : '' }}">
+	      						   		    {!! Form::label('sec_end', 'Year Graduated') !!}
+	      						   		    {!! Form::text('sec_end', null, ['class' => 'form-control', 'required' => 'required']) !!}
+	      						   		    <small class="text-danger">{{ $errors->first('sec_end') }}</small>
+	      						   		</div>
+	      						   	</div>
+	      						   </div>
 	      						    <div class="section">
 	      						    	
 	      						    	{!! Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']) !!}
@@ -148,17 +161,24 @@
 	      						        <small class="text-danger">{{ $errors->first('pri_address') }}</small>
 	      						    </div>
 
-	      						    <div class="form-group{{ $errors->has('pri_start') ? ' has-error' : '' }}">
-	      						        {!! Form::label('pri_start', 'Year Started') !!}
-	      						        {!! Form::text('pri_start', null, ['class' => 'form-control', 'required' => 'required']) !!}
-	      						        <small class="text-danger">{{ $errors->first('pri_start') }}</small>
-	      						    </div>
+	      						   <div class="row">
+	      						   	<div class="col-xs-6">
+	      						   		<div class="form-group{{ $errors->has('pri_start') ? ' has-error' : '' }}">
+	      						   		    {!! Form::label('pri_start', 'Year Started') !!}
+	      						   		    {!! Form::text('pri_start', null, ['class' => 'form-control', 'required' => 'required']) !!}
+	      						   		    <small class="text-danger">{{ $errors->first('pri_start') }}</small>
+	      						   		</div>
 
-	      						    <div class="form-group{{ $errors->has('pri_end') ? ' has-error' : '' }}">
-	      						        {!! Form::label('pri_end', 'Year Graduated') !!}
-	      						        {!! Form::text('pri_end', null, ['class' => 'form-control', 'required' => 'required']) !!}
-	      						        <small class="text-danger">{{ $errors->first('pri_end') }}</small>
-	      						    </div>
+	      						   		
+	      						   	</div>
+	      						   	<div class="col-xs-6">
+	      						   		<div class="form-group{{ $errors->has('pri_end') ? ' has-error' : '' }}">
+	      						   		    {!! Form::label('pri_end', 'Year Graduated') !!}
+	      						   		    {!! Form::text('pri_end', null, ['class' => 'form-control', 'required' => 'required']) !!}
+	      						   		    <small class="text-danger">{{ $errors->first('pri_end') }}</small>
+	      						   		</div>
+	      						   	</div>
+	      						   </div>
 	      						    <div class="section">
 	      						    	
 	      						    	{!! Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']) !!}
@@ -181,10 +201,6 @@
 
 	      	</div>
 	      </div>
-	      {{-- <div class="modal-footer">
-	        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary btn-flat"><i class="fa fa-check">&nbsp;</i> Save changes</button>
-	      </div> --}}
 	    </div>
 	  </div>
 	</div>

@@ -34,7 +34,7 @@
           </a>
           <ul class="treeview-menu" style="padding-left:25px;">
             <li><a href="{{route('profile.index', [Auth::user()->id, Auth::user()->slug] )}}"><i class="fa fa-odnoklassniki"></i> view profile</a></li>
-            <li><a href="#"><i class="fa fa-pencil"></i> edit profile</a></li>
+            <li><a href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-pencil"></i> edit profile</a></li>
           </ul>
         </li>
 

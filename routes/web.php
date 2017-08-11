@@ -26,14 +26,15 @@ Route::get('applicant/profile/id/{id}/{slug}', 'ApplicantProfileController@index
 Route::resource('applicant/profile', 'ApplicantProfileController', ['except' => ['index', 'show', 'destroy', 'create']]);
 Route::resource('applicant/address', 'ApplicantAddressController', ['except' =>  ['index', 'destroy']]);
 Route::resource('applicant/school', 'ApplicantSchoolController', ['except' =>  ['index', 'destroy', 'create']]);
-Route::resource('applicant/skill', 'ApplicantSchoolController', ['except' =>  ['index', 'show']]);
+Route::resource('applicant/skill', 'SkillController', ['except' =>  ['index', 'show', 'create']]);
+Route::resource('applicant/experience', 'ExperienceController');
 
 
 
 //Employer Route
 Route::get('employer/newsfeed', 'EmployerController@feed')->name('employer.feed');
 
-Route::get('employer/profile', 'EmployerController@getEmployerProfile')->name('employer.profile');
+
 	//resource routes for employer
 	Route::resource('employer/job', 'JobController');
 	

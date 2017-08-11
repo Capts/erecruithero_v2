@@ -28,13 +28,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition register-page">
-    <div class="register-box">
+    <div class="register-box" style=" margin-top: 35px;">
         <div class="register-logo">
-            <a href="#"><b>E Recruit</b>Hero</a>
+            <a href="/"><b>E Recruit</b>Hero</a>
         </div>
 
-        <div class="register-box-body">
-            <p class="login-box-msg">Register a new account</p>
+        <div class="register-box-body" >
+            <p class="login-box-msg ">Register a new account</p>
 
             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}

@@ -3,7 +3,7 @@
 <head>
    @include('partials.head')
 </head>
-<body>
+<body >
     <div id="app">
        @include('partials.nav')
 

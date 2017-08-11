@@ -17,23 +17,17 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="/employer/plugins/iCheck/square/blue.css">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
+<div class="login-box" style=" margin-top: 35px;">
   <div class="login-logo">
     <a href="{{ route('login') }}"><b>E-Recruit </b>Hero</a>
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body">
+  <div class="login-box-body kk">
     <p class="login-box-msg">Sign in to start</p>
     
     <form class="" role="form" method="POST" action="{{ route('login') }}">

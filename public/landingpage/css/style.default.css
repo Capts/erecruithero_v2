@@ -20,7 +20,7 @@ html {
 body {
   height: 100%;
   font-weight: 300;
-  padding-top: 80px;
+  /*padding-top: 80px;*/
 }
 header {
   z-index: 1000;

@@ -15,7 +15,7 @@
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      {!! Form::open(['method' => 'GET', 'route' => 'job.index', 'class' => 'sidebar-form', 'name' => 'search' ]) !!}
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -23,7 +23,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      {!! Form::close() !!}
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -41,10 +41,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=""><a href="{{ route('job.create') }}"><i class="fa fa-plus"></i> Post new job</a></li>
-            <li class=""><a href="{{ route('job.index') }}"><i class="fa fa-folder-open-o"></i> View all jobs</a></li>
-            {{--<li class=""><a href="#"><i class="fa fa-circle-o"></i> Jobs</a></li> 
-            <li><a href="#"><i class="fa fa-circle-o"></i> Settings</a></li> --}}
+            <li><a class="btn btn-xs btn-flat" title="add skill" data-toggle="modal" data-target="#create_job_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i> Post new job</a></li>
+            <li><a href="{{ route('job.index') }}" class="btn btn-xs btn-flat"><i class="fa fa-folder-open-o"></i> View all jobs</a></li>
           </ul>
         </li>
 

@@ -52,106 +52,99 @@
 			<div class="box box-success" >
 				<div class="box-header with-border box-success" >
 					<h4 class="text-center">Welcome to your profile</h4>
-
-					{{-- <div class="box-tools pull-right">
-						<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-						title="minimize">
-						<i class="fa fa-minus"></i></button>
-
-					</div> --}}
 				</div>
-				<div class="box-body" style="padding:20px 20px 50px;background-color: #222d32; color:white;">
+				<div class="box-body">
+					<div class="row">
+						<div class="col-md-3">
+						<!-- profile picture-->
+							<div class="box box-primary">
+								<div class="box-body">
+									{{-- <div class="col-xs-12">
+										<a href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-pencil pull-right"></i></a>
+									</div> --}}
 
-					
+									<p class="text-center" ><img src="{{Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
+									<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}}</p>
+									<hr>
+									<div class="box-body">
+										<span>
+											<h5> 
+												<i class="fa fa-google-plus pull-right"></i>
 
-					<div class="col-md-4" style="padding:10px 10px">
-					<div class="col-xs-12"><a href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-pencil pull-right"></i></a></div>
-						<p class="text-center" ><img src="{{Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
-						<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}}</p>
-						 <hr>
-						<span>
-							<h5> 
-								<i class="fa fa-google-plus pull-right"></i>
+												<b>{{ Auth::user()->email}}</b>
+											</h5>
+										</span>
 
-								<b>{{ Auth::user()->email}}</b>
-							</h5>
-						</span>
+										<span>
+											<h5>
+												<i class="fa fa-birthday-cake pull-right"></i>
+												<p>{{ date('M j,Y', strtotime(Auth::user()->profile->bday)) }}</p>
+												<p>{{ Auth::user()->profile->age . ' years old'}}</p>
+											</h5>
+										</span>
 
-						<span>
-							<h5>
-								<i class="fa fa-birthday-cake pull-right"></i>
-								<p>{{ date('M j,Y', strtotime(Auth::user()->profile->bday)) }}</p>
-								<p>{{ Auth::user()->profile->age . ' years old'}}</p>
-							</h5>
-						</span>
+										<span>
+											<h5>
+												<i class="fa fa-heart pull-right"></i>
 
-						<span>
-							<h5>
-								<i class="fa fa-heart pull-right"></i>
+												{{ ucfirst(Auth::user()->profile->civil_status) }}
+											</h5>
+										</span>
+									</div>
+									<div class="box-footer">
+										<p class="text-left">{{ ucfirst(Auth::user()->profile->bio) }}</p>
+									</div>
 
-								{{ ucfirst(Auth::user()->profile->civil_status) }}
-							</h5>
-						</span>
-
-						<span>
-							{{-- <h5>
-								<i class="fa fa-map-marker pull-right"></i>
-
-								{{ ucfirst(Auth::user()->address->street). ', ' .ucfirst(Auth::user()->address->barangay). ', ' .ucfirst(Auth::user()->address->city) }} <br>
-								{{ ucfirst(Auth::user()->address->province). ', ' .ucfirst(Auth::user()->address->country)}}
-							</h5> --}}
-						</span>
-						
-					
-						<div class="box-footer" style="color:white;background-color: #222d32;">
-							<p class="text-left">{{ ucfirst(Auth::user()->profile->bio) }}</p>
-						</div>
-						
-					</div>
-
-					<div class="col-md-8">
-						<div class="nav-tabs-custom" style="background-color: #222d32;">
-							<ul class="nav nav-tabs" style="font-size:18px;">
-								<li class="active"><a href="#education" data-toggle="tab">Education</a></li>
-								<li><a href="#skills" data-toggle="tab">Skills</a></li>
-								<li><a href="#experience" data-toggle="tab">Experience</a></li>
-								<li><a href="#personal" data-toggle="tab">Personal Information</a></li>
-							</ul>
-							<div class="tab-content">
-								<div class="active tab-pane" id="education">
-									@include('view_applicant.school.tab_index')
+									
+							</div>
+							<!-- Skills -->
+							<div class="box box-primary">
+								<div class="box-header ">
+									<h5 class="text-center"><i class="fa fa-language">&nbsp;</i>
+									<b>SKILLS</b>
+									<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add skill" data-toggle="modal" data-target="#skill_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
+									</h5>
 								</div>
-
-								<div class="tab-pane" id="skills">
+								<div class="box-body">
 									@include('view_applicant.skill.tab_index')
 								</div>
-
-
-								<div class="tab-pane" id="experience">
-									<!-- The timeline -->
-
-								</div>
-								<!-- /.tab-pane -->
-
-								<div class="tab-pane" id="personal">
-
-								</div>
-								<!-- /.tab-pane -->
 							</div>
-							<!-- /.tab-content -->
+
 						</div>
-						<!-- /.nav-tabs-custom -->
+						<div class="col-md-9">
+							<div class="row">
+							<!-- Education-->
+								<div class="col-xs-6">
+									<div class="box box-primary" style="padding: 20px 20px;">
+										<div class="box-header with-border">
+											<h5 class="text-center"><i class="fa fa-graduation-cap">&nbsp;</i>
+											<b>EDUCATION</b>
+											<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add school" data-toggle="modal" data-target="#school_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
+											</h5>
+										</div>
+										@include('view_applicant.school.tab_index')
+									</div>
+								</div>
+								<div class="col-xs-6">
+								 <!--experience-->
+									<div class="box box-primary" style="padding: 20px 20px;">
+										<div class="box-header">
+											<h5 class="text-center"><i class="fa fa-black-tie ">&nbsp;</i>
+												<b>EXPERIENCE</b>
+												<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add experience" data-toggle="modal" data-target="#experience_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
+											</h5>
+										</div>
+										@include('view_applicant.experience.tab_index')
+									</div>
+								</div>
+							</div>
 
-
-							
-								
-							
+						</div>
+					</div>
 					
 
 
-					</div>
 
-				</div>
 				<div class="box-footer">
 						
 					<h6>Last updated : <span>{{ date('M j,Y', strtotime(Auth::user()->updated_at)) }}</span></h6>

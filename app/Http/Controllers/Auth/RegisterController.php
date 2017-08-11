@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'slug' => str_slug($slug),
             'avatar' => $avatar
         ]);
-
+        
         $this->assignRole($user)->createprofile($user);
         return $user;
     }

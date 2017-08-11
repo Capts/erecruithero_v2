@@ -14,35 +14,41 @@ class User extends Authenticatable
     public function roles(){
         return $this
         ->belongsToMany('App\Role')->withTimestamps();
-        
     }
+
     public function profile(){
         return $this
         ->hasOne('App\Profile');
     }
-    public function school(){
-        return $this
-        ->hasOne(School::class);
-    }
+
     public function address(){
         return $this
         ->hasOne(Address::class);
     }
+
     public function skill(){
         return $this
         ->hasMany('App\Skill');
     }
+
     public function schoolPrimary(){
         return $this
         ->hasMany('App\SchoolPrimary');
     }
+    
     public function schoolSecondary(){
         return $this
         ->hasMany('App\SchoolSecondary');
     }
+
     public function schoolTertiary(){
         return $this
         ->hasMany('App\SchoolTertiary');
+    }
+
+    public function experience(){
+        return $this
+        ->hasMany('App\Experience');
     }
 
 

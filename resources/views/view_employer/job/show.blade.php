@@ -1,102 +1,77 @@
 @extends('view_employer.layouts.app')
 
-@section('title', 'View job')
+
+@section('title', 'E-recruit Hero | ' . $job->job_title)
 
 @section('content')
 
-@if (Auth::user()->roles()->first()->name == 'applicant')
-   applicant view here
+<div class="wrapper">
 
-@else
+  <header class="main-header">
+    @include('view_employer.partials.nav')
+  </header>
 
-  <div class="wrapper">
+<!-- Left side column. contains the sidebar -->
+  @include('view_employer.partials.employer_sidebar')
 
-    @include('view_employer.partials.employer_sidebar')
-      <!-- =============================================== -->
+<!-- =============================================== -->
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-        <h1>
-          Employers |
-          <small>View job</small>
-        </h1>
-         
-         {{--  <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Examples</a></li>
-            <li class="active">Blank page</li>
-          </ol> --}}
-        </section>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
 
-        <!-- Main content -->
-        <section class="content">
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+       <div class="box box-success">
+        <div class="box-header with-border text-center">
+          <h4>{{ ucfirst($job->job_title) }} </h4>
+          <a href=""><small>{{ ucfirst($job->company) }}</small></a>
+        </div>
+        <div class="box-body">
+          <dl class="dl-horizontal">
+                <dt>Responsibilities:</dt>
+                  <dd>{{ ucfirst($job->responsibilities) }}</dd>
+                  <br>
+                <dt>Qualifications:</dt>
+                  <dd>{{ ucfirst($job->qualifications) }}</dd>
+                  <br>
+                <dt>Valid until:</dt>
+                  <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
+                  <br>
+                <dt>Salary:</dt>
+                  <dd>{{ $job->salary }}</dd>
+                  <br><br>
+                <dt>Date posted:</dt>
+                  <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
+          </dl>
+            <button class="btn btn-flat btn-info pull-right"><i class="fa fa-pencil">&nbsp;</i>Edit this job</button>
+            <button class="btn btn-flat btn-danger pull-left"><i class="fa fa-archive">&nbsp;</i>Archive this job</button>
+        </div>
         
-        {{-- @include('view_employer.partials.message') --}}
-          <!-- Default box -->
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">Job details</h3>
-            </div>
-            <div class="box-body">
-              <div class="col-md-6">
-                <dl class="dl-horizontal">
-                  <dt>Job Title :</dt>
-                   <dd>{{ $job->job_title }}</dd>
-                   <br>
-                  <dt>Qualifiacations :</dt>
-                   <dd>{{ $job->qualifications }}</dd>
-                   <br><hr>
-                  <dt >Responsibilities :</dt>
-                   <dd>{{ $job->responsibilities }}</dd>
-                   <br>
-                </dl>
-              </div>
 
-              <div class="col-md-6">
-                <dl class="dl-horizontal">
-                  <dt>Company :</dt>
-                   <dd>{{ $job->company }}</dd>
-                   <br>
-                  <dt>Applicant Needed :</dt>
-                   <dd>{{ $job->applicant_needed }}</dd>
-                   <br>
-
-                </dl>
-                <span class="pull-right">
-                  {!! Form::open(['route'=> ['job.destroy', $job->id], 'method' => 'DELETE']) !!}
-                    <a href="{{ route('job.edit', $job->id) }}" class="btn btn-flat bg-purple btn-md" data-toggle="tooltip" title="edit this job"><i class="fa fa-edit"></i></a>
-                    
-                    {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', "class" => 'btn btn-flat bg-maroon btn-md', "data-toggle" => 'tooltip', 'title' => 'delete this job']) !!}
-
-                  {!! Form::close() !!}
-                </span>
-              </div>
-             
-          
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer">
-              {{-- Footer --}}
-            </div>
-            <!-- /.box-footer-->
-          </div>
-          <!-- /.box -->
-
-        </section>
-        <!-- /.content -->
+         
+       </div>
       </div>
-      <!-- /.content-wrapper -->
-
-
-
-    @include('view_employer.partials.footer')
-
-    <div class="control-sidebar-bg"></div>
+     
+    </div>
+    
+  </section>
+    <!-- /.content -->
   </div>
-<!-- ./wrapper -->
-@endif
+  <!-- /.content-wrapper -->
+@include('view_employer.partials.footer')
 
 
+  <!-- /.control-sidebar -->
+<!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+
+@include('view_employer.job.create_job_modal')
 @stop

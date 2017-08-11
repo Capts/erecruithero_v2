@@ -15,8 +15,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-
+     
       <div class="navbar-custom-menu">
+
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
@@ -96,7 +97,7 @@
             </ul>
           </li>
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
+          <li class="dropdown notifications-menu" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">10</span>
@@ -212,7 +213,7 @@
             </ul>
           </li>
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
+          <li class="dropdown user user-menu" style="margin-right: 120px;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ Storage::url(Auth::user()->avatar) }}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
@@ -231,7 +232,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{{ route('employer.profile') }}" class="btn btn-default btn-flat">Profile</a>
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                    <a href="{{ route('logout') }}" class="btn btn-danger btn-flat"

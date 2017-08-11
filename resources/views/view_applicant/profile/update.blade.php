@@ -96,7 +96,7 @@
 			                				<div class="col-md-12">
 			                					
 			                					<div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
-			                					    {!! Form::label('bio', 'Bio') !!}
+			                					    {!! Form::label('bio', 'Bio or objective') !!}
 			                					    {!! Form::textarea('bio', ( isset($users->profile->bio) ? $users->profile->bio : null ), ['class' => 'form-control', 'required' => 'required']) !!}
 			                					    <small class="text-danger">{{ $errors->first('bio') }}</small>
 			                					</div>

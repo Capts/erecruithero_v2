@@ -12,6 +12,7 @@ use App\SchoolSecondary;
 use App\SchoolTertiary;
 use App\Address;
 use App\Skill;
+use App\Experience;
 use Session;
 use Auth;
 
@@ -29,7 +30,7 @@ class ApplicantProfileController extends Controller
         $schoolP = SchoolPrimary::where('user_id', $id)->first();
         $schoolS = SchoolSecondary::where('user_id', $id)->first();
         $schoolT = SchoolTertiary::where('user_id', $id)->first();
-        // dd($schoolT);
+        
 
         $getAndLoopT = SchoolTertiary::where('user_id', $id)->get();
         $getAndLoopS = SchoolSecondary::where('user_id', $id)->get();
@@ -41,13 +42,19 @@ class ApplicantProfileController extends Controller
         $id = User::find($id);
         $slug = User::find($slug);
 
-        
+        //SKILLS
+        //get all skills and pass to view
+        $loopSkills = Skill::where('user_id', $users->id)->get();
+
+        //EXPERIENCE
+        $loopExp = Experience::where('user_id', $users->id)->get();
+        // dd($loopExp);
         //for new comers
         if (is_null($profile->bday) && is_null($profile->age) && is_null($profile->bio) && is_null($profile->civil_status)) {
             return view('view_applicant.profile.edit', compact('profile', 'users'));
         } else{
             
-            return view('view_applicant.profile.index', compact('users', 'id', 'slug', 'schoolP', 'schoolS', 'schoolT', 'getAndLoopT','getAndLoopS', 'getAndLoopP'));
+            return view('view_applicant.profile.index', compact('users', 'id', 'slug', 'schoolP', 'schoolS', 'schoolT', 'getAndLoopT','getAndLoopS', 'getAndLoopP', 'loopSkills', 'findSkillbyId', 'loopExp'));
         }
         
         
