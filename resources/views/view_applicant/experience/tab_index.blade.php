@@ -2,7 +2,7 @@
 	@include('view_applicant.experience.experience_modal')
 
 						@if (Auth::user()->experience->isEmpty())
-							<h4 class="text-center" style="color:silver">and in here.</h4><h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add your experience.</em></h6>
+							<h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add some experience.</em></h6>
 						@else
 							@foreach ($loopExp as $exp)
 								

@@ -60,22 +60,6 @@ class ApplicantProfileController extends Controller
         
     }
 
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show($id)
-    {
-        //
-    }
 
 
     public function edit($id)
@@ -101,6 +85,8 @@ class ApplicantProfileController extends Controller
                    $profile->bio = $request->input('bio');
                    $profile->bday = $request->input('bday');
                    $profile->civil_status = $request->input('civil_status');
+                   $profile->telephone = $request->input('telephone');
+                   $profile->mobile = $request->input('mobile');
                    $profile->save();
             }
 
@@ -118,9 +104,5 @@ class ApplicantProfileController extends Controller
         return redirect()->route('profile.index', [$users->id,$users->slug]);
     }
 
- 
-    public function destroy($id)
-    {
-        //
-    }
+
 }

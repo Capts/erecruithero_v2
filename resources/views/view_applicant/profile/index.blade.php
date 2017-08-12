@@ -49,108 +49,117 @@
 				</div>
 
 			@endif 
-			<div class="box box-success" >
-				<div class="box-header with-border box-success" >
-					<h4 class="text-center">Welcome to your profile</h4>
-				</div>
-				<div class="box-body">
-					<div class="row">
-						<div class="col-md-3">
-						<!-- profile picture-->
-							<div class="box box-primary">
+			
+				<div class="row">
+					<div class="col-md-3">
+					<!-- profile picture-->
+						<div class="box box-primary">
+							<div class="box-body">
+								{{-- <div class="col-xs-12">
+									<a href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-pencil pull-right"></i></a>
+								</div> --}}
+
+								<p class="text-center" ><img src="{{Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
+								<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}}</p>
+								<hr>
 								<div class="box-body">
-									{{-- <div class="col-xs-12">
-										<a href="{{ route('profile.edit', Auth::user()->id) }}"><i class="fa fa-pencil pull-right"></i></a>
-									</div> --}}
+									<span>
+										<h5> 
+											<i class="fa fa-google-plus pull-right"></i>
 
-									<p class="text-center" ><img src="{{Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
-									<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}}</p>
-									<hr>
-									<div class="box-body">
-										<span>
-											<h5> 
-												<i class="fa fa-google-plus pull-right"></i>
+											<b>{{ Auth::user()->email}}</b>
+										</h5>
+									</span>
 
-												<b>{{ Auth::user()->email}}</b>
-											</h5>
-										</span>
+									<span>
+										<h5>
+											<i class="fa fa-birthday-cake pull-right"></i>
+											<p>{{ date('M j,Y', strtotime(Auth::user()->profile->bday)) }}</p>
+											<p>{{ Auth::user()->profile->age . ' years old'}}</p>
+										</h5>
+									</span>
 
-										<span>
-											<h5>
-												<i class="fa fa-birthday-cake pull-right"></i>
-												<p>{{ date('M j,Y', strtotime(Auth::user()->profile->bday)) }}</p>
-												<p>{{ Auth::user()->profile->age . ' years old'}}</p>
-											</h5>
-										</span>
+									<span>
+										<h5>
+											<i class="fa fa-heart pull-right"></i>
 
-										<span>
-											<h5>
-												<i class="fa fa-heart pull-right"></i>
+											{{ ucfirst(Auth::user()->profile->civil_status) }}
+										</h5>
+									</span>
+									<br>
+									<span>
+										<h5>
+											<i class="fa fa-phone pull-right"></i>
 
-												{{ ucfirst(Auth::user()->profile->civil_status) }}
-											</h5>
-										</span>
-									</div>
-									<div class="box-footer">
-										<p class="text-left">{{ ucfirst(Auth::user()->profile->bio) }}</p>
-									</div>
+											{{ Auth::user()->profile->telephone }}
+										</h5>
+									</span>
 
-									
-							</div>
-							<!-- Skills -->
-							<div class="box box-primary">
-								<div class="box-header ">
-									<h5 class="text-center"><i class="fa fa-language">&nbsp;</i>
-									<b>SKILLS</b>
-									<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add skill" data-toggle="modal" data-target="#skill_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
-									</h5>
+									<span>
+										<h5>
+											<i class="fa fa-mobile-phone pull-right"></i>
+
+											{{ Auth::user()->profile->mobile }}
+										</h5>
+
+									</span>
 								</div>
-								<div class="box-body">
-									@include('view_applicant.skill.tab_index')
+								<div class="box-footer">
+									<p class="text-left">{{ ucfirst(Auth::user()->profile->bio) }}</p>
 								</div>
-							</div>
 
+								
 						</div>
-						<div class="col-md-9">
-							<div class="row">
-							<!-- Education-->
-								<div class="col-xs-6">
-									<div class="box box-primary" style="padding: 20px 20px;">
-										<div class="box-header with-border">
-											<h5 class="text-center"><i class="fa fa-graduation-cap">&nbsp;</i>
-											<b>EDUCATION</b>
-											<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add school" data-toggle="modal" data-target="#school_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
-											</h5>
-										</div>
-										@include('view_applicant.school.tab_index')
-									</div>
-								</div>
-								<div class="col-xs-6">
-								 <!--experience-->
-									<div class="box box-primary" style="padding: 20px 20px;">
-										<div class="box-header">
-											<h5 class="text-center"><i class="fa fa-black-tie ">&nbsp;</i>
-												<b>EXPERIENCE</b>
-												<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add experience" data-toggle="modal" data-target="#experience_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
-											</h5>
-										</div>
-										@include('view_applicant.experience.tab_index')
-									</div>
-								</div>
-							</div>
+						<!-- Skills -->
+						
 
+					</div>
+
+					<div class="box box-primary">
+						<div class="box-header with-border ">
+							<h5 class="text-center"><i class="fa fa-language">&nbsp;</i>
+							<b>SKILLS</b>
+							<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add skill" data-toggle="modal" data-target="#skill_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
+							</h5>
+						</div>
+						<div class="box-body">
+							@include('view_applicant.skill.tab_index')
 						</div>
 					</div>
+
+					<div class="col-md-9">
+						<div class="row">
+						<!-- Education-->
+							<div class="col-xs-6">
+								<div class="box box-primary" style="padding: 20px 20px;">
+									<div class="box-header with-border">
+										<h5 class="text-center"><i class="fa fa-graduation-cap">&nbsp;</i>
+										<b>EDUCATION</b>
+										<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add school" data-toggle="modal" data-target="#school_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
+										</h5>
+									</div>
+									@include('view_applicant.school.tab_index')
+								</div>
+							</div>
+							<div class="col-xs-6">
+							 <!--experience-->
+								<div class="box box-primary" style="padding: 20px 20px;">
+									<div class="box-header with-border">
+										<h5 class="text-center"><i class="fa fa-black-tie ">&nbsp;</i>
+											<b>EXPERIENCE</b>
+											<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add experience" data-toggle="modal" data-target="#experience_modal-{{ Auth::user()->id }}"><i class="fa fa-plus"></i></a>
+										</h5>
+									</div>
+									@include('view_applicant.experience.tab_index')
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
 					
 
 
-
-				<div class="box-footer">
-						
-					<h6>Last updated : <span>{{ date('M j,Y', strtotime(Auth::user()->updated_at)) }}</span></h6>
-				</div>
-			</div>
-				
 
 		</section>
 	</div>

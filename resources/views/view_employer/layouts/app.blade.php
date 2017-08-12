@@ -6,7 +6,7 @@
 <body class="hold-transition skin-green sidebar-mini">
     <div id="app">
         @include('view_employer.job.create_job_modal')
-        @include('view_employer.job.unarchive_modal')
+        
         
         @yield('content')
     </div>

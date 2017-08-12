@@ -21,22 +21,27 @@
 
 	<!-- Main content -->
 	<section class="content">
-		<div class="row">
-			<div class="col-md-8">
-			 <div class="box box-success">
-			 	<div class="box-body">
-			 		This is your feed
-			 	</div>
-			 </div>
-			</div>
-			<div class="col-md-4">
-				<div class="box box-primary">
-					<div class="box-body">
-						all applicants
+		<!-- Default box -->
+				<div class="box">
+					<div class="box-header with-border">
+						<h3 class="box-title"></h3>
+
+						<div class="box-tools pull-right">
+							<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+							title="Collapse">
+							<i class="fa fa-minus"></i></button>
+						</div>
+						<div class="box-body">
+							News feed starts here
+						</div>
+						<!-- /.box-body -->
+						<div class="box-footer">
+
+						</div>
+						<!-- /.box-footer-->
 					</div>
+					<!-- /.box -->
 				</div>
-			</div>
-		</div>
 		
 	</section>
 		<!-- /.content -->

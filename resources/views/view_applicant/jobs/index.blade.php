@@ -26,27 +26,48 @@
 
 		<!-- Default box -->
 		<div class="row">
-			<div class="col-xs-12">
-				<div class="col-md-7 col-md-offset-2">
-					@foreach ($alljobs as $job)
-						<div class="box box-default">
-							<div class="box-header with-border">
-								<a href="{{ route('jobs.show', $job->id) }}">{{$job->job_title}}</a><span class="pull-right" style="font-size:13px;">Posted: {{ date('M j,Y', strtotime($job->created_at)) }}</span >
-							</div>
-							<div class="box-body">
-								{{ ucfirst(str_limit($job->responsibilities, 150)) }}
-							</div>
-						</div>
-						
-					@endforeach
-					<div class="col-xs-12">
+		<div class="col-xs-10 col-xs-offset-1">
+
+				<div class="box box-primary">
+					<div class="box-header ">
+
+					</div>
+					<div class="box-body">
+
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Job ID</th>
+									<th>Job Title</th>
+									<th>Company</th>
+									<th>Date Posted</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach ($alljobs as $job)
+								<tr>
+									<td>{{ $job->id }}</td>
+									<td><a href="{{ route('job.show', $job->id) }}">{{ str_limit($job->job_title, 25) }}</a></td>
+									<td>{{ str_limit($job->company, 25) }}</td>
+									<td>{{ date('M j,Y', strtotime($job->created_at)) }}</td>
+								</tr>
+
+
+
+
+								@endforeach
+							</tbody>
+
+						</table>
 						<div class="text-center">
-						    {!! $alljobs->links() !!}
+							{!! $alljobs->links() !!}
 						</div>
 					</div>
+
 				</div>
-				
+
 			</div>
+
 		</div>
 			
 

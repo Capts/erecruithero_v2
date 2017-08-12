@@ -17,10 +17,10 @@ class JobTableSeeder extends Seeder
         for ($i=1; $i <= 20; $i++) { 
         	DB::table('jobs')->insert([
                 'user_id' => 1,
-	        	'job_title' => $faker->sentence,
-	        	'responsibilities' => implode($faker->paragraphs(6)),
-	        	'qualifications' => implode($faker->paragraphs(6)),
-	        	'company' => $faker->sentence,
+	        	'job_title' => $faker->word,
+	        	'responsibilities' => implode($faker->paragraphs(5)),
+	        	'qualifications' => implode($faker->paragraphs(5)),
+	        	'company' => $faker->company,
                 'work_location' => $faker->address,
 	        	'salary' => $faker->numberBetween($min = 1000, $max = 9000),
                 'due_date' => $faker->iso8601( $max = 'now' ),

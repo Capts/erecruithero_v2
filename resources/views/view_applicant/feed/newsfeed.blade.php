@@ -47,15 +47,16 @@
 					<i class="fa fa-minus"></i></button>
 				</div>
 				<div class="box-body">
-					Start creating your amazing application!
+					News feed starts here
 				</div>
 				<!-- /.box-body -->
 				<div class="box-footer">
-					Footer
+
 				</div>
 				<!-- /.box-footer-->
 			</div>
 			<!-- /.box -->
+		</div>
 
 		</section>
 		<!-- /.content -->

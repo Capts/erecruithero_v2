@@ -216,7 +216,7 @@
           <li class="dropdown user user-menu" style="margin-right: 120px;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ Storage::url(Auth::user()->avatar) }}" class="user-image" alt="User Image">
-              <span class="hidden-xs">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</span>
+              <span class="hidden-xs">{{ ucfirst(Auth::user()->firstname) }} {{ ucfirst(Auth::user()->lastname) }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -224,7 +224,7 @@
                 <img src="{{ Storage::url(Auth::user()->avatar) }}" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ Auth::user()->firstname }} {{ Auth::user()->firstname }}
+                  {{ ucfirst(Auth::user()->firstname) }} {{ ucfirst(Auth::user()->firstname) }}
                   <small>Member since {{ date('M j,Y', strtotime(Auth::getUser()->created_at)) }}</small>
                 </p>
               </li>

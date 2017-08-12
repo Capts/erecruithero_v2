@@ -23,7 +23,7 @@ Route::get('applicant/newsfeed', 'ApplicantController@feed')->name('applicant.fe
 
 Route::get('applicant/profile/id/{id}/{slug}', 'ApplicantProfileController@index')->name('profile.index');
 
-Route::resource('applicant/profile', 'ApplicantProfileController', ['except' => ['index', 'show', 'destroy', 'create']]);
+Route::resource('applicant/profile', 'ApplicantProfileController', ['except' => ['index', 'show', 'destroy', 'store', 'create']]);
 Route::resource('applicant/address', 'ApplicantAddressController', ['except' =>  ['index', 'destroy']]);
 Route::resource('applicant/school', 'ApplicantSchoolController', ['except' =>  ['index', 'destroy', 'create']]);
 Route::resource('applicant/skill', 'SkillController', ['except' =>  ['index', 'show', 'create']]);

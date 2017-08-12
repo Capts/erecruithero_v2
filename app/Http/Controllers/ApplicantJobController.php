@@ -16,7 +16,7 @@ class ApplicantJobController extends Controller
 
         $search = \Request::get('searchApp');
         
-        $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->orderBy('created_at', 'desc')->paginate(15);
+        $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->where('status', '')->orderBy('created_at', 'desc')->paginate(15);
 
         return view('view_applicant.jobs.searchjobs', compact('searchjobs', 'search'));
     }
@@ -24,7 +24,7 @@ class ApplicantJobController extends Controller
     public function index()
     {   
         
-        $alljobs = Job::orderBy('created_at', 'desc')->paginate(15);
+        $alljobs = Job::where('status', '')->orderBy('created_at', 'desc')->paginate(15);
 
         
         return view('view_applicant.jobs.index', compact('alljobs'));

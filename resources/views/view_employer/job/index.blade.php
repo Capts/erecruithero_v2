@@ -66,11 +66,23 @@
       <div class="col-xs-4">
         <div class="box box-info">
           <div class="box-header with-border">
-              <h5>Job Count:</h5>
+              <h4 class="text-center" style="color:silver;">Job summary</h4>
           </div>
           <div class="box-body">
-            <h4 style="color: silver;text-align: center;">{{ $countJob}}</h4>
+
+            <h4 style="color: silver;">
+             
+              <p>Available jobs <span class="pull-right badge" style="margin-right:20px;font-size:15px;">{{ $countAvailable}}</span> </p>
+              
+              <br>
+              <p>Archived jobs <span class="pull-right badge" style="margin-right:20px;font-size:15px;">{{ $countArchive}}</span> </p>
+            </h4>
           </div> 
+          <div class="box-footer">
+            <h4 style="color: silver;">
+              <p>All jobs<span class="pull-right badge" style="margin-right:20px;font-size:15px;">{{ $countJob }}</span></p>
+            </h4>
+          </div>
         </div>
       </div>
     </div>

@@ -27,11 +27,18 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
+        <li >
+          <a href="{{ route('applicant.feed') }}">
+            <i class="fa fa-rss"></i> <span>Newsfeed</span>
+          </a>
+         
+        </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i> <span>Profile</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
+              {{-- <i class="fa fa-angle-right pull-right"></i> --}}
             </span>
           </a>
           <ul class="treeview-menu" style="padding-left:25px;">

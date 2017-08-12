@@ -20,6 +20,8 @@ class CreateProfilesTable extends Migration
             $table->text('bio')->nullable();
             $table->string('bday')->nullable();
             $table->text('civil_status')->nullable();
+            $table->string('telephone')->nullable();
+            $table->string('mobile')->nullable();
             $table->timestamps();
         });
     }

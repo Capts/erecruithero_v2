@@ -40,14 +40,19 @@
                 <dt>Qualifications:</dt>
                   <dd>{{ ucfirst($job->qualifications) }}</dd>
                   <br>
-                <dt>Valid until:</dt>
-                  <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
+                <dt>Location:</dt>
+                  <dd>{{ $job->work_location }}</dd>
                   <br>
                 <dt>Salary:</dt>
                   <dd><b>₱</b> {{ number_format($job->salary, 2) }}</dd>
-                  <br><br>
+                  <br>
                 <dt>Date posted:</dt>
                   <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
+                  <br>
+                  <br>
+                <dt>Job post expiration:</dt>
+                  <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
+                  
           </dl>
             <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
             @include('view_applicant.jobs.areyousure_modal')

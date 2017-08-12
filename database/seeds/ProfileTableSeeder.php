@@ -23,6 +23,8 @@ class ProfileTableSeeder extends Seeder
         $profile_applicant->bio = 'Hello there!, I am an employer';
         $profile_applicant->bday = '11/09/200';
         $profile_applicant->civil_status = 'single';
+        $profile_applicant->telephone = "074661123";
+        $profile_applicant->mobile =  "09999999999";
         $profile_applicant->save();
 
         $address_applicant = new Address();
@@ -77,6 +79,8 @@ class ProfileTableSeeder extends Seeder
         $profile_employer->bio = 'Hello there!, I am an applicant';
         $profile_employer->bday = '12/20/1996';
         $profile_employer->civil_status = 'single';
+        $profile_employer->telephone = "07899292";
+        $profile_employer->mobile = "09888888888";
         $profile_employer->save();
 
         $address_employer = new Address();

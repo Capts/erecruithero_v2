@@ -51,7 +51,7 @@ class User extends Authenticatable
         ->hasMany('App\Experience');
     }
 
-     public function application(){
+    public function application(){
         return $this
         ->hasMany('App\Application');
     }

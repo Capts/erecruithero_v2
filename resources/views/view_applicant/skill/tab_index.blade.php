@@ -1,6 +1,6 @@
 
 				@if (Auth::user()->skill->isEmpty())
-					<h4 class="text-center" style="color:silver">same goes here.</h4><h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add a skill.</em></h6>
+					<h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add a skill.</em></h6>
 				@else
 
 				

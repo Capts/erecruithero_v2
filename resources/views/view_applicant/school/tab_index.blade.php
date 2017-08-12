@@ -2,7 +2,7 @@
 
 			
 					@if (is_null($schoolT) and is_null($schoolS) and is_null($schoolP) )
-						<h4 class="text-center" style="color:silver">nothing to show here.</h4><h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add.</em></h6>
+						<h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add a school</em></h6>
 					@else
 						@if (is_null($schoolT))
 							

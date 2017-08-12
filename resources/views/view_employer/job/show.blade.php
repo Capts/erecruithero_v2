@@ -17,7 +17,7 @@
 
 <!-- =============================================== -->
 @include('view_employer.job.edit_job_modal')
-
+@include('view_employer.job.unarchive_modal')
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -54,14 +54,16 @@
                 <dt>Qualifications:</dt>
                   <dd>{{ ucfirst($job->qualifications) }}</dd>
                   <br>
-                <dt>Valid until:</dt>
-                  <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
-                  <br>
                 <dt>Salary:</dt>
                   <dd>{{ number_format($job->salary, 2) }}</dd>
                   <br><br>
                 <dt>Date posted:</dt>
                   <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
+                  <br>
+                  <br>
+                <dt>Job post expiration:</dt>
+                  <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
+                  
           </dl>
           @if ($job->status == 'archived')
             
@@ -72,7 +74,7 @@
             {!! Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
                     {!! Form::hidden('status', null) !!}
                       <br><br>
-                    {!! Form::button('<i class="fa fa-archive">&nbsp;</i>Archive this post', ['type' => 'submit', 'class' => 'pull-left btn btn-flat btn-danger', 'name'=> 'btnArchive', 'value' => 'archive']) !!}
+                    {!! Form::button('<i class="fa fa-archive">&nbsp;</i>Archive this job', ['type' => 'submit', 'class' => 'pull-left btn btn-flat btn-danger', 'name'=> 'btnArchive', 'value' => 'archive']) !!}
             {!! Form::close() !!}
              <button data-toggle="modal" data-target="#edit_job_modal" class="btn btn-flat btn-info pull-right"><i class="fa fa-pencil">&nbsp;</i>Edit this job</button>
           @endif

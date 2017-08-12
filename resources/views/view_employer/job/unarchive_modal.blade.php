@@ -32,7 +32,7 @@
 								        <div class="input-group-addon">
 								          <i class="fa fa-calendar"></i>
 								        </div>
-								        {!! Form::text('due_date', '', ['class' => 'form-control pull-right', 'id' => 'datepicker', 'required' => 'required']) !!}
+								        {!! Form::text('due_date', Carbon\Carbon::now()->toDateString(), ['class' => 'form-control pull-right', 'id' => 'datepicker', 'required' => 'required']) !!}
 								        {{-- <input type="text" name='due_date' class="form-control pull-right" id="datepicker"> --}}
 								        <small class="text-danger">{{ $errors->first('due_date') }}</small>
 								      </div>
