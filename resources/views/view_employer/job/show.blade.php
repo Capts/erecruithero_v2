@@ -15,7 +15,7 @@
   @include('view_employer.partials.employer_sidebar')
 
 <!-- =============================================== -->
-
+@include('view_employer.job.edit_job_modal')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->

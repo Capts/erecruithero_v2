@@ -55,11 +55,6 @@
          <li class=" treeview">
           <a href="#"><i class="fa fa-newspaper-o"></i> <span>Resume</span> </a>
         </li>
-
-        <li class=" treeview">
-          <a href="#"><i class="fa fa-cogs"></i> <span>Settings</span> </a>
-        </li>
-
          <li class=" treeview">
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
