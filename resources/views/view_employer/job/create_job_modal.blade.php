@@ -34,7 +34,7 @@
 	      			    	<div class="col-xs-6">
 	      			    		<div class="form-group{{ $errors->has('salary') ? ' has-error' : '' }}">
 	      			    		    {!! Form::label('salary', 'Salary') !!}
-	      			    		    {!! Form::text('salary', null, ['class' => 'form-control', 'placeholder' => 'Leave blank if salary is to be discuss.']) !!}
+	      			    		    {!! Form::text('salary', null, ['class' => 'form-control', 'placeholder' => 'Leave blank if salary is to be discussed.']) !!}
 	      			    		    <small class="text-danger">{{ $errors->first('salary') }}</small>
 	      			    		</div>
 	      			    	</div>
