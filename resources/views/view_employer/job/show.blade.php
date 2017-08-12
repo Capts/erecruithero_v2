@@ -49,7 +49,7 @@
                 <dt>Date posted:</dt>
                   <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
           </dl>
-            <button class="btn btn-flat btn-info pull-right"><i class="fa fa-pencil">&nbsp;</i>Edit this job</button>
+            <button data-toggle="modal" data-target="#edit_job_modal" class="btn btn-flat btn-info pull-right"><i class="fa fa-pencil">&nbsp;</i>Edit this job</button>
             <button class="btn btn-flat btn-danger pull-left"><i class="fa fa-archive">&nbsp;</i>Archive this job</button>
         </div>
         

@@ -99,7 +99,35 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
+       $job = Job::find($id);
+
+       $this->validate($request, [
+            'job_title' => 'required|max:60',
+            'company' => 'required|max:60',
+            'work_location' => 'required|max:100',
+            'responsibilities' => 'required|min:5',
+            'qualifications' => 'required|min:5',
+            'due_date' => 'required'
+        ]);
+
+
+       $job->job_title = $request->input('job_title');
+       $job->company = $request->input('company');
+       $job->work_location = $request->input('work_location');
+       $job->responsibilities = $request->input('responsibilities');
+       $job->qualifications = $request->input('qualifications');
        
+       if ($request->salary == '') {
+           $job->salary = 'To be discuss';
+       }else{
+           $job->salary = $request->input('salary');
+       }
+
+       $job->due_date = $request->input('due_date');
+       $job->Save();
+
+        Session::flash('success', 'You edited this job post' );
+       return redirect()->route('job.show', $job->id);
     }
 
     /**

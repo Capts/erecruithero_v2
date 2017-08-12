@@ -55,7 +55,7 @@
 							</div>
 								<div class="box-body">
 									@foreach ($searchjobs as $job)
-										<p><a href="{{ route('jobs.show', $job->id) }}">{{ $job->job_title }}</a> &nbsp;<small>{{ $job->company }}</small></p>
+										<p><a href="{{ route('job.show', $job->id) }}">{{ $job->job_title }}</a> &nbsp;<small>{{ $job->company }}</small></p>
 									@endforeach
 								</div>
 

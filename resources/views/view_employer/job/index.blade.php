@@ -64,14 +64,3 @@
 
 @include('view_employer.job.create_job_modal')
 @stop
-{{-- 
-<div class="div">
-            <div class="col-md-12">
-                <div class="div">
-                    <div class="text-center">
-                        {!! $jobs->links() !!}
-                    </div>
-                </div>
-
-            </div>
-        </div> --}}
