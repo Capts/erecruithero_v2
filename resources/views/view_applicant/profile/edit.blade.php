@@ -24,16 +24,14 @@
 		<section class="content">
 
 			<div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
-			    <div class="modal-dialog modal-md" role="document">
+			    <div class="modal-dialog modal-lg" role="document">
 			        <div class="modal-content">
 			            <div class="modal-header" style="background-color: #346b3e; color: white;">
 			                {{-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> --}}
 			                <i class="fa fa-user pull-left fa-2x"></i><h4 class="modal-title text-center">We need to set your profile first</h4>
 			            </div>
 			            <div class="modal-body">
-			                	<fieldset>
-			                		<legend><h5>Basic information</h5></legend>
-			                			<div class="row">
+			                		<div class="row">
 			                			{!! Form::model($profile, ['route' => ['profile.update', $profile->user_id], 'method' => 'PUT']) !!}
 			                				<div class="col-md-12">
 												
@@ -66,7 +64,7 @@
 												<div class="col-xs-4">
 													<div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
 													    {!! Form::label('age', 'Age') !!}
-													    {!! Form::text('age', null, ['class' => 'form-control', 'required' => 'required']) !!}
+													    {!! Form::number('age', null, ['class' => 'form-control', 'required' => 'required']) !!}
 													    <small class="text-danger">{{ $errors->first('age') }}</small>
 													</div>
 												</div>
@@ -86,7 +84,7 @@
 			                						
 			                						<div class="form-group{{ $errors->has('telephone') ? ' has-error' : '' }}">
 			                						    {!! Form::label('telephone', 'Telephone') !!}
-			                						    {!! Form::text('telephone', null, ['class' => 'form-control']) !!}
+			                						    {!! Form::number('telephone', null, ['class' => 'form-control']) !!}
 			                						    <small class="text-danger">{{ $errors->first('telephone') }}</small>
 			                						</div>
 			                					</div>
@@ -94,29 +92,69 @@
 		                							
 		                							<div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
 		                							    {!! Form::label('mobile', 'Mobile') !!}
-		                							    {!! Form::text('mobile', null, ['class' => 'form-control']) !!}
+		                							    {!! Form::number('mobile', null, ['class' => 'form-control']) !!}
 		                							    <small class="text-danger">{{ $errors->first('mobile') }}</small>
 		                							</div>
 		                						</div>
-			                					
-			                					
+			                				
 			                				</div>
+
+			                				<div class="col-md-12">
+			                					<div class="col-xs-4">
+			                						<div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
+			                						    {!! Form::label('street', 'Street') !!}
+			                						    {!! Form::text('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+			                						    <small class="text-danger">{{ $errors->first('street') }}</small>
+			                						</div>
+			                					</div>
+			                					<div class="col-xs-4">
+			                						<div class="form-group{{ $errors->has('barangay') ? ' has-error' : '' }}">
+			                						    {!! Form::label('barangay', 'Barangay') !!}
+			                						    {!! Form::text('barangay',  ( isset($users->address->barangay) ? $users->address->barangay : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+			                						    <small class="text-danger">{{ $errors->first('barangay') }}</small>
+			                						</div>
+			                					</div>
+			                					<div class="col-xs-4">
+			                						<div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+			                						    {!! Form::label('city', 'City') !!}
+			                						    {!! Form::text('city',  ( isset($users->address->city) ? $users->address->city : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+			                						    <small class="text-danger">{{ $errors->first('city') }}</small>
+			                						</div>
+			                					</div>
+			                					<div class="col-xs-6">
+			                						<div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
+			                						    {!! Form::label('province', 'Province') !!}
+			                						    {!! Form::text('province',  ( isset($users->address->province) ? $users->address->province : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+			                						    <small class="text-danger">{{ $errors->first('province') }}</small>
+			                						</div>
+			                					</div>
+
+			                					<div class="col-xs-6">
+			                						<div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+			                						    {!! Form::label('country', 'Country') !!}
+			                						    {!! Form::text('country',  ( isset($users->address->country) ? $users->address->country : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+			                						    <small class="text-danger">{{ $errors->first('country') }}</small>
+			                						</div>
+			                					</div>
+			                				</div>
+
+
+
+
 			                				<div class="col-md-12">
 				                				<div class="col-xs-12">
 				                					<div class="form-group{{ $errors->has('bio') ? ' has-error' : '' }}">
 			                					    {!! Form::label('bio', 'Bio or objective') !!}
-			                					    {!! Form::textarea('bio', null, ['class' => 'form-control', 'required' => 'required']) !!}
+			                					    {!! Form::textarea('bio', null, ['class' => 'form-control', 'required' => 'required', 'rows' => '5']) !!}
 			                					    <small class="text-danger">{{ $errors->first('bio') }}</small>
 			                					</div>
 				                				</div>
 			                					
-			                					{!! Form::submit('save profile', ['class' => 'btn btn-success btn-flat btx-sm pull-right']) !!}
+			                					{!! Form::submit('save profile', ['class' => 'btn-block btn btn-success btn-flat btx-sm pull-right']) !!}
 			                				</div>
 			                					
 			                			{!! Form::close() !!}
 			                			</div>
-			                	</fieldset>
-			                	<!-- End Profile-->
 								
 			            </div>
 			        </div>

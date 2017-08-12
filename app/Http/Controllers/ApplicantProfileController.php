@@ -78,7 +78,10 @@ class ApplicantProfileController extends Controller
         $users = User::find($id);
 
         $profile = Profile::find($id);
-       
+        
+        $address = Address::where('user_id', $id)->first();
+
+        // dd($address);
 
             if (isset($profile)) {
                    $profile->age = $request->input('age');
@@ -94,10 +97,18 @@ class ApplicantProfileController extends Controller
             if(isset($users)) {
                     $users->firstname = $request->input('firstname');
                     $users->lastname = $request->input('lastname');
+                    $users->slug = $request->firstname. '-' . $request->lastname;
                     $users->save();
-
-               
             }      
+
+            if (isset($address)) {
+               $address->street = $request->input('street');
+               $address->barangay = $request->input('barangay');
+               $address->city = $request->input('city');
+               $address->province = $request->input('province');
+               $address->country = $request->input('country');
+               $address->save();
+            }
         
         Session::flash('success', 'You updated your profile!' );
 

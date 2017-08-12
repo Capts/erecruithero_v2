@@ -41,10 +41,7 @@
 			@if (Session::has('success'))
 
 				<div class="alert alert-success" role="alert">
-					<div class="box-tools pull-right">
-						<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-
-					</div>
+					
 					<strong>Success! </strong> {{ Session::get('success')}}&nbsp; <i class="fa fa-check"></i>
 				</div>
 
@@ -60,49 +57,47 @@
 								</div> --}}
 
 								<p class="text-center" ><img src="{{Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
-								<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}}</p>
-								<hr>
-								<div class="box-body">
+								<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}} <br>
+									<small style="color:silver;">{{ ucfirst($users->address->street) .  ', '  . ucfirst($users->address->barangay) . ', ' . ucfirst($users->address->city) }}</small> <br>
+									<small style="color:silver;">{{ ucfirst($users->address->province) .  ', ' . ucfirst($users->address->country) }}</small>
+								</p>
+									<p class="pull-left" style="font-size: 13px;color:silver;">
+												<i class="fa fa-phone">&nbsp;</i>
+												{{ Auth::user()->profile->telephone }}
+									</p>
+									<p class="pull-right" style="font-size: 13px;color:silver;">
+												<i class="fa fa-mobile-phone">&nbsp;</i>
+
+												{{ Auth::user()->profile->mobile }}
+									</p>
+									<br>
+								
+								<div class="box-body" style="border-top: 1px solid silver;padding-top:0px;">
 									<span>
-										<h5> 
-											<i class="fa fa-google-plus pull-right"></i>
+										<h6> 
+											<i class="fa fa-envelope-open pull-right"></i>
 
 											<b>{{ Auth::user()->email}}</b>
-										</h5>
+										</h6>
 									</span>
 
 									<span>
-										<h5>
+										<h6>
 											<i class="fa fa-birthday-cake pull-right"></i>
 											<p>{{ date('M j,Y', strtotime(Auth::user()->profile->bday)) }}</p>
 											<p>{{ Auth::user()->profile->age . ' years old'}}</p>
-										</h5>
+										</h6>
 									</span>
 
 									<span>
-										<h5>
+										<h6>
 											<i class="fa fa-heart pull-right"></i>
 
 											{{ ucfirst(Auth::user()->profile->civil_status) }}
-										</h5>
-									</span>
-									<br>
-									<span>
-										<h5>
-											<i class="fa fa-phone pull-right"></i>
-
-											{{ Auth::user()->profile->telephone }}
-										</h5>
+										</h6>
 									</span>
 
-									<span>
-										<h5>
-											<i class="fa fa-mobile-phone pull-right"></i>
-
-											{{ Auth::user()->profile->mobile }}
-										</h5>
-
-									</span>
+									
 								</div>
 								<div class="box-footer">
 									<p class="text-left">{{ ucfirst(Auth::user()->profile->bio) }}</p>

@@ -68,7 +68,7 @@ class RegisterController extends Controller
             'avatar' => $avatar
         ]);
         
-        $this->assignRole($user)->createprofile($user);
+        $this->assignRole($user)->createprofile($user)->createAddress($user);
         return $user;
     }
 
@@ -93,22 +93,22 @@ class RegisterController extends Controller
         return $this;
     }
 
-    // public function createAddress($user){
+    public function createAddress($user){
 
-    //     $address = new Address();
+        $address = new Address();
 
-    //     $address->user_id = $user->id;
-    //     $address->street = 'not specified';
-    //     $address->barangay = 'not specified';
-    //     $address->city = 'not specified';
-    //     $address->province = 'not specified';
-    //     $address->country = 'not specified';
+        $address->user_id = $user->id;
+        $address->street = '';
+        $address->barangay = '';
+        $address->city = '';
+        $address->province = '';
+        $address->country = '';
 
-    //     $user->address()->save($address);
+        $user->address()->save($address);
 
 
-    //     return $this;
-    // }
+        return $this;
+    }
     // public function createSchool($user){
 
     //     $school = new School();
