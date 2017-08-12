@@ -32,11 +32,6 @@ class JobController extends Controller
     }
 
 
-    public function create()
-    {
-        return view('view_employer.job.create');
-    }
-
 
     public function store(Request $request)
     {
@@ -59,7 +54,7 @@ class JobController extends Controller
         $jobs->qualifications = $request->qualifications;
         
         if ($request->salary == '') {
-            $jobs->salary = 'To be discuss';
+            $jobs->salary = 'To be discussed';
         }else{
             $jobs->salary = $request->salary;
         }
@@ -77,14 +72,7 @@ class JobController extends Controller
         return view('view_employer.job.show', compact('job')); 
     }
 
-   
-    public function edit($id)
-    {
-        $job = Job::where('id', $id)->first();
-        dd($job);
 
-        return view('view_employer.job.edit', compact('job'));
-    }
 
    
     public function update(Request $request, $id)
@@ -108,7 +96,7 @@ class JobController extends Controller
        $job->qualifications = $request->input('qualifications');
        
        if ($request->salary == '') {
-           $job->salary = 'To be discuss';
+           $job->salary = 'To be discussed';
        }else{
            $job->salary = $request->input('salary');
        }

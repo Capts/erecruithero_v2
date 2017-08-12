@@ -42,5 +42,5 @@ Route::get('employer/newsfeed', 'EmployerController@feed')->name('employer.feed'
 Route::get('employer/job/search', 'JobController@search')->name('employer.search');
 
 	//resource routes for employer
-	Route::resource('employer/job', 'JobController');
+	Route::resource('employer/job', 'JobController', ['except'=> ['edit','create']]);
 	
