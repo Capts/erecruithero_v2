@@ -23,6 +23,7 @@ class CreateJobsTable extends Migration
             $table->string('company');
             $table->string('salary');
             $table->string('due_date');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

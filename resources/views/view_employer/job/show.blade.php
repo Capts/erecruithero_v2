@@ -7,6 +7,7 @@
 
 <div class="wrapper">
 
+
   <header class="main-header">
     @include('view_employer.partials.nav')
   </header>
@@ -16,6 +17,8 @@
 
 <!-- =============================================== -->
 @include('view_employer.job.edit_job_modal')
+
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -27,10 +30,21 @@
   <section class="content">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
+      @if (Session::has('success'))
+
+        <div class="alert alert-success" role="alert">
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+
+          </div>
+          <i class="fa fa-check"></i>&nbsp;{{ Session::get('success')}} 
+        </div>
+
+      @endif 
        <div class="box box-success">
         <div class="box-header with-border text-center">
           <h4>{{ ucfirst($job->job_title) }} </h4>
-          <a href=""><small>{{ ucfirst($job->company) }}</small></a>
+          <small>by: </small><a href=""><small>{{ ucfirst($job->company) }}</small></a>
         </div>
         <div class="box-body">
           <dl class="dl-horizontal">
@@ -44,13 +58,32 @@
                   <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
                   <br>
                 <dt>Salary:</dt>
-                  <dd>{{ $job->salary }}</dd>
+                  <dd>{{ number_format($job->salary, 2) }}</dd>
                   <br><br>
                 <dt>Date posted:</dt>
                   <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
           </dl>
-            <button data-toggle="modal" data-target="#edit_job_modal" class="btn btn-flat btn-info pull-right"><i class="fa fa-pencil">&nbsp;</i>Edit this job</button>
-            <button class="btn btn-flat btn-danger pull-left"><i class="fa fa-archive">&nbsp;</i>Archive this job</button>
+          @if ($job->status == 'archived')
+            
+            <h4 class="pull-left" style="color:red">This job is now on archive </h4>
+             <button  data-toggle="modal" data-target="#unarchive_modal" class="btn btn-flat btn-primary pull-right"><i class="fa fa-key">&nbsp;</i>Enable this job</button>
+          @else
+            
+            {!! Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
+                    {!! Form::hidden('status', null) !!}
+                      <br><br>
+                    {!! Form::button('<i class="fa fa-archive">&nbsp;</i>Archive this post', ['type' => 'submit', 'class' => 'pull-left btn btn-flat btn-danger', 'name'=> 'btnArchive', 'value' => 'archive']) !!}
+            {!! Form::close() !!}
+             <button data-toggle="modal" data-target="#edit_job_modal" class="btn btn-flat btn-info pull-right"><i class="fa fa-pencil">&nbsp;</i>Edit this job</button>
+          @endif
+          
+
+          
+           
+
+          
+           
+          
         </div>
         
 

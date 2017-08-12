@@ -30,7 +30,7 @@
        <div class="box box-success">
         <div class="box-header with-border text-center">
           <h4>{{ ucfirst($job->job_title) }} </h4>
-          <a href="#"><small>{{ ucfirst($job->company) }}</small></a>
+          <small>by: </small><a href="#"><small>{{ ucfirst($job->company) }}</small></a>
         </div>
         <div class="box-body" >
           <dl class="dl-horizontal" style="padding: 10px 50px;">

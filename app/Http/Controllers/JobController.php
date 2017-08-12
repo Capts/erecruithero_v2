@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Job;
 use Auth;
 use Session;
@@ -26,7 +27,7 @@ class JobController extends Controller
     {   
       
         $countJob = Job::count();
-        $jobs = Job::orderBy('created_at', 'desc')->paginate(30);
+        $jobs = Job::orderBy('created_at', 'desc')->paginate(15);
 
         return view('view_employer.job.index', compact('jobs', 'countJob'));
     }
@@ -35,34 +36,39 @@ class JobController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'job_title' => 'required|max:60',
-            'company' => 'required|max:60',
-            'work_location' => 'required|max:100',
-            'responsibilities' => 'required|min:5',
-            'qualifications' => 'required|min:5',
-            'due_date' => 'required'
-            ]);
-
-        $jobs = new Job();
-
-        $jobs->user_id = Auth::user()->id;
-        $jobs->job_title = $request->job_title;
-        $jobs->company = $request->company;
-        $jobs->work_location = $request->work_location;
-        $jobs->responsibilities = $request->responsibilities;
-        $jobs->qualifications = $request->qualifications;
         
-        if ($request->salary == '') {
-            $jobs->salary = 'To be discussed';
-        }else{
-            $jobs->salary = $request->salary;
-        }
+            $this->validate($request, [
+                'job_title' => 'required|max:60',
+                'company' => 'required|max:60',
+                'work_location' => 'required|max:100',
+                'responsibilities' => 'required|min:5',
+                'qualifications' => 'required|min:5',
+                'due_date' => 'required'
+                ]);
 
-        $jobs->due_date = $request->due_date;
-        $jobs->save();
+            $jobs = new Job();
 
-        return redirect()->route('job.show', $jobs->id);
+            $jobs->user_id = Auth::user()->id;
+            $jobs->job_title = $request->job_title;
+            $jobs->company = $request->company;
+            $jobs->work_location = $request->work_location;
+            $jobs->responsibilities = $request->responsibilities;
+            $jobs->qualifications = $request->qualifications;
+            
+            if ($request->salary == '') {
+                $jobs->salary = 'To be discussed';
+            }else{
+                $jobs->salary = $request->salary;
+            }
+
+            $jobs->due_date = $request->due_date;
+            $jobs->save();
+
+            Session::flash('success','Job posted successfully');
+            return redirect()->route('job.show', $jobs->id);
+       
+
+         
     }
 
      public function show($id)
@@ -79,41 +85,59 @@ class JobController extends Controller
     {
        $job = Job::find($id);
 
-       $this->validate($request, [
-            'job_title' => 'required|max:60',
-            'company' => 'required|max:60',
-            'work_location' => 'required|max:100',
-            'responsibilities' => 'required|min:5',
-            'qualifications' => 'required|min:5',
-            'due_date' => 'required'
-        ]);
+
+        if (\Request::has('btnArchive')) {
+            $job->status = 'archived';
+            $job->save();
+
+            Session::flash('success', 'This job has been archived by' . '  ' .Auth::user()->firstname );
+            return redirect()->route('job.show', $job->id);
+        }
+        if(\Request::has('btnUpdate')){
+           $this->validate($request, [
+                'job_title' => 'required|max:60',
+                'company' => 'required|max:60',
+                'work_location' => 'required|max:100',
+                'responsibilities' => 'required|min:5',
+                'qualifications' => 'required|min:5',
+                'due_date' => 'required'
+            ]);
 
 
-       $job->job_title = $request->input('job_title');
-       $job->company = $request->input('company');
-       $job->work_location = $request->input('work_location');
-       $job->responsibilities = $request->input('responsibilities');
-       $job->qualifications = $request->input('qualifications');
-       
-       if ($request->salary == '') {
-           $job->salary = 'To be discussed';
-       }else{
-           $job->salary = $request->input('salary');
-       }
+           $job->job_title = $request->input('job_title');
+           $job->company = $request->input('company');
+           $job->work_location = $request->input('work_location');
+           $job->responsibilities = $request->input('responsibilities');
+           $job->qualifications = $request->input('qualifications');
+           
+           if ($request->salary == '') {
+               $job->salary = 'To be discussed';
+           }else{
+               $job->salary = $request->input('salary');
+           }
 
-       $job->due_date = $request->input('due_date');
-       $job->Save();
+           $job->due_date = $request->input('due_date');
+           $job->Save();
 
-        Session::flash('success', 'You edited this job post' );
-       return redirect()->route('job.show', $job->id);
+            Session::flash('success', 'This job has been updated by' . '  ' .Auth::user()->firstname );
+           return redirect()->route('job.show', $job->id);
+        }
+
+         if (\Request::has('btnUnarchive')) {
+            $job->status = '';
+            $job->due_date = $request->input('due_date');
+            $job->save();
+
+            Session::flash('success', 'This job is now available');
+            return redirect()->route('job.show', $job->id);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function setArchive(Request $requests, $id){
+
+    }
+
+    
     public function destroy($id)
     {
         //

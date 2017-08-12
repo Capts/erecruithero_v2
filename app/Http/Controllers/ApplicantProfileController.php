@@ -112,13 +112,6 @@ class ApplicantProfileController extends Controller
 
                
             }      
-       
-        
-        
-       
-        
-
-        
         
         Session::flash('success', 'You updated your profile!' );
 

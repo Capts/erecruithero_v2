@@ -24,26 +24,47 @@
     <div class="row">
       <div class="col-xs-8">
         
-        @foreach ($jobs as $job)
-          <div class="col-xs-12">
-            <div class="box box-success">
-              <div class="box-header with-border">
-                <a href="{{ route('job.show', $job->id) }}"><h4>{{ $job->job_title }}</h4></a>
-                <div class="box-tools">
-                  <small class="pull-right">Date posted: {{  date('M j,Y', strtotime($job->created_at))  }}</small>
-                </div>
-              </div>
+        <div class="box box-primary">
+          <div class="box-header ">
+            
+          </div>
+          <div class="box-body">
 
-              <div class="box-body">
-                  {{ ucfirst(str_limit($job->responsibilities, 100)) }}
-              </div>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Job ID</th>
+                  <th>Job Title</th>
+                  <th>Company</th>
+                  <th>Date Posted</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach ($jobs as $job)
+                  <tr>
+                    <td>{{ $job->id }}</td>
+                    <td><a href="{{ route('job.show', $job->id) }}">{{ str_limit($job->job_title, 25) }}</a></td>
+                    <td>{{ str_limit($job->company, 25) }}</td>
+                    <td>{{ date('M j,Y', strtotime($job->created_at)) }}</td>
+                  </tr>
+                  
+               
+
+                
+                @endforeach
+              </tbody>
+            
+            </table>
+             <div class="text-center">
+                {!! $jobs->links() !!}
             </div>
           </div>
-         
-        @endforeach
+
+        </div>
+      
       </div>
       <div class="col-xs-4">
-        <div class="box box-default">
+        <div class="box box-info">
           <div class="box-header with-border">
               <h5>Job Count:</h5>
           </div>

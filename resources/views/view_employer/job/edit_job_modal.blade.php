@@ -92,7 +92,7 @@
 	      			  
 	      			
 	      			    <div class="btn-group pull-right">
-	      			        {!! Form::submit("update now", ['class' => 'btn btn-flat bg-olive']) !!}
+	      			        {!! Form::submit("update now", ['class' => 'btn btn-flat bg-olive', 'name' => 'btnUpdate', 'value' => 'update']) !!}
 	      			    </div>
 	      			
 	      			{!! Form::close() !!}
