@@ -12,6 +12,7 @@
 	      	<div class="row">
 
 	      		<div class="col-md-12">
+
 	      			{!! Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
 	      			
 	      			    <div class="form-group{{ $errors->has('job_title') ? ' has-error' : '' }}">
@@ -95,6 +96,7 @@
 	      			    </div>
 	      			
 	      			{!! Form::close() !!}
+
 
 
 	      		</div>
