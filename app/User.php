@@ -51,6 +51,12 @@ class User extends Authenticatable
         ->hasMany('App\Experience');
     }
 
+     public function application(){
+        return $this
+        ->hasMany('App\Application');
+    }
+
+
 
 
     protected $fillable = [

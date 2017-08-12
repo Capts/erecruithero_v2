@@ -20,21 +20,41 @@
         </div>
         <div class="row">
           <div class="col-md-10">
-
-            {!! Form::open(['method' => 'POST', 'class' => 'form-horizontal', 'style' => 'margin-left:25px;']) !!}
-
-            <div class="form-group{{ $errors->has('search') ? ' has-error' : '' }}">
-              {{-- {!! Form::label('search', 'Input label') !!} --}}
-              {!! Form::text('search', null, ['class' => 'form-control input-lg', 'required' => 'required', 'placeholder'=> 'Search jobs..']) !!}
-              <small class="text-danger">{{ $errors->first('search') }}</small>
-            </div>
             
+            @if (Auth::check())
+              @if (Auth::user()->roles()->first()->name === 'applicant')
+                {!! Form::open(['method' => 'GET', 'route' => 'searchjob', 'class' => 'sidebar-form' ]) !!}
+                  <div class="input-group">
+                    <input type="text" name="searchApp" class="form-control input-lg" placeholder="Search jobs">
+                    <span class="input-group-btn">
+                          <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
+                          </button>
+                        </span>
+                  </div>
 
-            <div class="btn-group" style="padding-left: 0px;">
-              {!! Form::button("<i class='fa fa-search'></i> &nbsp;Find now", ['type' => 'submit', 'class' => 'btn btn-flat bg-olive']) !!}
-            </div>
+                {!! Form::close() !!}
 
-            {!! Form::close() !!}
+              @else
+                {!! Form::open(['method' => 'GET', 'route' => 'job.index', 'class' => 'sidebar-form']) !!}
+                  <div class="input-group">
+                    <input type="text" name="search" class="form-control input-lg" placeholder="Search jobs">
+                    <span class="input-group-btn">
+                          <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
+                          </button>
+                        </span>
+                  </div>
+
+                
+
+                {!! Form::close() !!}
+
+              @endif
+            @else
+             
+            @endif
+
+           
+           
           </div>
          
         </div>

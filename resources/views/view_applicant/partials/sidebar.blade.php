@@ -11,16 +11,18 @@
           <a href="#"><i class="fa fa-envelope"></i>{{Auth::user()->email}}</a>
         </div>
       </div>
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+     
+
+      {!! Form::open(['method' => 'GET', 'route' => 'searchjob', 'class' => 'sidebar-form']) !!}
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <input type="text" name="searchApp" class="form-control" placeholder="Search jobs">
           <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                <button type="submit"  id="search-btn" class="btn btn-flat "><i class="fa fa-search"></i>
                 </button>
               </span>
         </div>
-      </form>
+
+      {!! Form::close() !!}
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -38,30 +40,14 @@
           </ul>
         </li>
 
-        <li class="treeview">
-          <a href="#">
+        <li >
+          <a href="{{ route('jobs.index') }}">
             <i class="fa fa-gavel"></i> <span>Jobs</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
+              {{-- <i class="fa fa-angle-right pull-right"></i> --}}
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-        </li>
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-briefcase"></i> <span>Companies</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
+         
         </li>
 
        

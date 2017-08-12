@@ -28,19 +28,19 @@ Route::resource('applicant/address', 'ApplicantAddressController', ['except' => 
 Route::resource('applicant/school', 'ApplicantSchoolController', ['except' =>  ['index', 'destroy', 'create']]);
 Route::resource('applicant/skill', 'SkillController', ['except' =>  ['index', 'show', 'create']]);
 Route::resource('applicant/experience', 'ExperienceController');
+Route::get('applicants/jobs', 'ApplicantJobController@searchAJob')->name('searchjob');
+Route::resource('applicant/jobs', 'ApplicantJobController', ['except' => ['create', 'store', 'edit','destroy', 'update']]);
+
+// application route
+
 
 
 
 //Employer Route
 Route::get('employer/newsfeed', 'EmployerController@feed')->name('employer.feed');
 
+Route::get('employer/job', 'JobController@serachAJob')->name('searchjobEmployer');
 
 	//resource routes for employer
 	Route::resource('employer/job', 'JobController');
 	
-
-//route modals
-	// Route::get('/applicant/profile/{id}', 'ModalEditController@get_modal_personal')->name('personal');
-
-
-// Route::get('/home', 'HomeController@index')->name('home');

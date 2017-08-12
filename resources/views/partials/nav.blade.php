@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top navbar-inverse" style="margin-bottom: 0px;">
+<nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px;background-color: #00a65a;">
     <div class="container">
         <div class="navbar-header">
 
@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <span>E-recruit Hero</span>
+                <span style="color:white">E-recruit Hero</span>
             </a>
         </div>
 
@@ -30,7 +30,7 @@
                     <li><a href="{{ route('register') }}">Register</a></li> --}}
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a href="#" style="color:white;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <img src="{{ Storage::url(Auth::getUser()->avatar) }}" alt="user image" class="img-circle" width="25px" height="25px"> &nbsp;{{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
                         </a>
 
