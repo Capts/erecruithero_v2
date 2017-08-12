@@ -14,21 +14,21 @@ class JobController extends Controller
         $this->middleware('auth');
     }
 
-    public function searchjob(){
+    public function search(){
         $search = \Request::get('search');
         
         $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->orderBy('created_at', 'desc')->paginate(15);
 
-        return view('view_employer.jobs.searchjobs', compact('searchjobs', 'search'));
+        return view('view_employer.job.searchjobs', compact('searchjobs', 'search'));
     }
+
     public function index()
     {   
-        $search = \Request::get('search');
-        // $searchJob = Job::where('job_title', 'like','%'.$search.'%')->orderBy('created_at', 'desc')->paginate(10);
-
+      
         $countJob = Job::count();
-        $jobs = Job::where('job_title', 'like','%'.$search.'%')->orderBy('created_at', 'desc')->paginate(30);
-        return view('view_employer.job.index', compact('jobs', 'countJob', 'searchJob'));
+        $jobs = Job::orderBy('created_at', 'desc')->paginate(30);
+
+        return view('view_employer.job.index', compact('jobs', 'countJob'));
     }
 
 

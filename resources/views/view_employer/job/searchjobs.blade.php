@@ -14,7 +14,7 @@
 <!-- =============================================== -->
 
 <!-- Left side column. contains the sidebar -->
-@include('view_employer.partials.sidebar')
+@include('view_employer.partials.employer_sidebar')
 
 <!-- =============================================== -->
 

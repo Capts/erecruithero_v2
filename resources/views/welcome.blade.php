@@ -35,7 +35,7 @@
                 {!! Form::close() !!}
 
               @else
-                {!! Form::open(['method' => 'GET', 'route' => 'job.index', 'class' => 'sidebar-form']) !!}
+                {!! Form::open(['method' => 'GET', 'route' => 'employer.search', 'class' => 'sidebar-form']) !!}
                   <div class="input-group">
                     <input type="text" name="search" class="form-control input-lg" placeholder="Search jobs">
                     <span class="input-group-btn">
