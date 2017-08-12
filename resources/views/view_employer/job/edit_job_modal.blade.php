@@ -12,7 +12,7 @@
 	      	<div class="row">
 
 	      		<div class="col-md-12">
-	      			{!! Form::model($job->toArray(), ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
+	      			{!! Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
 	      			
 	      			    <div class="form-group{{ $errors->has('job_title') ? ' has-error' : '' }}">
 	      			        {!! Form::label('job_title', 'Job title') !!}
@@ -61,7 +61,7 @@
 							        <div class="input-group-addon">
 							          <i class="fa fa-calendar"></i>
 							        </div>
-							        {!! Form::text('due_date', $job->created_at->format('d/m/Y H:i'),['class' => 'form-control pull-right', 'id' => 'datepicker']) !!}
+							        {!! Form::text('due_date', null, ['class' => 'form-control pull-right', 'id' => 'datepicker']) !!}
 							        {{-- <input type="text" name='due_date' class="form-control pull-right" id="datepicker"> --}}
 							        <small class="text-danger">{{ $errors->first('due_date') }}</small>
 							      </div>
@@ -91,7 +91,7 @@
 	      			  
 	      			
 	      			    <div class="btn-group pull-right">
-	      			        {!! Form::submit("post job", ['class' => 'btn btn-flat bg-olive']) !!}
+	      			        {!! Form::submit("update now", ['class' => 'btn btn-flat bg-olive']) !!}
 	      			    </div>
 	      			
 	      			{!! Form::close() !!}

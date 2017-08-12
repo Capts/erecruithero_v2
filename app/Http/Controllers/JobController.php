@@ -77,26 +77,16 @@ class JobController extends Controller
         return view('view_employer.job.show', compact('job')); 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
-        $job = Job::find($id);
+        $job = Job::where('id', $id)->first();
+        dd($job);
 
         return view('view_employer.job.edit', compact('job'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request, $id)
     {
        $job = Job::find($id);
