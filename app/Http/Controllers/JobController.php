@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Job;
+use App\Skill;
 use Auth;
 use Session;
 
@@ -20,7 +21,11 @@ class JobController extends Controller
         
         $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->where('status', '')->orderBy('created_at', 'desc')->paginate(15);
 
-        return view('view_employer.job.searchjobs', compact('searchjobs', 'search'));
+        $qualified = Skill::where('skill_name', 'like', '%'.$search.'%')->paginate(15);
+        // dd($qualified);
+        return view('view_employer.job.searchjobs', compact('searchjobs', 'search', 'qualified'));
+
+
     }
 
     public function index()
@@ -66,7 +71,7 @@ class JobController extends Controller
             $jobs->due_date = $request->due_date;
             $jobs->save();
 
-            Session::flash('success','Job posted successfully');
+            Session::flash('success','Job successfully posted');
             return redirect()->route('job.show', $jobs->id);
        
 

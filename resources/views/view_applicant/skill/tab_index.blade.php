@@ -6,7 +6,7 @@
 				
 					@foreach ($loopSkills as $skill)
 						<div class="col-xs-5">
-							<h4 ><p class="label label-info">{{ ucfirst(str_limit("$skill->skill_name", 7)) }}</p></h4>
+							<h4 ><p class="label label-info">{{ ucfirst(str_limit("$skill->skill_name", 11)) }}</p></h4>
 						</div>
 					@endforeach
 

@@ -22,5 +22,7 @@ class SkillTableSeeder extends Seeder
         $employer_skills->user_id = 2;
         $employer_skills->skill_name = 'Painting';
         $employer_skills->save();
+
+        
     }
 }

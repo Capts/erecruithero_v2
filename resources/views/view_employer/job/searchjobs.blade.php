@@ -92,7 +92,9 @@
 								<h5>List of qualified applicants for this job</h5>
 							</div>
 							<div class="box-body">
-								
+								@foreach ($qualified as $q)
+									{{-- $q->skill_name; --}}
+								@endforeach
 							</div>
 						</div>
 					</div>

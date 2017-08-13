@@ -47,7 +47,7 @@
 								@foreach ($alljobs as $job)
 								<tr>
 									<td>{{ $job->id }}</td>
-									<td><a href="{{ route('job.show', $job->id) }}">{{ str_limit($job->job_title, 25) }}</a></td>
+									<td><a href="{{ route('jobs.show', $job->id) }}">{{ str_limit($job->job_title, 25) }}</a></td>
 									<td>{{ str_limit($job->company, 25) }}</td>
 									<td>{{ date('M j,Y', strtotime($job->created_at)) }}</td>
 								</tr>

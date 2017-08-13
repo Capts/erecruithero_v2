@@ -37,7 +37,7 @@
 						@foreach ($getAndLoopS as $loopSec)
 						<div class="box-body">
 							<div class="box-header ">
-								<p>Attended &nbsp;{{ $loopSec->sec_school. ' in ' . $loopSec->sec_address }}</p>
+								<p>Attended &nbsp; <a href="#">{{ $loopSec->sec_school }}</a>&nbsp;in {{ $loopSec->sec_address }}</p>
 								{{ $loopSec->sec_start . ' - ' . $loopSec->sec_end }} 
 								
 							</div>
@@ -56,7 +56,7 @@
 						<div class="box-body">
 							<div class="box-header  with-border">
 
-								<p>Attended&nbsp; {{ $loopPri->pri_school . ' in ' .$loopPri->pri_address }}</p>
+								<p>Attended&nbsp; <a href="#">{{ $loopPri->pri_school }}</a>&nbsp;in {{$loopPri->pri_address }}</p>
 								
 								{{ $loopPri->pri_start . ' - ' . $loopPri->pri_end }}
 								
