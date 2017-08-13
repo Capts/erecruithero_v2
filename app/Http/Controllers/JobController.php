@@ -31,10 +31,11 @@ class JobController extends Controller
     }
 
     public function arc(){
-        
+
+        $job = Job::whereNull('status')->orderBy('created_at', 'desc')->paginate(15);
         $archived = Job::where('status', 'archived')->paginate(10);
 
-        return view('view_employer.job.archived', compact('archived'));
+        return view('view_employer.job.archived', compact('archived', 'job'));
     }
 
     public function index()

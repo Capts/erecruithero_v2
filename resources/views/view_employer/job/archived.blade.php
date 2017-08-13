@@ -9,7 +9,6 @@
 <!-- =============================================== -->
   <header class="main-header">
     @include('view_employer.partials.nav')
-    @include('view_employer.job.unarchive_modal')
   </header>
 <!-- Left side column. contains the sidebar -->
   @include('view_employer.partials.employer_sidebar')
@@ -38,7 +37,6 @@
                   <th>Job Title</th>
                   <th>Company</th>
                   <th>Date Posted</th>
-                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -48,7 +46,7 @@
                     <td>{{ str_limit($arc->job_title, 25) }}</td>
                     <td>{{ str_limit($arc->company, 25) }}</td>
                     <td>{{ date('M j,Y', strtotime($arc->created_at)) }}</td>
-                    <td> <button  data-toggle="modal" data-target="#unarchive_modal" class="btn btn-flat bg-olive btn-xs"><i class="fa fa-key">&nbsp;</i>Enable this job</button></td>
+                   
                   </tr>
                   
                
