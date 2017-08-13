@@ -93,7 +93,7 @@
 							</div>
 							<div class="box-body">
 								@foreach ($qualified as $q)
-									{{-- $q->skill_name; --}}
+									{{-- {{ $qualified->skill()->user->firstname}} --}}
 								@endforeach
 							</div>
 						</div>

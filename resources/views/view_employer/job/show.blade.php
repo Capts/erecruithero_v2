@@ -55,9 +55,14 @@
                   <dd>{{ ucfirst($job->qualifications) }}</dd>
                   <br>
                 <dt>Salary:</dt>
-                  <dd>{{ number_format($job->salary, 2) }}</dd>
+                  @if ($job->salary == 'To be discussed')
+                    <dd>{{ $job->salary }}</dd>
+                  @else
+                    <dd>{{ number_format($job->salary, 2) }}</dd>
+                  @endif
                   <br><br>
                 <dt>Date posted:</dt>
+                 
                   <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
                   <br>
                   <br>

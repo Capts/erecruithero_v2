@@ -19,7 +19,7 @@ class JobController extends Controller
     public function search(){
         $search = \Request::get('search');
         
-        $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->where('status', '')->orderBy('created_at', 'desc')->paginate(15);
+        $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->whereNull('status')->orderBy('created_at', 'desc')->paginate(15);
 
         $qualified = Skill::where('skill_name', 'like', '%'.$search.'%')->paginate(15);
         // dd($qualified);
@@ -34,7 +34,7 @@ class JobController extends Controller
         $countJob = Job::count();
         $countArchive = Job::where('status', 'archived')->count();
         $countAvailable = Job::where('status', '')->count();
-        $jobs = Job::where('status', '')->orderBy('created_at', 'desc')->paginate(15);
+        $jobs = Job::whereNull('status')->orderBy('created_at', 'desc')->paginate(15);
 
         return view('view_employer.job.index', compact('jobs', 'countJob', 'countArchive', 'countAvailable'));
     }

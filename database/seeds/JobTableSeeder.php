@@ -24,7 +24,7 @@ class JobTableSeeder extends Seeder
                 'work_location' => $faker->address,
 	        	'salary' => $faker->numberBetween($min = 1000, $max = 9000),
                 'due_date' => $faker->iso8601( $max = 'now' ),
-	        	'status' => '',
+	        	'status' => null,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
 	        	]);
