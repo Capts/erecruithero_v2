@@ -49,9 +49,8 @@
                     <td>{{ date('M j,Y', strtotime($arc->created_at)) }}</td>
 
                   </tr>
-                  
-               
-{{-- {{-- {{-- {{-- {{-- {{-- {{-- {{-- asfasf afas --}}sasadaaaaaaaaaaaaaaaaa --}} --}} --}} --}} --}} --}} --}}
+
+
                 
                 @endforeach
               </tbody>
