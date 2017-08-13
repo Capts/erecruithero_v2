@@ -40,6 +40,7 @@ Route::resource('applicant/jobs', 'ApplicantJobController', ['except' => ['creat
 Route::get('employer/newsfeed', 'EmployerController@feed')->name('employer.feed');
 
 Route::get('employer/job/search', 'JobController@search')->name('employer.search');
+Route::get('employer/job/archived', 'JobController@arc')->name('employer.arc');
 
 	//resource routes for employer
 

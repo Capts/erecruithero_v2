@@ -34,14 +34,14 @@
         </li>
         
         <li class="treeview">
-          <a href="#"><i class="fa fa-rss"></i> <span>Newsfeed</span> </a>
+          <a href="{{ route('employer.feed') }}"><i class="fa fa-rss"></i> <span>Newsfeed</span> </a>
         </li>
 
         <li class=" treeview">
           <a href="#">
             <i class="fa fa-gavel"></i> <span>Jobs</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
+              {{-- <i class="fa fa-angle-right pull-right"></i> --}}
             </span>
           </a>
           <ul class="treeview-menu">
@@ -51,14 +51,14 @@
           </ul>
         </li>
 
-        <li class=" treeview">
+        <li class="treeview">
           <a href="#"><i class="fa fa-graduation-cap"></i> <span>Applicants</span> </a>
         </li>
         
-         <li class=" treeview">
-          <a href="#"><i class="fa fa-newspaper-o"></i> <span>Resume</span> </a>
+         <li class="treeview" style="border:2px solid red;">
+          <a href="{{ route('employer.arc') }}" ><i class="fa fa-key"></i> <span>Archive</span> </a>
         </li>
-         <li class=" treeview">
+         <li class="treeview">
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>
