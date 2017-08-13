@@ -51,13 +51,17 @@
           </ul>
         </li>
 
-        <li class="treeview">
-          <a href="#"><i class="fa fa-graduation-cap"></i> <span>Applicants</span> </a>
+        <li>
+          <a href="{{ route('employer.arc') }}">
+            <i class="fa fa-key"></i> <span>Archive</span>
+            <span class="pull-right-container">
+              {{-- <i class="fa fa-angle-right pull-right"></i> --}}
+            </span>
+          </a>
+          
         </li>
-        
-         <li class="treeview">
-          <a href="{{ route('employer.arc') }}" ><i class="fa fa-key"></i> <span>Archive</span> </a>
-        </li>
+      
+
          <li class="treeview">
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();

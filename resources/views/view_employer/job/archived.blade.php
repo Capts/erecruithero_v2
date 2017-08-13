@@ -36,6 +36,7 @@
                   <th>Job ID</th>
                   <th>Job Title</th>
                   <th>Company</th>
+                  <th>Actions</th>
                   <th>Date Posted</th>
                 </tr>
               </thead>
@@ -43,7 +44,7 @@
                 @foreach ($archived as $arc)
                   <tr>
                     <td>{{ $arc->id }}</td>
-                    <td><a href="{{ route('arc.show', $arc->id) }}">{{ str_limit($arc->job_title, 25) }}</a></td>
+                    <td><a href="#">{{ str_limit($arc->job_title, 25) }}</a></td>
                     <td>{{ str_limit($arc->company, 25) }}</td>
                     <td>{{ date('M j,Y', strtotime($arc->created_at)) }}</td>
                   </tr>

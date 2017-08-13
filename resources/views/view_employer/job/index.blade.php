@@ -66,6 +66,7 @@
       <div class="col-xs-4">
         <div class="box box-info">
           <div class="box-header with-border">
+          
               <h4 class="text-center" style="color:silver;">Job summary</h4>
           </div>
           <div class="box-body">
