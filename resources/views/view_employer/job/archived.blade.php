@@ -26,7 +26,7 @@
         
         <div class="box box-primary">
           <div class="box-header ">
-            
+            <h4 class="text-center" style="color:silver;">Archived jobs</h4>
           </div>
           <div class="box-body">
 
@@ -37,6 +37,7 @@
                   <th>Job Title</th>
                   <th>Company</th>
                   <th>Date Posted</th>
+
                 </tr>
               </thead>
               <tbody>
@@ -46,7 +47,7 @@
                     <td>{{ str_limit($arc->job_title, 25) }}</td>
                     <td>{{ str_limit($arc->company, 25) }}</td>
                     <td>{{ date('M j,Y', strtotime($arc->created_at)) }}</td>
-                   
+
                   </tr>
                   
                
