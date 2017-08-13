@@ -55,7 +55,7 @@
           <a href="#"><i class="fa fa-graduation-cap"></i> <span>Applicants</span> </a>
         </li>
         
-         <li class="treeview" style="border:2px solid red;">
+         <li class="treeview">
           <a href="{{ route('employer.arc') }}" ><i class="fa fa-key"></i> <span>Archive</span> </a>
         </li>
          <li class="treeview">
