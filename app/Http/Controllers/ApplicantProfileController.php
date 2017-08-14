@@ -38,7 +38,7 @@ class ApplicantProfileController extends Controller
 
         //profile
         $users = User::find($id);
-        $profile = Profile::find($id);
+        $profile = Profile::where('user_id', $id)->with('user')->first();
         // dd($profile);
         $id = User::find($id);
         $slug = User::find($slug);
@@ -52,8 +52,8 @@ class ApplicantProfileController extends Controller
         $loopExp = Experience::where('user_id', $users->id)->get();
 
 
-        // if (is_null($profile->bday) && is_null($profile->age) && is_null($profile->bio) && is_null($profile->civil_status)) {
-        if(is_null($profile)){
+        if (is_null($profile->bday) && is_null($profile->age) && is_null($profile->bio) && is_null($profile->civil_status)) {
+        
             return view('view_applicant.profile.edit', compact('profile', 'users'));  
         } else{
             
