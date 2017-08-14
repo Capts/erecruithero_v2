@@ -60,17 +60,18 @@
 								<p class="text-center">{{ ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)}} <br>
 									<small style="color:silver;">{{ ucfirst($users->address->street) .  ', '  . ucfirst($users->address->barangay) . ', ' . ucfirst($users->address->city) }}</small> <br>
 									<small style="color:silver;">{{ ucfirst($users->address->province) .  ', ' . ucfirst($users->address->country) }}</small>
+										<br>
+										@if (!is_null($users->profile->mobile))
+									
+										<i style="color:silver;font-size: 10px" class="fa fa-mobile-phone">&nbsp;</i>
+										<span style="color:silver;font-size: 10px">{{ $users->profile->mobile }}</span>
+										
+								
+									@endif
 								</p>
-									<p class="pull-left" style="font-size: 13px;color:silver;">
-												<i class="fa fa-phone">&nbsp;</i>
-												{{ Auth::user()->profile->telephone }}
-									</p>
-									<p class="pull-right" style="font-size: 13px;color:silver;">
-												<i class="fa fa-mobile-phone">&nbsp;</i>
 
-												{{ Auth::user()->profile->mobile }}
-									</p>
-									<br>
+									
+									
 								
 								<div class="box-body" style="border-top: 1px solid silver;padding-top:0px;">
 									<span>
@@ -80,7 +81,20 @@
 											<b>{{ Auth::user()->email}}</b>
 										</h6>
 									</span>
-
+									<span>
+										<h6>
+											<i class="fa fa-phone pull-right"></i>
+											@if (is_null($users->profile->telephone))
+												<br>
+											@else
+											<p class="pull-left">
+												
+												<span>{{ $users->profile->telephone }}</span>
+												
+											</p><br>
+											@endif
+										</h6>
+									</span>
 									<span>
 										<h6>
 											<i class="fa fa-birthday-cake pull-right"></i>

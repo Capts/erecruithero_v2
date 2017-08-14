@@ -56,19 +56,18 @@
 								<p class="text-center"><?php echo e(ucfirst($users->firstname).  ' '  . ucfirst($users->lastname)); ?> <br>
 									<small style="color:silver;"><?php echo e(ucfirst($users->address->street) .  ', '  . ucfirst($users->address->barangay) . ', ' . ucfirst($users->address->city)); ?></small> <br>
 									<small style="color:silver;"><?php echo e(ucfirst($users->address->province) .  ', ' . ucfirst($users->address->country)); ?></small>
+										<br>
+										<?php if(!is_null($users->profile->mobile)): ?>
+									
+										<i style="color:silver;font-size: 10px" class="fa fa-mobile-phone">&nbsp;</i>
+										<span style="color:silver;font-size: 10px"><?php echo e($users->profile->mobile); ?></span>
+										
+								
+									<?php endif; ?>
 								</p>
-									<p class="pull-left" style="font-size: 13px;color:silver;">
-												<i class="fa fa-phone">&nbsp;</i>
-												<?php echo e(Auth::user()->profile->telephone); ?>
 
-									</p>
-									<p class="pull-right" style="font-size: 13px;color:silver;">
-												<i class="fa fa-mobile-phone">&nbsp;</i>
-
-												<?php echo e(Auth::user()->profile->mobile); ?>
-
-									</p>
-									<br>
+									
+									
 								
 								<div class="box-body" style="border-top: 1px solid silver;padding-top:0px;">
 									<span>
@@ -78,7 +77,20 @@
 											<b><?php echo e(Auth::user()->email); ?></b>
 										</h6>
 									</span>
-
+									<span>
+										<h6>
+											<i class="fa fa-phone pull-right"></i>
+											<?php if(is_null($users->profile->telephone)): ?>
+												<br>
+											<?php else: ?>
+											<p class="pull-left">
+												
+												<span><?php echo e($users->profile->telephone); ?></span>
+												
+											</p><br>
+											<?php endif; ?>
+										</h6>
+									</span>
 									<span>
 										<h6>
 											<i class="fa fa-birthday-cake pull-right"></i>

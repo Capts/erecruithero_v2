@@ -33,11 +33,10 @@
 			            <div class="modal-body">
 			                		<div class="row">
 			                			{!! Form::model($profile, ['route' => ['profile.update', $profile->user_id], 'method' => 'PUT']) !!}
-			                			
+
 			                				<div class="col-md-12">
 
 												
-			                					
 			                					    {!! Form::hidden('firstname', $users->firstname, ['class' => 'form-control', 'required' => 'required']) !!}
 			                					    <small class="text-danger">{{ $errors->first('firstname') }}</small>
 			                					

@@ -80,8 +80,9 @@ class ApplicantProfileController extends Controller
     {
         $users = User::find($id);
 
-        $profile = Profile::find($id);
-        
+        $profile = Profile::where('user_id', $id)->first();
+
+        // dd($profile);
         $address = Address::where('user_id', $id)->first();
 
         // dd($address);
