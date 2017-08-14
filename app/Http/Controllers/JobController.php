@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Job;
 use App\Skill;
+use App\User;
 use Auth;
 use Session;
 
@@ -17,14 +18,20 @@ class JobController extends Controller
     }
 
     public function search(){
+
         $search = \Request::get('search');
         
         $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->whereNull('status')->orderBy('created_at', 'desc')->paginate(15);
+        // $searchQualified = Skill::where('skill_name', 'like', '%' .$search.'%')->get();
 
 
-
-        $qualified = Skill::where('skill_name', 'like', '%'.$search.'%')->paginate(15);
+        $qualified = Skill::where('skill_name', 'like', '%'.$search.'%')->with('user')->get();
+        // $qualified1 = Skill::where('skill_name', 'like', '%'.$search.'%')->paginate(15);
         // dd($qualified);
+        
+        
+        // $getQualifiedUser = User::where('id', $qualified->user_id)->get();
+        // dd($getQualifiedUser);
         return view('view_employer.job.searchjobs', compact('searchjobs', 'search', 'qualified'));
 
 

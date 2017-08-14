@@ -93,8 +93,13 @@
 							</div>
 							<div class="box-body">
 								@foreach ($qualified as $q)
-									{{-- {{ $qualified->skill()->user->firstname}} --}}
+									<div class="box-footer">
+										
+										<i class="fa fa-check-circle pull-right" style="color:green;">&nbsp; </i><small class="pull-right" style="color:silver;">matched!</small><a href="#">{{ $q->user->firstname }}</a> <br>
+									</div>
+						
 								@endforeach
+										{{-- {{ $getQualifiedUser->firstname }} <br> --}}
 							</div>
 						</div>
 					</div>

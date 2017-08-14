@@ -14,28 +14,41 @@
   <img src="/img/b1.jpg" alt="">
   <div class="container" style="position: absolute;top: 60px;padding: 120px 120px">
     <div class="row" >
-      <div class="col-md-12">
-        <h1>Built For Job Seekers</h1>
-        <h3 class="weight-300">Find the job you want and apply! It's easy as one-two-tree.
-        </div>
-        <div class="row">
-          <div class="col-md-10">
+      
+
             
             @if (Auth::check())
               @if (Auth::user()->roles()->first()->name === 'applicant')
                 {!! Form::open(['method' => 'GET', 'route' => 'searchjob', 'class' => 'sidebar-form' ]) !!}
-                  <div class="input-group">
-                    <input type="text" name="searchApp" class="form-control input-lg" placeholder="Search jobs">
-                    <span class="input-group-btn">
-                          <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
-                          </button>
-                        </span>
+                <div class="col-md-12">
+                  	<h1>Built For Job Seekers</h1>
+                  	<h3 class="weight-300">Find the job you want and apply! It's easy as one-two-tree.</h3>
+                 </div>
+
+                  <div class="row">
+                    <div class="col-md-10">
+                  		<div class="input-group">
+
+	                   		<input type="text" name="searchApp" class="form-control input-lg" placeholder="Search jobs">
+	                    	<span class="input-group-btn">
+	                          <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
+	                          </button>
+	                        </span>
+                  		</div>
+                  	</div>
                   </div>
 
                 {!! Form::close() !!}
 
               @else
                 {!! Form::open(['method' => 'GET', 'route' => 'employer.search', 'class' => 'sidebar-form']) !!}
+                <div class="col-md-12">
+                  	<h1>Welcome, {{ Auth::user()->firstname }}!</h1>
+                  	<h3 class="weight-300">Search for Applicants</h3>
+                 </div>
+
+                  <div class="row">
+                    <div class="col-md-10">
                   <div class="input-group">
                     <input type="text" name="search" class="form-control input-lg" placeholder="Search jobs">
                     <span class="input-group-btn">
@@ -47,7 +60,9 @@
                 
 
                 {!! Form::close() !!}
+	            </div>
 
+	        </div>
               @endif
             @else
              
@@ -55,9 +70,7 @@
 
            
            
-          </div>
          
-        </div>
       </div>
 
 
