@@ -109,7 +109,7 @@ class JobController extends Controller
             $job->status = 'archived';
             $job->save();
 
-            Session::flash('success', 'This job has been archived by' . '  ' .Auth::user()->firstname );
+            Session::flash('danger', 'This job has been archived by' . '  ' .Auth::user()->firstname );
             return redirect()->route('job.show', $job->id);
         }
         if(\Request::has('btnUpdate')){
@@ -152,11 +152,7 @@ class JobController extends Controller
         }
     }
 
-    public function setArchive(Request $requests, $id){
 
-    }
-
-    
     public function destroy($id)
     {
         //
