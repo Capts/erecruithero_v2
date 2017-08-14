@@ -39,8 +39,10 @@ class ApplicantProfileController extends Controller
         //profile
         $users = User::find($id);
         $profile = Profile::find($id);
+        // dd($profile);
         $id = User::find($id);
         $slug = User::find($slug);
+
 
         //SKILLS
         //get all skills and pass to view
@@ -48,10 +50,11 @@ class ApplicantProfileController extends Controller
 
         //EXPERIENCE
         $loopExp = Experience::where('user_id', $users->id)->get();
-        // dd($loopExp);
-        //for new comers
-        if (is_null($profile->bday) && is_null($profile->age) && is_null($profile->bio) && is_null($profile->civil_status)) {
-            return view('view_applicant.profile.edit', compact('profile', 'users'));
+
+
+        // if (is_null($profile->bday) && is_null($profile->age) && is_null($profile->bio) && is_null($profile->civil_status)) {
+        if(is_null($profile)){
+            return view('view_applicant.profile.edit', compact('profile', 'users'));  
         } else{
             
             return view('view_applicant.profile.index', compact('users', 'id', 'slug', 'schoolP', 'schoolS', 'schoolT', 'getAndLoopT','getAndLoopS', 'getAndLoopP', 'loopSkills', 'findSkillbyId', 'loopExp'));

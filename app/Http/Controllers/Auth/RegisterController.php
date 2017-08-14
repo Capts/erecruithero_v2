@@ -39,12 +39,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
+    
     protected function create(array $data)
     {
         if($data['gender'] == "Male"){
@@ -56,6 +51,7 @@ class RegisterController extends Controller
         $first = $data['firstname'];
         $last = $data['lastname'];
         $slug = $first . '-' . $last;
+        // dd($slug);
 
 
         $user = User::create([
@@ -64,7 +60,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'gender' => $data['gender'],
-            'slug' => str_slug($slug),
+            'slug' => $slug,
             'avatar' => $avatar
         ]);
         
