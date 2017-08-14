@@ -26,7 +26,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
       <?php if(Session::has('success')): ?>
 
         <div class="alert alert-success" role="alert">
@@ -49,12 +49,15 @@
 
 
       <?php if($job->status == 'archived'): ?>
-      <div class="box box-danger">
+      <div class="box box-danger" style="cursor: not-allowed;">
         <div class="box-header with-border text-center">
-          <h4 ><i style="color:red" class="fa fa-archive fa-2x pull-left"></i><?php echo e(ucfirst($job->job_title)); ?> </h4>
+          <h4 ><?php echo e(ucfirst($job->job_title)); ?> </h4>
+          <i class="fa fa-archive fa-5x" style="text-align: center;color:red;"></i>
           <small>by: </small><small><?php echo e(ucfirst($job->company)); ?></small>
         </div>
-        <div class="box-body">
+        <div class="box-body" style="opacity: 0.2;">
+
+          <span> </span>
           <dl class="dl-horizontal">
             <dt>Responsibilities:</dt>
             <dd><?php echo e(ucfirst($job->responsibilities)); ?></dd>
@@ -68,14 +71,14 @@
             <?php else: ?>
             <dd><?php echo e(number_format($job->salary, 2)); ?></dd>
             <?php endif; ?>
-            <br><br>
+            <br>
             <dt>Date posted:</dt>
 
             <dd><?php echo e(date('M j,Y', strtotime($job->created_at))); ?></dd>
             <br>
-            <br>
+
             <dt>Job post expiration:</dt>
-            <dd><?php echo e(date('M j,Y', strtotime($job->due_date))); ?></dd>
+              <dd><?php echo e(date('M j,Y', strtotime($job->due_date))); ?></dd>
 
           </dl>
 
@@ -116,11 +119,10 @@
                 <?php else: ?>
                 <dd><?php echo e(number_format($job->salary, 2)); ?></dd>
                 <?php endif; ?>
-                <br><br>
+                <br>
                 <dt>Date posted:</dt>
 
                 <dd><?php echo e(date('M j,Y', strtotime($job->created_at))); ?></dd>
-                <br>
                 <br>
                 <dt>Job post expiration:</dt>
                 <dd><?php echo e(date('M j,Y', strtotime($job->due_date))); ?></dd>
@@ -134,12 +136,10 @@
 
             <div class="box-footer">
 
-
               <?php echo Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']); ?>
 
                 <?php echo Form::hidden('status', null); ?>
 
-                <br><br>
                 <?php echo Form::button('<i class="fa fa-archive">&nbsp;</i>Archive this job', ['type' => 'submit', 'class' => 'pull-left btn btn-flat btn-danger', 'name'=> 'btnArchive', 'value' => 'archive']); ?>
 
               <?php echo Form::close(); ?>

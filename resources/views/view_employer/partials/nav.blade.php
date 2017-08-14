@@ -231,11 +231,11 @@
              
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+               {{--  <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                   <a href="{{ route('logout') }}" class="btn btn-danger btn-flat"
+                </div> --}}
+                <div class="">
+                   <a href="{{ route('logout') }}" class="btn-block btn btn-danger btn-flat"
                       onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
                       Logout

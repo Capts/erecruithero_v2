@@ -29,7 +29,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
       @if (Session::has('success'))
 
         <div class="alert alert-success" role="alert">
@@ -52,12 +52,15 @@
 
 
       @if ($job->status == 'archived')
-      <div class="box box-danger">
+      <div class="box box-danger" style="cursor: not-allowed;">
         <div class="box-header with-border text-center">
-          <h4 ><i style="color:red" class="fa fa-archive fa-2x pull-left"></i>{{ ucfirst($job->job_title) }} </h4>
+          <h4 >{{ ucfirst($job->job_title) }} </h4>
+          <i class="fa fa-archive fa-5x" style="text-align: center;color:red;"></i>
           <small>by: </small><small>{{ ucfirst($job->company) }}</small>
         </div>
-        <div class="box-body">
+        <div class="box-body" style="opacity: 0.2;">
+
+          <span> </span>
           <dl class="dl-horizontal">
             <dt>Responsibilities:</dt>
             <dd>{{ ucfirst($job->responsibilities) }}</dd>
@@ -71,14 +74,14 @@
             @else
             <dd>{{ number_format($job->salary, 2) }}</dd>
             @endif
-            <br><br>
+            <br>
             <dt>Date posted:</dt>
 
             <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
             <br>
-            <br>
+
             <dt>Job post expiration:</dt>
-            <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
+              <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
 
           </dl>
 
@@ -119,11 +122,10 @@
                 @else
                 <dd>{{ number_format($job->salary, 2) }}</dd>
                 @endif
-                <br><br>
+                <br>
                 <dt>Date posted:</dt>
 
                 <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
-                <br>
                 <br>
                 <dt>Job post expiration:</dt>
                 <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
@@ -137,10 +139,8 @@
 
             <div class="box-footer">
 
-
               {!! Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
                 {!! Form::hidden('status', null) !!}
-                <br><br>
                 {!! Form::button('<i class="fa fa-archive">&nbsp;</i>Archive this job', ['type' => 'submit', 'class' => 'pull-left btn btn-flat btn-danger', 'name'=> 'btnArchive', 'value' => 'archive']) !!}
               {!! Form::close() !!}
 
