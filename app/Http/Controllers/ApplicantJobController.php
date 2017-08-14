@@ -24,8 +24,8 @@ class ApplicantJobController extends Controller
     public function index()
     {   
         
-        $alljobs = Job::where('status', '')->orderBy('created_at', 'desc')->paginate(15);
-
+        $alljobs = Job::where('status', null)->orderBy('created_at', 'desc')->paginate(15);
+        // dd($alljobs);
         
         return view('view_applicant.jobs.index', compact('alljobs'));
     }
