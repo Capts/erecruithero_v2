@@ -119,12 +119,10 @@
                 <!-- Menu Body -->
                
                 <li class="user-footer">
-                    <div class="pull-left">
-                        <a href="#" class="btn btn-success btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
+                    
+                    <div class="">
                       
-                        <a class="btn btn-flat btn-danger" href="{{ route('logout') }}"
+                        <a class=" btn-block btn btn-flat btn-danger" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                             <i class="fa fa-sign-out"></i> &nbsp;Logout

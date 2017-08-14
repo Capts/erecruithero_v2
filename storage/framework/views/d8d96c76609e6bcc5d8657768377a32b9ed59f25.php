@@ -32,9 +32,10 @@
 			                		<div class="row">
 			                			<?php echo Form::model($profile, ['route' => ['profile.update', $profile->user_id], 'method' => 'PUT']); ?>
 
+
 			                				<div class="col-md-12">
+
 												
-			                					
 			                					    <?php echo Form::hidden('firstname', $users->firstname, ['class' => 'form-control', 'required' => 'required']); ?>
 
 			                					    <small class="text-danger"><?php echo e($errors->first('firstname')); ?></small>
