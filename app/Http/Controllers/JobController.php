@@ -30,12 +30,12 @@ class JobController extends Controller
 
     }
 
-    public function arc(){
-
-
+    public function arc()
+    {
+       
         $archived = Job::where('status', 'archived')->paginate(10);
-
-        return view('view_employer.job.archived', compact('archived', 'job'));
+        
+        return view('view_employer.job.archived', compact('archived'));
     }
 
     public function index()

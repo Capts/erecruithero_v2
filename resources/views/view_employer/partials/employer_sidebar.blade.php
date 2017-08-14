@@ -33,7 +33,7 @@
           <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span> </a>
         </li>
         
-        <li class="treeview">
+        <li>
           <a href="{{ route('employer.feed') }}"><i class="fa fa-rss"></i> <span>Newsfeed</span> </a>
         </li>
 

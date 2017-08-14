@@ -72,10 +72,10 @@
           </dl>
           @if ($job->status == 'archived')
             
-            <h5 class="pull-left" style="color:red">This job is now on archive </h5>
+            <h5 class="pull-left" style="color:red">This job is on archive </h5>
             
-             <button  data-toggle="modal" data-target="#unarchive_modal"  class="btn btn-flat btn-primary pull-right"><i class="fa fa-key">&nbsp;</i>Enable this job</button> 
-             <a href="{{ route('employer.arc') }}" class="btn btn-flat btn-danger pull-right" style="margin-right: 20px;"><i class="fa fa-archive">&nbsp;</i>Go to archive</a>
+             <button  data-toggle="modal" data-target="#unarchive_modal"  class="btn btn-flat btn-success pull-right"><i class="fa fa-key">&nbsp;</i>Enable this job</button> 
+            {{--  <a href="{{ route('employer.arc') }}" class="btn btn-flat btn-danger pull-right" style="margin-right: 20px;"><i class="fa fa-archive">&nbsp;</i>Go to archive</a> --}}
           @else
             
             {!! Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
