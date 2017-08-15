@@ -82,7 +82,7 @@
 		                							<div class="col-xs-4">
 		                								<div class="form-group{{ $errors->has('civil_status') ? ' has-error' : '' }}">
 		                								    {!! Form::label('civil_status', 'Civil Status') !!}
-		                								    {!! Form::select('civil_status', ['single' => 'single','married' => 'married'], null, ['selected', 'placeholder' => 'I am', 'class' => 'form-control', 'required']) !!}
+		                								    {!! Form::select('civil_status', ['single' => 'single','married' => 'married'], ( isset($users->profile->civil_status) ? $users->profile->civil_status : null ), ['selected', 'placeholder' => 'I am', 'class' => 'form-control', 'required']) !!}
 
 		                								    <small class="text-danger">{{ $errors->first('civil_status') }}</small>
 		                								</div>
@@ -95,7 +95,7 @@
 		                							<div class="col-xs-6">
 		                								<div class="form-group{{ $errors->has('telephone') ? ' has-error' : '' }}">
 		                								    {!! Form::label('telephone', 'Telephone') !!}
-		                								    {!! Form::text('telephone', ( isset($users->profile->telephone) ? $users->profile->telephone : null ), ['class' => 'form-control']) !!}
+		                								    {!! Form::text('telephone', ( isset($users->profile->telephone) ? $users->profile->telephone : null), ['placeholder' => 'leave blank if none','class' => 'form-control']) !!}
 		                								    <small class="text-danger">{{ $errors->first('telephone') }}</small>
 		                								</div>
 		                							</div>
@@ -164,7 +164,7 @@
 										    {!! Form::textarea('bio', ( isset($users->profile->bio) ? $users->profile->bio : null ), ['class' => 'form-control', 'required' => 'required']) !!}
 										    <small class="text-danger">{{ $errors->first('bio') }}</small>
 										</div>
-										{!! Form::submit('save profile', ['class' => 'btn-block btn btn-success btn-flat btx-sm pull-right', 'style' => 'margin-top:290px']) !!}
+										{!! Form::submit('save profile', ['class' => 'btn-block btn btn-success btn-flat btx-sm pull-right']) !!}
 									</div>
 								</div>
 							</div>

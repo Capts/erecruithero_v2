@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Skill;
 use Auth;
+use Session;
 
 class SkillController extends Controller
 {
@@ -19,7 +20,7 @@ class SkillController extends Controller
 
 
         $this->validate($request, [
-            'skill_name' => 'required|max:40|unique:skills,user_id',
+            'skill_name' => 'required|min:3|max:40|unique:skills,user_id',
             ]);
 
 
@@ -35,23 +36,37 @@ class SkillController extends Controller
         return redirect()->route('profile.index', [Auth::user()->id, Auth::user()->slug]);
     }
 
-    public function show($id)
-    {
-        //
-    }
+  
 
     public function edit($id)
     {
-        //
+        $skill = Skill::find($id);
+
+        return view('view_applicant.skill.edit_skill', compact('skill'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $skill = Skill::find($id);
+
+        $this->validate($request, [
+            'skill_name' => 'required|min:3|max:40|unique:skills'
+            ]);
+
+        $skill->skill_name = $request->input('skill_name');
+        $skill->save();
+
+        return redirect()->route('profile.index', [Auth::user()->id,Auth::user()->slug]);
     }
 
     public function destroy($id)
     {
-        //
+       $skill = Skill::find($id);
+
+       $skill->delete();
+
+        Session::flash('danger', 'The skill was successfully deleted!');
+
+       return redirect()->route('profile.index', [Auth::user()->id,Auth::user()->slug]);
     }
 }

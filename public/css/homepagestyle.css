@@ -1,0 +1,33 @@
+
+.kk{
+border:2px solid red;
+
+}
+
+#wordingsInLarge{
+	position: absolute;
+	top: 50px;
+	left: 120px;
+
+}
+
+#loginLarge{
+	position: absolute;
+	top: 190px;
+	left: 110px;
+	z-index: 2;
+	width: 320px;
+}
+
+/* Queries*/
+
+@media only screen and (max-width: 1200px) {
+ 	
+	#loginLarge{
+		top:150px;
+	}
+  
+}
+
+
+

@@ -44,12 +44,16 @@
 					
 					<strong>Success! </strong> {{ Session::get('success')}}&nbsp; <i class="fa fa-check"></i>
 				</div>
-
+			@elseif(Session::has('danger'))
+				<div class="alert alert-danger" role="alert">
+					
+					<strong>Success! </strong> {{ Session::get('danger')}}&nbsp; <i class="fa fa-trash"></i>
+				</div>
 			@endif 
 			
 				<div class="row">
 					<div class="col-md-3">
-					<!-- profile picture-->
+						<!-- profile picture-->
 						<div class="box box-primary">
 							<div class="box-body">
 								{{-- <div class="col-xs-12">
@@ -61,13 +65,12 @@
 									<small style="color:silver;">{{ ucfirst($users->address->street) .  ', '  . ucfirst($users->address->barangay) . ', ' . ucfirst($users->address->city) }}</small> <br>
 									<small style="color:silver;">{{ ucfirst($users->address->province) .  ', ' . ucfirst($users->address->country) }}</small>
 										<br>
-										@if (!is_null($users->profile->mobile))
 									
-										<i style="color:silver;font-size: 10px" class="fa fa-mobile-phone">&nbsp;</i>
-										<span style="color:silver;font-size: 10px">{{ $users->profile->mobile }}</span>
+									
+										<i style="color:silver;font-size: 16px" class="fa fa-mobile-phone">&nbsp;</i>
+										<span style="color:silver;font-size: 12px">{{ $users->profile->mobile }}</span>
 										
 								
-									@endif
 								</p>
 
 									
@@ -83,12 +86,12 @@
 									</span>
 									<span>
 										<h6>
-											<i class="fa fa-phone pull-right"></i>
+											
 											@if (is_null($users->profile->telephone))
-												<br>
-											@else
-											<p class="pull-left">
 												
+											@else
+											<i class="fa fa-phone pull-right"></i>
+											<p class="pull-left">
 												<span>{{ $users->profile->telephone }}</span>
 												
 											</p><br>
@@ -119,9 +122,7 @@
 
 								
 						</div>
-						<!-- Skills -->
 						
-
 					</div>
 
 					<div class="box box-primary">
@@ -139,7 +140,7 @@
 					<div class="col-md-9">
 						<div class="row">
 						<!-- Education-->
-							<div class="col-xs-6">
+							<div class="col-md-6">
 								<div class="box box-primary" style="padding: 20px 20px;">
 									<div class="box-header with-border">
 										<h5 class="text-center"><i class="fa fa-graduation-cap">&nbsp;</i>
@@ -150,7 +151,7 @@
 									@include('view_applicant.school.tab_index')
 								</div>
 							</div>
-							<div class="col-xs-6">
+							<div class="col-md-6">
 							 <!--experience-->
 								<div class="box box-primary" style="padding: 20px 20px;">
 									<div class="box-header with-border">

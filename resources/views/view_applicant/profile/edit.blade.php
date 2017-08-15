@@ -85,7 +85,7 @@
 			                						
 			                						<div class="form-group{{ $errors->has('telephone') ? ' has-error' : '' }}">
 			                						    {!! Form::label('telephone', 'Telephone') !!}
-			                						    {!! Form::number('telephone', null, ['class' => 'form-control']) !!}
+			                						    {!! Form::number('telephone', null, ['class' => 'form-control', 'placeholder' => 'leave blank if none']) !!}
 			                						    <small class="text-danger">{{ $errors->first('telephone') }}</small>
 			                						</div>
 			                					</div>
@@ -93,7 +93,7 @@
 		                							
 		                							<div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
 		                							    {!! Form::label('mobile', 'Mobile') !!}
-		                							    {!! Form::number('mobile', null, ['class' => 'form-control']) !!}
+		                							    {!! Form::number('mobile', null, ['class' => 'form-control', 'required' => 'required']) !!}
 		                							    <small class="text-danger">{{ $errors->first('mobile') }}</small>
 		                							</div>
 		                						</div>

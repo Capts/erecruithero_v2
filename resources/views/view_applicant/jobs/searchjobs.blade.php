@@ -46,7 +46,7 @@
 			@else
 				
 				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
+					<div class="col-xs-10 col-xs-offset-1">
 						<div class="box box-primary">
 						  <div class="box-header with-border">
 						    <h4 style="color:silver;">Match found! Keyword: <em style="color:green;">{{ $search }}</em> </h4 >
@@ -66,7 +66,7 @@
 						        @foreach ($searchjobs as $job)
 						          <tr>
 						            <td>{{ $job->id }}</td>
-						            <td><a href="{{ route('job.show', $job->id) }}">{{ str_limit($job->job_title, 25) }}</a></td>
+						            <td><a href="{{ route('jobs.show', $job->id) }}">{{ str_limit($job->job_title, 25) }}</a></td>
 						            <td>{{ str_limit($job->company, 25) }}</td>
 						            <td>{{ date('M j,Y', strtotime($job->created_at)) }}</td>
 						          </tr>
