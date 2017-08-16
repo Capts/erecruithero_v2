@@ -56,9 +56,9 @@
 		                						   
 
 		                						
-		                							<div class="col-xs-4">
+		                							<div class="col-xs-6">
 		                								<!-- Date -->
-		                								<div class="form-group{{ $errors->has('bday') ? ' has-error' : '' }}">
+		                								{{-- <div class="form-group{{ $errors->has('bday') ? ' has-error' : '' }}">
 		                								  {!! Form::label('bday', 'Birthdate') !!}
 
 		                								  <div class="input-group date">
@@ -66,16 +66,20 @@
 		                								      <i class="fa fa-calendar"></i>
 		                								    </div>
 		                								    {!! Form::text('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control pull-right', 'id' => 'datepicker']) !!}
-		                								    {{-- <input type="text" name='bday' class="form-control pull-right" id="datepicker"> --}}
 		                								    <small class="text-danger">{{ $errors->first('bday') }}</small>
 		                								  </div>
-		                								  <!-- /.input group -->
+		                								  
+		                								</div> --}}
+		                								<div class="form-group{{ $errors->has('bday') ? ' has-error' : '' }}">
+		                								    {!! Form::label('bday', 'Birthday') !!}
+		                								    {!! Form::text('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control manual', 'placeholder'=>'mm/dd/yyyy', 'required' => 'required']) !!}
+		                								    <small class="text-danger">{{ $errors->first('bday') }}</small>
 		                								</div>
 		                							</div>
-		                							<div class="col-xs-4">
+		                							<div class="col-xs-2">
 		                								<div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
 		                								    {!! Form::label('age', 'Age') !!}
-		                								    {!! Form::text('age', ( isset($users->profile->age) ? $users->profile->age : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+		                								    {!! Form::text('age', ( isset($users->profile->age) ? $users->profile->age : null ), ['class' => 'form-control', 'required' => 'required', 'id' => 'age', 'max' => '2' , 'readonly', 'step' => ' ']) !!}
 		                								    <small class="text-danger">{{ $errors->first('age') }}</small>
 		                								</div>
 		                							</div>

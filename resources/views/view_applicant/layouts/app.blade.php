@@ -59,6 +59,26 @@
       })
     </script>
 
+    <script>
+    function setAge(d)
+    {
+      var age = moment().diff(d, 'years', true);
+      $('#age').val(age);
+      
+    }
+     
+    $(function() {
+      $('.manual').change(function() {
+        var isoDate = new Date($(this).val()).toISOString();
+        setAge(moment(isoDate));
+      });
+      
+      $('#datepicker').datetimepicker().on('dp.change', function(e) {
+        setAge(e.date);
+      });
+    });
+    </script>
+
 
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
       <!---->

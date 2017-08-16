@@ -150,7 +150,7 @@ class JobController extends Controller
         }
 
          if (\Request::has('btnUnarchive')) {
-            $job->status = '';
+            $job->status = null;
             $job->due_date = $request->input('due_date');
             $job->save();
 

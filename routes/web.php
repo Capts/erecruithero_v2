@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('sampledate', function(){
+	return view('view_applicant.profile.sample_date');
+});
+
 Auth::routes();
 
 // Applicant Routes
