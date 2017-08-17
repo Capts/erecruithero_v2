@@ -5,7 +5,7 @@
 </head>
 <body class="hold-transition skin-green sidebar-mini">
     <div id="app">
-
+        
         <?php echo $__env->yieldContent('content'); ?>
     </div>
 
@@ -57,6 +57,26 @@
         $('#reservation').daterangepicker()
       
       })
+    </script>
+
+    <script>
+    function setAge(d)
+    {
+      var age = moment().diff(d, 'years', true);
+      $('#age').val(age);
+      
+    }
+     
+    $(function() {
+      $('.manual').change(function() {
+        var isoDate = new Date($(this).val()).toISOString();
+        setAge(moment(isoDate));
+      });
+      
+      $('#datepicker').datetimepicker().on('dp.change', function(e) {
+        setAge(e.date);
+      });
+    });
     </script>
 
 

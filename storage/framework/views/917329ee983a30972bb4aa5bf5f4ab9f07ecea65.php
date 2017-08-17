@@ -10,5 +10,6 @@
 <!-- Styles -->
 <link href="<?php echo e(asset('applicant/css/app.css')); ?>" rel="stylesheet">
 <link href="<?php echo e(asset('css/search_style.css')); ?>" rel="stylesheet">
+<link href="<?php echo e(asset('css/homepagestyle.css')); ?>" rel="stylesheet">
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">

@@ -44,8 +44,11 @@
                   <dd>{{ $job->work_location }}</dd>
                   <br>
                 <dt>Salary:</dt>
-                  <dd><b>₱</b> {{ number_format($job->salary, 2) }}</dd>
-                  <br>
+                 @if ($job->salary == 'To be discussed')
+                 <dd>{{ $job->salary }}</dd>
+                 @else
+                 <dd>{{ number_format($job->salary, 2) }}</dd>
+                 @endif
                 <dt>Date posted:</dt>
                   <dd>{{ date('M j,Y', strtotime($job->created_at)) }}</dd>
                   <br>

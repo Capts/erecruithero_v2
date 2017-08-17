@@ -23,7 +23,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
        <div class="box box-success">
         <div class="box-header with-border text-center">
           <h4><?php echo e(ucfirst($job->job_title)); ?> </h4>

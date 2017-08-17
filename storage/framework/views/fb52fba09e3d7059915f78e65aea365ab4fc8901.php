@@ -25,7 +25,7 @@
 						        <small class="text-danger"><?php echo e($errors->first('skill_name')); ?></small>
 						    </div>
 						    
-						    	<?php echo Form::submit('save skill', ['class' => 'btn btn-success btn-flat pull-right']); ?>
+						    	<?php echo Form::submit('add skill', ['class' => 'btn btn-success btn-flat pull-right']); ?>
 
 						    </div>
 						    <br>

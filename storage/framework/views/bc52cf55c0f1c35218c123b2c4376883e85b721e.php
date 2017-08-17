@@ -27,7 +27,7 @@
     <a href="<?php echo e(route('login')); ?>"><b>E-Recruit </b>Hero</a>
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body kk">
+  <div class="login-box-body">
     <p class="login-box-msg">Sign in to start</p>
     
     <form class="" role="form" method="POST" action="<?php echo e(route('login')); ?>">
