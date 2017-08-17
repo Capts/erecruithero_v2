@@ -22,7 +22,7 @@
 						        <small class="text-danger">{{ $errors->first('skill_name') }}</small>
 						    </div>
 						    
-						    	{!! Form::submit('save skill', ['class' => 'btn btn-success btn-flat pull-right']) !!}
+						    	{!! Form::submit('add skill', ['class' => 'btn btn-success btn-flat pull-right']) !!}
 						    </div>
 						    <br>
 						    <br>

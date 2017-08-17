@@ -46,26 +46,17 @@
 			                					    <small class="text-danger">{{ $errors->first('lastname') }}</small>
 			                				
 
-												<div class="col-xs-4">
-													<!-- Date -->
+												<div class="col-xs-6">
 													<div class="form-group{{ $errors->has('bday') ? ' has-error' : '' }}">
-													  {!! Form::label('bday', 'Birthdate') !!}
-
-													  <div class="input-group date">
-													    <div class="input-group-addon">
-													      <i class="fa fa-calendar"></i>
-													    </div>
-													    {!! Form::text('bday', null, ['class' => 'form-control pull-right', 'id' => 'datepicker']) !!}
-													    {{-- <input type="text" name='bday' class="form-control pull-right" id="datepicker"> --}}
-													    <small class="text-danger">{{ $errors->first('bday') }}</small>
-													  </div>
-													  <!-- /.input group -->
-													</div>
+		                								    {!! Form::label('bday', 'Birthday') !!}
+		                								    {!! Form::text('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control manual', 'placeholder'=>'mm/dd/yyyy', 'required' => 'required']) !!}
+		                								    <small class="text-danger">{{ $errors->first('bday') }}</small>
+		                								</div>
 												</div>
-												<div class="col-xs-4">
+												<div class="col-xs-2">
 													<div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
 													    {!! Form::label('age', 'Age') !!}
-													    {!! Form::number('age', null, ['class' => 'form-control', 'required' => 'required']) !!}
+													    {!! Form::text('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']) !!}
 													    <small class="text-danger">{{ $errors->first('age') }}</small>
 													</div>
 												</div>
@@ -85,7 +76,7 @@
 			                						
 			                						<div class="form-group{{ $errors->has('telephone') ? ' has-error' : '' }}">
 			                						    {!! Form::label('telephone', 'Telephone') !!}
-			                						    {!! Form::number('telephone', null, ['class' => 'form-control']) !!}
+			                						    {!! Form::number('telephone', null, ['class' => 'form-control', 'placeholder' => 'leave blank if none']) !!}
 			                						    <small class="text-danger">{{ $errors->first('telephone') }}</small>
 			                						</div>
 			                					</div>
@@ -93,7 +84,7 @@
 		                							
 		                							<div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
 		                							    {!! Form::label('mobile', 'Mobile') !!}
-		                							    {!! Form::number('mobile', null, ['class' => 'form-control']) !!}
+		                							    {!! Form::number('mobile', null, ['class' => 'form-control', 'required' => 'required']) !!}
 		                							    <small class="text-danger">{{ $errors->first('mobile') }}</small>
 		                							</div>
 		                						</div>
