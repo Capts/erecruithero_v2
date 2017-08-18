@@ -25,7 +25,7 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<div class="box box-success">
+					<div class="box box-primary">
 						<div class="box-header"></div>
 						<div class="box-body">
 							<p class="text-center" ><img src="{{Storage::url($thisUser->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
@@ -89,18 +89,14 @@
 							@endif
 
 						</div>
-						<div class="box-footer">
-							<div class="">
-								<button class="btn btn-flat bg-olive btn-block">Invite for interview</button>
-							</div>
-						</div>
+						
 
 					
 					</div>
 
 
 					<!-- SKILLS -->
-					<div class="box box-success">
+					<div class="box box-primary">
 						<div class="box-header with-border">
 							<h4 class="text-center"><i class="fa fa-language">&nbsp;</i>
 								<b>SKILLS</b>
@@ -118,7 +114,8 @@
 								@else
 									@foreach ($applicant->skill as $skill)
 										<div class="col-md-6">
-											<p class="label label-primary" style="font-size: 15px;">{{ ucfirst(str_limit($skill->skill_name, 21)) }}</p><br><br>
+											<span class="fa fa-circle-o" style="font-size: 16px;color: #42a3f7;">&nbsp;</span>
+											<span >{{ ucfirst(str_limit($skill->skill_name, 21)) }}</span><br><br>
 										</div>
 										
 									@endforeach
@@ -136,7 +133,7 @@
 
 
 				<div class="col-md-4">
-					<div class="box box-success">
+					<div class="box box-primary">
 						<div class="box-header with-border">
 							<h4 class="text-center"><i class="fa fa-black-tie ">&nbsp;</i>
 								<b>EXPERIENCE</b>
@@ -145,8 +142,8 @@
 						<div class="box-body">
 						@if ($applicant->experience->isEmpty())
 							<small style="color: silver">nothing to show here</small>
-							@else
-							@foreach ($loopExp as $exp)
+						@else
+							@foreach ($applicant->experience as $exp)
 
 							<div class="box-body">
 								<a href="#">{{ $exp->exp_title }} </a>at  {{$exp->exp_company}} <br>
@@ -158,7 +155,7 @@
 
 
 							@endforeach
-							@endif
+						@endif
 
 						</div>
 					</div>
@@ -173,7 +170,7 @@
 
 
 				<div class="col-md-5">
-					<div class="box box-success">
+					<div class="box box-primary">
 						<div class="box-header with-border">
 							
 							<h4 class="text-center"><i class="fa fa-graduation-cap">&nbsp;</i>
@@ -263,7 +260,14 @@
 
 			</div>
 			
-
+		
+			<div class="col-md-4 col-md-offset-8">
+				
+					<button class="btn btn-flat btn-primary btn-lg btn-block"><i class="fa fa-calendar pull-left">&nbsp;</i>Invite for interview</button>
+				
+			</div>
+			<br><br>
+			
 
 		</section>
 	</div>

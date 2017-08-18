@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\User;
 use App\Skill;
+use App\Application;
 use Session;
 use Auth;
 
@@ -29,48 +30,9 @@ class ApplicationController extends Controller
 
 
 
-        return view('view_employer.applicants.show', compact('applicant', 'thisUser'));
+        return view('view_employer.application.show', compact('applicant', 'thisUser'));
    }
 
 
-    public function index()
-    {
-        //
-    }
-
-    
-    public function create()
-    {
-        //
-    }
-
   
-    public function store(Request $request)
-    {
-        //
-    }
-
-    
-    public function show($id)
-    {
-        //
-    }
-
-    
-    public function edit($id)
-    {
-        //
-    }
-
-   
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-   
-    public function destroy($id)
-    {
-        //
-    }
 }

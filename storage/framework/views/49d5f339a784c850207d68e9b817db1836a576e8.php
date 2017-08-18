@@ -89,11 +89,7 @@
 							<?php endif; ?>
 
 						</div>
-						<div class="box-footer">
-							<div class="">
-								<button class="btn btn-flat bg-olive btn-block">Invite for interview</button>
-							</div>
-						</div>
+						
 
 					
 					</div>
@@ -265,7 +261,14 @@
 
 			</div>
 			
-
+		
+			<div class="col-md-4 col-md-offset-8">
+				
+					<button class="btn btn-flat bg-olive btn-lg btn-block"><i class="fa fa-calendar pull-left">&nbsp;</i>Invite for interview</button>
+				
+			</div>
+			<br><br>
+			
 
 		</section>
 	</div>

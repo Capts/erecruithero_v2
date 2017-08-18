@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Address' => $baseDir . '/app/Address.php',
-    'App\\Application' => $baseDir . '/app/Application.php',
     'App\\CharacterReference' => $baseDir . '/app/CharacterReference.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Country' => $baseDir . '/app/Country.php',
@@ -19,6 +18,7 @@ return array(
     'App\\Http\\Controllers\\ApplicantProfileController' => $baseDir . '/app/Http/Controllers/ApplicantProfileController.php',
     'App\\Http\\Controllers\\ApplicantSchoolController' => $baseDir . '/app/Http/Controllers/ApplicantSchoolController.php',
     'App\\Http\\Controllers\\ApplicationController' => $baseDir . '/app/Http/Controllers/ApplicationController.php',
+    'App\\Http\\Controllers\\ApplyController' => $baseDir . '/app/Http/Controllers/ApplyController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -35,6 +35,8 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Job' => $baseDir . '/app/Job.php',
+    'App\\JobUser' => $baseDir . '/app/JobUser.php',
+    'App\\Notifications\\InviteForInterview' => $baseDir . '/app/Notifications/InviteForInterview.php',
     'App\\Profile' => $baseDir . '/app/Profile.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

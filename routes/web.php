@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sampledate', function(){
-	return view('view_applicant.profile.sample_date');
-});
+
 
 Auth::routes();
 
@@ -35,6 +33,8 @@ Route::resource('applicant/experience', 'ExperienceController');
 Route::get('applicants/jobs', 'ApplicantJobController@searchAJob')->name('searchjob');
 Route::resource('applicant/jobs', 'ApplicantJobController', ['except' => ['create', 'store', 'edit','destroy', 'update']]);
 
+Route::resource('applicant/job/apply', 'ApplyController');
+
 // application route
 
 
@@ -48,8 +48,8 @@ Route::get('employer/job/search', 'JobController@search')->name('employer.search
 
 	//resource routes for employer
 
-	Route::get('employer/applicants/show/applicant/id/{id}/{slug}', 'ApplicationController@getApp')->name('applicant.profile');
+	Route::get('employer/applicants/show/applicant/id/{id}/{slug}', 'ApplicationController@getApp')->name('application.profile');
 
 	Route::resource('employer/job', 'JobController', ['except'=> ['edit','create']]);
-	Route::resource('employer/applicants', 'ApplicationController', ['except'=> ['edit','destroy', 'create']]);
+	// Route::resource('employer/applicants', 'ApplicationController@');
 	

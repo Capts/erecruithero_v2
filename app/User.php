@@ -51,11 +51,11 @@ class User extends Authenticatable
         ->hasMany('App\Experience');
     }
 
-    public function application(){
+    public function jobs(){
         return $this
-        ->hasMany('App\Application');
+        ->belongsToMany('App\Job');
     }
-
+ 
 
 
 

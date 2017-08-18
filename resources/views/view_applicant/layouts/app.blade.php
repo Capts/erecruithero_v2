@@ -73,9 +73,7 @@
         setAge(moment(isoDate));
       });
       
-      $('#datepicker').datetimepicker().on('dp.change', function(e) {
-        setAge(e.date);
-      });
+    
     });
     </script>
 

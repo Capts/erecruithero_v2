@@ -57,12 +57,20 @@
                   <dd>{{ date('M j,Y', strtotime($job->due_date)) }}</dd>
                   
           </dl>
-            <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+
+          @if (is_null($getApply))
+            <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure-{{ Auth::user()->id }}"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+          @else
+            <button class="btn btn-flat disabled pull-right"><i class="fa fa-check-circle">&nbsp;</i>Already applied</button>
+          @endif
+         
+
+           
             @include('view_applicant.jobs.areyousure_modal')
             {{-- <button class="btn btn-flat btn-danger pull-left"><i class="fa fa-archive">&nbsp;</i>Archive this job</button> --}}
         </div>
         
-
+         
          
        </div>
       </div>

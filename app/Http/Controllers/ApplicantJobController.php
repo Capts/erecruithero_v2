@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Job;
+use App\JobUser;
+use Auth;
+use DB;
 
 class ApplicantJobController extends Controller
 {
@@ -36,7 +39,13 @@ class ApplicantJobController extends Controller
         $job = Job::find($id);
         // dd($job);
 
-        return view('view_applicant.jobs.show',[$job->id], compact('job'));
+        $getApply = DB::table('job_users')
+                        ->where('user_id', Auth::user()->id)
+                        ->where('job_id', $id)
+                        ->first();
+            // dd($getApply);
+
+        return view('view_applicant.jobs.show',[$job->id], compact('job', 'getApply'));
     }
 
    

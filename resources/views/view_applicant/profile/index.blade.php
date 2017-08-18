@@ -119,15 +119,13 @@
 								<div class="box-footer">
 									
 									@if (strlen(Auth::user()->profile->bio) >  150)
-										{{ ucfirst(str_limit(Auth::user()->profile->bio, 150)) }} <a href="#">read more</a>
+									
+										{{ ucfirst(str_limit(Auth::user()->profile->bio, 150)) }} <a href="#" data-toggle="modal" data-target="#readmore">read more</a>
 									@else
 
-									{{ ucfirst(Auth::user()->profile->bio) }}
-
-
+										{{ ucfirst(Auth::user()->profile->bio) }}
 									@endif
-									
-										
+									@include('view_applicant.profile.read_more_modal')
 								
 								</div>
 

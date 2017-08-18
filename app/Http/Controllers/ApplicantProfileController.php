@@ -47,7 +47,7 @@ class ApplicantProfileController extends Controller
         //SKILLS
         //get all skills and pass to view
         $loopSkills = Skill::where('user_id', $users->id)->get();
-        
+        // dd($loopSkills);
         //EXPERIENCE
         $loopExp = Experience::where('user_id', $users->id)->get();
 

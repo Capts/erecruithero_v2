@@ -31,7 +31,7 @@
         </div>
         <div class="box-body" >
           <dl class="dl-horizontal" style="padding: 10px 50px;">
-                <dt>Responsibilities:</dt>
+                <dt>Job description:</dt>
                   <dd><?php echo e(ucfirst($job->responsibilities)); ?></dd>
                   <br>
                 <dt>Qualifications:</dt>
@@ -54,12 +54,20 @@
                   <dd><?php echo e(date('M j,Y', strtotime($job->due_date))); ?></dd>
                   
           </dl>
-            <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+
+          <?php if(is_null($getApply)): ?>
+            <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure-<?php echo e(Auth::user()->id); ?>"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+          <?php else: ?>
+            <button class="btn btn-flat disabled pull-right"><i class="fa fa-check-circle">&nbsp;</i>Already applied</button>
+          <?php endif; ?>
+         
+
+           
             <?php echo $__env->make('view_applicant.jobs.areyousure_modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             
         </div>
         
-
+         
          
        </div>
       </div>

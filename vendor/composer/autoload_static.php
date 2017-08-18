@@ -283,7 +283,6 @@ class ComposerStaticInitd79e368c10c9aecf758ad19d150ca95a
 
     public static $classMap = array (
         'App\\Address' => __DIR__ . '/../..' . '/app/Address.php',
-        'App\\Application' => __DIR__ . '/../..' . '/app/Application.php',
         'App\\CharacterReference' => __DIR__ . '/../..' . '/app/CharacterReference.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Country' => __DIR__ . '/../..' . '/app/Country.php',
@@ -295,6 +294,7 @@ class ComposerStaticInitd79e368c10c9aecf758ad19d150ca95a
         'App\\Http\\Controllers\\ApplicantProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplicantProfileController.php',
         'App\\Http\\Controllers\\ApplicantSchoolController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplicantSchoolController.php',
         'App\\Http\\Controllers\\ApplicationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplicationController.php',
+        'App\\Http\\Controllers\\ApplyController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplyController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -311,6 +311,8 @@ class ComposerStaticInitd79e368c10c9aecf758ad19d150ca95a
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Job' => __DIR__ . '/../..' . '/app/Job.php',
+        'App\\JobUser' => __DIR__ . '/../..' . '/app/JobUser.php',
+        'App\\Notifications\\InviteForInterview' => __DIR__ . '/../..' . '/app/Notifications/InviteForInterview.php',
         'App\\Profile' => __DIR__ . '/../..' . '/app/Profile.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

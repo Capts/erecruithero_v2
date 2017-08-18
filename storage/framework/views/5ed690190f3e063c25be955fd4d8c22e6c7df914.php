@@ -116,16 +116,14 @@
 								<div class="box-footer">
 									
 									<?php if(strlen(Auth::user()->profile->bio) >  150): ?>
-										<?php echo e(ucfirst(str_limit(Auth::user()->profile->bio, 150))); ?> <a href="#">read more</a>
+									
+										<?php echo e(ucfirst(str_limit(Auth::user()->profile->bio, 150))); ?> <a href="#" data-toggle="modal" data-target="#readmore">read more</a>
 									<?php else: ?>
 
-									<?php echo e(ucfirst(Auth::user()->profile->bio)); ?>
-
-
+										<?php echo e(ucfirst(Auth::user()->profile->bio)); ?>
 
 									<?php endif; ?>
-									
-										
+									<?php echo $__env->make('view_applicant.profile.read_more_modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 								
 								</div>
 
