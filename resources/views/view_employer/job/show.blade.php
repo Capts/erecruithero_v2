@@ -68,6 +68,9 @@
             <dt>Qualifications:</dt>
             <dd>{{ ucfirst($job->qualifications) }}</dd>
             <br>
+            <dt>Location:</dt>
+            <dd>{{ ucfirst($job->work_location) }}</dd>
+            <br>
             <dt>Salary:</dt>
             @if ($job->salary == 'To be discussed')
             <dd>{{ $job->salary }}</dd>
@@ -115,6 +118,9 @@
                 <br>
                 <dt>Qualifications:</dt>
                 <dd>{{ ucfirst($job->qualifications) }}</dd>
+                <br>
+                <dt>Location:</dt>
+                <dd>{{ ucfirst($job->work_location) }}</dd>
                 <br>
                 <dt>Salary:</dt>
                 @if ($job->salary == 'To be discussed')

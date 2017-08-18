@@ -20,7 +20,7 @@ class RegisterController extends Controller
     use RegistersUsers;
 
    
-    protected $redirectTo = 'applicant/newsfeed';
+    protected $redirectTo = '/';
 
    
     public function __construct()

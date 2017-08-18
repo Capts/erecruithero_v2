@@ -32,11 +32,11 @@
         <li class="active treeview">
           <a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span> </a>
         </li>
-        
+      {{--   
         <li>
           <a href="{{ route('employer.feed') }}"><i class="fa fa-rss"></i> <span>Newsfeed</span> </a>
         </li>
-
+ --}}
         <li class=" treeview">
           <a href="#">
             <i class="fa fa-gavel"></i> <span>Jobs</span>

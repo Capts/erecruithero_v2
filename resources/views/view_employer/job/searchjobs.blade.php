@@ -88,19 +88,38 @@
 					</div>
 					<div class="col-xs-4">
 						<div class="box box-primary">
-							<div class="box-header with-border">
-								<h5>List of qualified applicants for this job</h5>
-							</div>
-							<div class="box-body">
-								@foreach ($qualified as $q)
-									<div class="box-footer">
-										
-										<i class="fa fa-check-circle pull-right" style="color:green;">&nbsp; </i><small class="pull-right" style="color:silver;">matched!</small><a href="#">{{ ucfirst($q->user->firstname) .' ' .ucfirst($q->user->lastname) }}</a> <br>
-									</div>
-						
-								@endforeach
-										{{-- {{ $getQualifiedUser->firstname }} <br> --}}
-							</div>
+							
+							@if ($qualified->count() == 0)
+								<div class="box-body">
+									<h3 class="text-center" style="color:silver">
+										No applicant matched <br>
+										<p class="lead" style="color:silver">this job</p>
+									</h3>
+
+								</div>
+
+							@else
+								<div class="box-header with-border">
+									<h5>
+										List of qualified applicants for this job
+
+									</h5>
+
+								</div>
+
+								<div class="box-body">
+									@foreach ($qualified as $q)
+										<div class="box-footer">
+											
+											<i class="fa fa-check-circle pull-right" style="color:green;">&nbsp; </i><small class="pull-right" style="color:silver;">matched!</small><a href="{{ route('applicant.profile', [$q->user->id, $q->user->slug]) }}">{{ ucfirst($q->user->firstname) .' ' .ucfirst($q->user->lastname) }}</a> <br>
+										</div>
+								
+									@endforeach
+											{{-- {{ $getQualifiedUser->firstname }} <br> --}}
+								</div>
+
+
+							@endif
 						</div>
 					</div>
 				</div>

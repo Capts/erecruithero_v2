@@ -48,5 +48,8 @@ Route::get('employer/job/search', 'JobController@search')->name('employer.search
 
 	//resource routes for employer
 
+	Route::get('employer/applicants/show/applicant/id/{id}/{slug}', 'ApplicationController@getApp')->name('applicant.profile');
+
 	Route::resource('employer/job', 'JobController', ['except'=> ['edit','create']]);
+	Route::resource('employer/applicants', 'ApplicationController', ['except'=> ['edit','destroy', 'create']]);
 	

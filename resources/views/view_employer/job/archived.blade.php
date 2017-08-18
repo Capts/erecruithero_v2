@@ -24,12 +24,24 @@
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1">
         
-        <div class="box box-primary">
-          <div class="box-header ">
-            <h4 class="text-center" style="color:silver;">Archived jobs</h4>
-          </div>
-          <div class="box-body">
+        
+          @if ($archived->count() == 0)
+            <div class="box box-danger">
+             
+              <div class="box-body">
 
+                 <h1 class="text-center" style="color: silver"><i class="fa fa-columns">&nbsp;</i>Archive folder is empty</h1>
+
+              </div>
+            </div>
+          @else
+
+          <div class="box box-primary">
+           
+            <div class="box-body">
+            <div class="box-header ">
+              <h4 class="text-center" style="color:silver;">Archived jobs</h4>
+            </div>
             <table class="table table-responsive">
               <thead>
                 <tr>
@@ -58,12 +70,20 @@
               </tbody>
             
             </table>
-             <div class="text-center">
+              <div class="text-center">
                 {!! $archived->links() !!}
-            </div>
-          </div>
+              </div>
 
-        </div>
+
+            </div>
+
+          </div>
+          @endif
+            
+
+
+
+         
       
       </div>
     </div>

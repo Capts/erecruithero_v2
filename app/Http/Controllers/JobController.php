@@ -26,7 +26,7 @@ class JobController extends Controller
 
 
         $qualified = Skill::where('skill_name', 'like', '%'.$search.'%')->with('user')->get();
-        // $qualified1 = Skill::where('skill_name', 'like', '%'.$search.'%')->paginate(15);
+        
         // dd($qualified);
         
         

@@ -12,10 +12,10 @@ class SkillTableSeeder extends Seeder
      */
     public function run()
     {
-        $employer_skills = new Skill();
-        $employer_skills->user_id = 1;
-        $employer_skills->skill_name = 'Drawing';
-        $employer_skills->save();
+        // $employer_skills = new Skill();
+        // $employer_skills->user_id = 1;
+        // $employer_skills->skill_name = 'Drawing';
+        // $employer_skills->save();
 
 
         $applicant_skills = new Skill();

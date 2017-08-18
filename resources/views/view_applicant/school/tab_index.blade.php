@@ -7,7 +7,7 @@
 						@if (is_null($schoolT))
 							
 						@else
-						<p class="" style="background-color:#23c66a;color:white;">Tertiary</p>
+						<h4><span class="badge" style="background-color: #357ecc;">3</span>&nbsp;Tertiary </h4>
 
 						@foreach ($getAndLoopT as $loopTer)
 
@@ -33,7 +33,7 @@
 						@if (is_null($schoolS))
 
 						@else
-						<p class="" style="background-color:#23c66a;color:white;">Secondary</p>
+						<h4><span class="badge" style="background-color: #357ecc;">2</span>&nbsp;Secondary </h4>
 						@foreach ($getAndLoopS as $loopSec)
 						<div class="box-body">
 							<div class="box-header ">
@@ -51,7 +51,7 @@
 						@if (is_null($schoolP))
 
 						@else
-						<p class="" style="background-color:#23c66a;color:white;">Primary</p>
+						<h4><span class="badge" style="background-color: #357ecc;">1</span>&nbsp;Primary </h4>
 						@foreach ($getAndLoopP as $loopPri)
 						<div class="box-body">
 							<div class="box-header  with-border">

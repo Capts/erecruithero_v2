@@ -48,7 +48,7 @@
                             @if (Auth::user()->roles()->first()->name == 'applicant')
                                 <li><a href="{{ route('profile.index', [Auth::user()->id, Auth::user()->slug]) }}">Profile</a></li>
                             @else
-                                <li><a href="{{ route('employer.feed') }}">Newsfeed</a></li>
+                                <li><a href="{{ route('job.index') }}">Jobs</a></li>
                             @endif
                             <li>
                                 <a href="{{ route('logout') }}"

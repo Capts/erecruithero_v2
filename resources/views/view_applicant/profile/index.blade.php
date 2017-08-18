@@ -117,7 +117,18 @@
 									
 								</div>
 								<div class="box-footer">
-									<p class="text-left">{{ ucfirst(Auth::user()->profile->bio) }}</p>
+									
+									@if (strlen(Auth::user()->profile->bio) >  150)
+										{{ ucfirst(str_limit(Auth::user()->profile->bio, 150)) }} <a href="#">read more</a>
+									@else
+
+									{{ ucfirst(Auth::user()->profile->bio) }}
+
+
+									@endif
+									
+										
+								
 								</div>
 
 								

@@ -74,7 +74,7 @@
 	      			    <div class="row">
 	      			    	<div class="col-xs-6">
 	      			    		<div class="form-group{{ $errors->has('responsibilities') ? ' has-error' : '' }}">
-	      			    		    {!! Form::label('responsibilities', 'Responsibilities') !!}
+	      			    		    {!! Form::label('responsibilities', 'Job description') !!}
 	      			    		    {!! Form::textarea('responsibilities', null, ['class' => 'form-control', 'required' => 'required']) !!}
 	      			    		    <small class="text-danger">{{ $errors->first('responsibilities') }}</small>
 	      			    		</div>
