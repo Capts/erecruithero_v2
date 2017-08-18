@@ -21,12 +21,15 @@ class ApplicationController extends Controller
 
    public function getApp($id, $slug){
 
-        $applicant = User::where('id', $id)->with(['experience', 'profile', 'skill', 'schoolPrimary', 'schoolSecondary', 'schoolTertiary'])->first();
+        $thisUser = User::find($id);
+        // dd($thisUser);
+
+        $applicant = User::where('id', $id)->with(['experience', 'address', 'profile', 'skill', 'schoolPrimary', 'schoolSecondary', 'schoolTertiary'])->first();
         // dd($applicant);
 
 
 
-        return view('view_employer.applicants.show', compact('applicant'));
+        return view('view_employer.applicants.show', compact('applicant', 'thisUser'));
    }
 
 

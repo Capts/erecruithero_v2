@@ -28,9 +28,9 @@
 					<div class="box box-success">
 						<div class="box-header"></div>
 						<div class="box-body">
-							{{-- <p class="text-center" ><img src="{{Storage::url($applicant->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
-							
-							<p class="text-center">{{ ucfirst($applicant->firstname).  ' '  . ucfirst($applicant->lastname)}} <br>
+							<p class="text-center" ><img src="{{Storage::url($thisUser->avatar)}}" class="img-circle" alt="" height="90px" width="90px" ></p>
+
+							<p class="text-center">{{ ucfirst($thisUser->firstname).  ' '  . ucfirst($thisUser->lastname)}} <br>
 								<small style="color:silver;">{{ ucfirst($applicant->address->street) .  ', '  . ucfirst($applicant->address->barangay) . ', ' . ucfirst($applicant->address->city) }}</small> <br>
 								<small style="color:silver;">{{ ucfirst($applicant->address->province) .  ', ' . ucfirst($applicant->address->country) }}</small>
 									<br>
@@ -38,7 +38,7 @@
 								
 									<i style="color:silver;font-size: 16px" class="fa fa-mobile-phone">&nbsp;</i>
 									<span style="color:silver;font-size: 12px">{{ $applicant->profile->mobile }}</span>
-							</p> --}}
+							</p>
 							<hr>
 
 							<span>

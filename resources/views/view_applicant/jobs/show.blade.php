@@ -34,7 +34,7 @@
         </div>
         <div class="box-body" >
           <dl class="dl-horizontal" style="padding: 10px 50px;">
-                <dt>Responsibilities:</dt>
+                <dt>Job description:</dt>
                   <dd>{{ ucfirst($job->responsibilities) }}</dd>
                   <br>
                 <dt>Qualifications:</dt>
