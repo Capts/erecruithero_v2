@@ -188,7 +188,7 @@ class ProfileTableSeeder extends Seeder
         $p4 = new Profile();
 
         $p4->user_id = 4;
-        $p4->age = 30;
+        $p4->age = 21;
         $p4->bio = 'Hello there!, I am an applicant';
         $p4->bday = '12/20/1985';
         $p4->civil_status = 'single';
@@ -197,7 +197,7 @@ class ProfileTableSeeder extends Seeder
         $p4->save();
 
         $p4Add = new Address();
-        $p4Add->user_id = 3;
+        $p4Add->user_id = 4;
         $p4Add->street = '#23';
         $p4Add->barangay = 'Kias';
         $p4Add->city = 'Baguio City';
