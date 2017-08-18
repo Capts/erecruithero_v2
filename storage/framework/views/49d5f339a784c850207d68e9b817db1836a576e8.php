@@ -26,7 +26,7 @@
 					<div class="box box-success">
 						<div class="box-header"></div>
 						<div class="box-body">
-							<p class="text-center" ><img src="" class="img-circle" alt="" height="90px" width="90px" ></p>
+							<p class="text-center" ><img src="<?php echo e(Storage::url($thisUser->avatar)); ?>" class="img-circle" alt="" height="90px" width="90px" ></p>
 
 							<p class="text-center"><?php echo e(ucfirst($thisUser->firstname).  ' '  . ucfirst($thisUser->lastname)); ?> <br>
 								<small style="color:silver;"><?php echo e(ucfirst($applicant->address->street) .  ', '  . ucfirst($applicant->address->barangay) . ', ' . ucfirst($applicant->address->city)); ?></small> <br>
