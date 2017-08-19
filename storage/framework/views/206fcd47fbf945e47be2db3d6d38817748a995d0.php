@@ -39,23 +39,26 @@
         <?php elseif(Auth::user()->roles()->first()->name === 'employer'): ?>
           <?php echo Form::open(['method' => 'GET', 'route' => 'employer.search', 'class' => 'sidebar-form']); ?>
 
-            <div class="col-md-12">
+            <div class="col-md-10 col-md-offset-2">
+            <br><br><br><br>
               <h1>Welcome, <?php echo e(Auth::user()->firstname); ?>!</h1>
-              <h3 class="weight-300">Search for Applicants</h3>
+              <h3 class="weight-300">search a skilled applicants</h3>
+              <div class="row">
+                <div class="col-md-10">
+                  <div class="input-group">
+                    <input type="text" name="search" class="form-control input-lg" placeholder="Search jobs">
+                    <span class="input-group-btn">
+                      <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
+                      </button>
+                    </span>
+                  </div>
+
+                </div>
+            <br><br><br><br>
+
             </div>
 
-            <div class="row">
-              <div class="col-md-10">
-                <div class="input-group">
-                  <input type="text" name="search" class="form-control input-lg" placeholder="Search jobs">
-                  <span class="input-group-btn">
-                    <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
-                    </button>
-                  </span>
-                </div>
-
-              </div>
-
+            
             </div>
 
           <?php echo Form::close(); ?>
@@ -156,10 +159,10 @@
   
 
 </section>
-
+  
 
     <div class="container">
-      <br>
+      <br><br><br><br>
       <div id="content">
         <div class="row">
           <div class="col-md-4">

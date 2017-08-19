@@ -47,7 +47,7 @@
                             <?php if(Auth::user()->roles()->first()->name == 'applicant'): ?>
                                 <li><a href="<?php echo e(route('profile.index', [Auth::user()->id, Auth::user()->slug])); ?>">Profile</a></li>
                             <?php else: ?>
-                                <li><a href="<?php echo e(route('employer.feed')); ?>">Newsfeed</a></li>
+                                <li><a href="<?php echo e(route('job.index')); ?>">Jobs</a></li>
                             <?php endif; ?>
                             <li>
                                 <a href="<?php echo e(route('logout')); ?>"
