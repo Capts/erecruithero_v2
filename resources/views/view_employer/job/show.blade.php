@@ -62,7 +62,7 @@
 
           <span> </span>
           <dl class="dl-horizontal">
-            <dt>Responsibilities:</dt>
+            <dt>Job Description:</dt>
             <dd>{{ ucfirst($job->responsibilities) }}</dd>
             <br>
             <dt>Qualifications:</dt>

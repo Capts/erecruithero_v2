@@ -6,14 +6,14 @@
 					@foreach ($loopSkills as $skill)
 
 						<div class="col-xs-12 t">
-							<h4>
-								<label class="label label-default">{{ ucfirst(str_limit("$skill->skill_name", 25)) }}
-								</label>
+							<h5>
+								<span class="fa fa-circle-o" style="font-size: 16px;color: #42a3f7;">&nbsp;</span>
+								<span >{{ ucfirst(str_limit($skill->skill_name, 21)) }}</span>
 								<a style="font-size: 14px;" href="{{ route('skill.edit', $skill->id) }}">
 								<span class="fa fa-pencil pull-right"></span></a>
 								
 									
-							</h4>
+							</h5>
 							
 						</div>
 					@endforeach

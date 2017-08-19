@@ -80,7 +80,8 @@
 							<hr>
 
 							@if (strlen($applicant->profile->bio) >  150)
-										{{ ucfirst(str_limit($applicant->profile->bio, 150)) }} <a href="#">read more</a>
+										{{ ucfirst(str_limit($applicant->profile->bio, 150)) }} <a href="#" data-toggle="modal" data-target="#readmore1">read more</a>
+										@include('view_employer.application.read_more_modal')
 							@else
 
 							{{ ucfirst($applicant->profile->bio) }}
