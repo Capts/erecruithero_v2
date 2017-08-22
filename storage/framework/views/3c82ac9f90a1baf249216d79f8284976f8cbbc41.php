@@ -71,15 +71,15 @@
 
             <h4 style="color: silver;">
              
-              <p>Available jobs <span class="pull-right badge" style="margin-right:20px;font-size:15px;"><?php echo e($countAvailable); ?></span> </p>
+              <p>Available Jobs <span class="pull-right badge" style="margin-right:20px;font-size:15px;"><?php echo e($countAvailable); ?></span> </p>
               
               <br>
-              <p>Archived jobs <span class="pull-right badge badge-primary" style="margin-right:20px;font-size:15px;"><?php echo e($countArchive); ?></span> </p>
+              <p>Archived Jobs <span class="pull-right badge badge-primary" style="margin-right:20px;font-size:15px;"><?php echo e($countArchive); ?></span> </p>
             </h4>
           </div> 
           <div class="box-footer">
             <h4 style="color: silver;">
-              <p>All jobs<span class="pull-right badge" style="margin-right:20px;font-size:15px;"><?php echo e($countJob); ?></span></p>
+              <p>All Posted Jobs<span class="pull-right badge" style="margin-right:20px;font-size:15px;"><?php echo e($countJob); ?></span></p>
             </h4>
           </div>
         </div>

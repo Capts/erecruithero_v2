@@ -85,7 +85,7 @@
 	      			    <div class="row">
 	      			    	<div class="col-xs-6">
 	      			    		<div class="form-group<?php echo e($errors->has('responsibilities') ? ' has-error' : ''); ?>">
-	      			    		    <?php echo Form::label('responsibilities', 'Responsibilities'); ?>
+	      			    		    <?php echo Form::label('responsibilities', 'Job description'); ?>
 
 	      			    		    <?php echo Form::textarea('responsibilities', null, ['class' => 'form-control', 'required' => 'required']); ?>
 

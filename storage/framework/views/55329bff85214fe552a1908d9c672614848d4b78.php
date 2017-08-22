@@ -44,7 +44,7 @@
 			<?php else: ?>
 				
 				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
+					<div class="col-xs-10 col-xs-offset-1">
 						<div class="box box-primary">
 						  <div class="box-header with-border">
 						    <h4 style="color:silver;">Match found! Keyword: <em style="color:green;"><?php echo e($search); ?></em> </h4 >
@@ -64,7 +64,7 @@
 						        <?php $__currentLoopData = $searchjobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						          <tr>
 						            <td><?php echo e($job->id); ?></td>
-						            <td><a href="<?php echo e(route('job.show', $job->id)); ?>"><?php echo e(str_limit($job->job_title, 25)); ?></a></td>
+						            <td><a href="<?php echo e(route('jobs.show', $job->id)); ?>"><?php echo e(str_limit($job->job_title, 25)); ?></a></td>
 						            <td><?php echo e(str_limit($job->company, 25)); ?></td>
 						            <td><?php echo e(date('M j,Y', strtotime($job->created_at))); ?></td>
 						          </tr>
