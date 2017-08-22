@@ -39,6 +39,7 @@ class ApplicantJobController extends Controller
         $job = Job::find($id);
         // dd($job);
 
+
         $getApply = DB::table('job_users')
                         ->where('user_id', Auth::user()->id)
                         ->where('job_id', $id)

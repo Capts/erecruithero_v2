@@ -11,11 +11,8 @@ class InviteForInterview extends Notification
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
+    
+
     public function __construct()
     {
         //
@@ -29,15 +26,22 @@ class InviteForInterview extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database','broadcast'];
     }
 
 
     public function toDatabase($notifiable){
 
-        // return [
-        //     'inviteTime'=> \Carbon::now()
-        // ];
+        return [
+            'inviteTime'=> \Carbon::now()
+        ];
+    }
+
+     public function toBroadcast($notifiable){
+
+        return  new Broadcast([
+            'inviteTime'=> \Carbon::now()
+        ]);
     }
 
 

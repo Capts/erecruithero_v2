@@ -64,7 +64,7 @@
 						        <?php $__currentLoopData = $searchjobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 						          <tr>
 						            <td><?php echo e($job->id); ?></td>
-						            <td><a href="<?php echo e(route('jobs.show', $job->id)); ?>"><?php echo e(str_limit($job->job_title, 25)); ?></a></td>
+						            <td><a href="<?php echo e(route('jobs.show', $job->id)); ?>"><?php echo e(ucfirst(str_limit($job->job_title, 25))); ?></a></td>
 						            <td><?php echo e(str_limit($job->company, 25)); ?></td>
 						            <td><?php echo e(date('M j,Y', strtotime($job->created_at))); ?></td>
 						          </tr>

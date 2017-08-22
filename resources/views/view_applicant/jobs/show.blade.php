@@ -27,6 +27,27 @@
   <section class="content">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
+
+        @if (Session::has('success'))
+
+          <div class="alert alert-success" role="alert">
+            <div class="box-tools pull-right">
+              {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}
+
+            </div>
+            <i class="fa fa-check"></i>&nbsp;{{ Session::get('success')}} 
+          </div>
+        @elseif (Session::has('danger'))
+          <div class="alert alert-danger" role="alert">
+            <div class="box-tools pull-right">
+              {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}
+
+            </div>
+            <i class="fa fa-times"></i>&nbsp;{{ Session::get('danger')}} 
+          </div>
+        @endif 
+
+
        <div class="box box-success">
         <div class="box-header with-border text-center">
           <h4>{{ ucfirst($job->job_title) }} </h4>
@@ -58,16 +79,26 @@
                   
           </dl>
 
-          @if (is_null($getApply))
-            <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure-{{ Auth::user()->id }}"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
-          @else
-            <button class="btn btn-flat disabled pull-right"><i class="fa fa-check-circle">&nbsp;</i>Already applied</button>
-          @endif
+          
+
+       
+
+            @if (is_null($getApply))
+              <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure-{{ Auth::user()->id }}"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+            @else
+
+            
+              <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure1-{{ $getApply->id }}" style="margin-left: 20px;"><i class="fa fa-times">&nbsp;</i>Cancel application</button>
+
+              <button class="btn btn-flat disabled pull-right"><i class="fa fa-check-circle">&nbsp;</i>Already applied</button>
+            @endif
+
          
 
            
             @include('view_applicant.jobs.areyousure_modal')
-            {{-- <button class="btn btn-flat btn-danger pull-left"><i class="fa fa-archive">&nbsp;</i>Archive this job</button> --}}
+            @include('view_applicant.jobs.areyousure_modal1')
+
         </div>
         
          

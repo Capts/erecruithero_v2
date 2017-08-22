@@ -10,6 +10,7 @@ use App\Application;
 use App\JobUser;
 use App\Job;
 use Session;
+use DB;
 use Auth;
 
 class ApplyController extends Controller
@@ -27,7 +28,6 @@ class ApplyController extends Controller
 
     public function store(Request $request)
     {
-        
       
         // 
        $getJobId = Job::where('id', $request->job_id)->first();
@@ -43,7 +43,7 @@ class ApplyController extends Controller
        $applying->save();
 
        
-
+       Session::flash('success', 'Your application was sent!');
        return redirect()->route('jobs.show', [$applying->job_id]);
     }
 
@@ -66,6 +66,21 @@ class ApplyController extends Controller
 
     public function destroy($id)
     {
-        //
+        $job = JobUser::where('id', $id)->first();
+
+        // dd($job);
+      
+        if (is_null($job)) {
+             return redirect()->route('jobs.show', $job->job_id);
+        }else{
+
+            $job->delete();
+
+            Session::flash('danger', 'You canceled your application');
+            return redirect()->route('jobs.show', $job->job_id);
+        }
+        
+        
+        
     }
 }

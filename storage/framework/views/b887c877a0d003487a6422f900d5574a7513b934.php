@@ -24,6 +24,27 @@
   <section class="content">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
+
+        <?php if(Session::has('success')): ?>
+
+          <div class="alert alert-success" role="alert">
+            <div class="box-tools pull-right">
+              
+
+            </div>
+            <i class="fa fa-check"></i>&nbsp;<?php echo e(Session::get('success')); ?> 
+          </div>
+        <?php elseif(Session::has('danger')): ?>
+          <div class="alert alert-danger" role="alert">
+            <div class="box-tools pull-right">
+              
+
+            </div>
+            <i class="fa fa-times"></i>&nbsp;<?php echo e(Session::get('danger')); ?> 
+          </div>
+        <?php endif; ?> 
+
+
        <div class="box box-success">
         <div class="box-header with-border text-center">
           <h4><?php echo e(ucfirst($job->job_title)); ?> </h4>
@@ -55,16 +76,26 @@
                   
           </dl>
 
-          <?php if(is_null($getApply)): ?>
-            <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure-<?php echo e(Auth::user()->id); ?>"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
-          <?php else: ?>
-            <button class="btn btn-flat disabled pull-right"><i class="fa fa-check-circle">&nbsp;</i>Already applied</button>
-          <?php endif; ?>
+          
+
+       
+
+            <?php if(is_null($getApply)): ?>
+              <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure-<?php echo e(Auth::user()->id); ?>"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+            <?php else: ?>
+
+            
+              <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure1-<?php echo e($getApply->id); ?>" style="margin-left: 20px;"><i class="fa fa-times">&nbsp;</i>Cancel application</button>
+
+              <button class="btn btn-flat disabled pull-right"><i class="fa fa-check-circle">&nbsp;</i>Already applied</button>
+            <?php endif; ?>
+
          
 
            
             <?php echo $__env->make('view_applicant.jobs.areyousure_modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-            
+            <?php echo $__env->make('view_applicant.jobs.areyousure_modal1', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
         </div>
         
          

@@ -59,7 +59,7 @@
 
           <span> </span>
           <dl class="dl-horizontal">
-            <dt>Responsibilities:</dt>
+            <dt>Job Description:</dt>
             <dd><?php echo e(ucfirst($job->responsibilities)); ?></dd>
             <br>
             <dt>Qualifications:</dt>

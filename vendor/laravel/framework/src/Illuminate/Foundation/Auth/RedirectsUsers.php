@@ -1,7 +1,7 @@
 <?php
 
 namespace Illuminate\Foundation\Auth;
-use Auth;
+
 trait RedirectsUsers
 {
     /**
@@ -14,9 +14,7 @@ trait RedirectsUsers
         if (method_exists($this, 'redirectTo')) {
             return $this->redirectTo();
         }
-        if (Auth::user()->roles->first()->name == 'applicant') {
-            # code...
-            return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
-        }
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
     }
 }

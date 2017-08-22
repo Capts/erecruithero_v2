@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 trait AuthenticatesUsers
 {
-use RedirectsUsers, ThrottlesLogins;
+    use RedirectsUsers, ThrottlesLogins;
 
     /**
      * Show the application's login form.
@@ -113,9 +113,7 @@ use RedirectsUsers, ThrottlesLogins;
      */
     protected function authenticated(Request $request, $user)
     {
-       if(Auth::user()->roles()->first()->name == 'employer'){
-        return redirect()->route('job.index');
-       }
+        //
     }
 
     /**

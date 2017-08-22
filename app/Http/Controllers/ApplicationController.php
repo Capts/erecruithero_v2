@@ -33,6 +33,10 @@ class ApplicationController extends Controller
         return view('view_employer.application.show', compact('applicant', 'thisUser'));
    }
 
+   public function inviteApplicant(){
 
+    return 'yea';
+
+   }
   
 }

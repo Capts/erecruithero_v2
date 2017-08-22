@@ -41,11 +41,11 @@
 						   
 						{!! Form::close() !!}
 							
-							  {!! Form::open(['route'=> ['skill.destroy', $skill->id], 'method' => 'POST']) !!}
+							{!! Form::open(['route'=> ['skill.destroy', $skill->id], 'method' => 'POST']) !!}
 								{{ method_field('delete') }}
 						    	{!! Form::submit('delete skill', ["class" => 'btn btn-flat btn-danger pull-left']) !!}
 
-				    			{!! Form::close() !!}
+				    		{!! Form::close() !!}
 
 					</div>
 				</div>
