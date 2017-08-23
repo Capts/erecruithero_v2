@@ -21,8 +21,14 @@
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="fa fa-bell-o"></span>
-                    <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span>
+                    @if (count(auth()->user()->unreadNotifications) < 1)
+                        <span class="fa fa-bell-o"></span>
+                        {{-- <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span> --}}
+                    @else
+                        <span class="fa fa-bell-o"></span>
+                        <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span>
+                    @endif
+                    
                 </a>
                 <ul class="dropdown-menu" >
                     @if (count(auth()->user()->unreadNotifications) <= 1 )
@@ -37,7 +43,7 @@
                         <ul class="menu">
                             <li>
                                 @foreach (auth()->user()->unreadNotifications as $notif)
-                                    <a href="#">{{ $notif->type }}</a>
+                                    @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type)))
                                 @endforeach
                             </li>
                         </ul>

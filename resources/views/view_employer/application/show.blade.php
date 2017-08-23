@@ -293,6 +293,11 @@
 				        {{-- {!! Form::label('user_id', 'user id') !!} --}}
 				        {!! Form::hidden('user_id', $thisUser->id, ['class' => 'form-control', 'required' => 'required']) !!}
 				        <small class="text-danger">{{ $errors->first('user_id') }}</small>
+
+				        <div class="form-group{{ $errors->has('invited_by') ? ' has-error' : '' }}">
+				            {!! Form::hidden('invited_by', auth()->user()->id, ['class' => 'form-control', 'required' => 'required']) !!}
+				            <small class="text-danger">{{ $errors->first('invited_by') }}</small>
+				        </div>
 				    </div>
 				   	</div>
 				   </div>

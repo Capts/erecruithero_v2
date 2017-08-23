@@ -17,6 +17,9 @@ class CreateInvitationsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('job_id')->unsigned();
+            $table->integer('invited_by')->unsigned();
+            $table->string('invited_by_name')->nullable();
+            $table->string('invited_by_avatar')->nullable();
             $table->timestamps();
         });
     }

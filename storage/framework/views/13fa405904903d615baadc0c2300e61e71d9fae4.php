@@ -298,6 +298,12 @@
 				        <?php echo Form::hidden('user_id', $thisUser->id, ['class' => 'form-control', 'required' => 'required']); ?>
 
 				        <small class="text-danger"><?php echo e($errors->first('user_id')); ?></small>
+
+				        <div class="form-group<?php echo e($errors->has('invited_by') ? ' has-error' : ''); ?>">
+				            <?php echo Form::hidden('invited_by', auth()->user()->id, ['class' => 'form-control', 'required' => 'required']); ?>
+
+				            <small class="text-danger"><?php echo e($errors->first('invited_by')); ?></small>
+				        </div>
 				    </div>
 				   	</div>
 				   </div>

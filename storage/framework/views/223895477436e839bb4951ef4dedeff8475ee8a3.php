@@ -21,8 +21,14 @@
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="fa fa-bell-o"></span>
-                    <span class="label label-danger"><?php echo e(count(auth()->user()->unreadNotifications)); ?></span>
+                    <?php if(count(auth()->user()->unreadNotifications) < 1): ?>
+                        <span class="fa fa-bell-o"></span>
+                        
+                    <?php else: ?>
+                        <span class="fa fa-bell-o"></span>
+                        <span class="label label-danger"><?php echo e(count(auth()->user()->unreadNotifications)); ?></span>
+                    <?php endif; ?>
+                    
                 </a>
                 <ul class="dropdown-menu" >
                     <?php if(count(auth()->user()->unreadNotifications) <= 1 ): ?>
@@ -37,7 +43,7 @@
                         <ul class="menu">
                             <li>
                                 <?php $__currentLoopData = auth()->user()->unreadNotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notif): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a href="#"><?php echo e($notif->type); ?></a>
+                                    <?php echo $__env->make('view_applicant.partials.notification.'.snake_case(class_basename($notif->type)), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </li>
                         </ul>

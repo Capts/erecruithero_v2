@@ -47,21 +47,25 @@ class ApplicationController extends Controller
 
       $user = User::find($id);
       $job = Job::where('id', $request->job_id)->first();
-      // dd($job);
+      // dd($user);
 
 
       $invitation = new Invitation();
 
       $invitation->user_id = $request->user_id;
       $invitation->job_id = $request->job_id;
+      $invitation->invited_by = auth()->user()->id;
+      $invitation->invited_by_name = auth()->user()->firstname;
+      $invitation->invited_by_avatar = auth()->user()->avatar;
+      // dd($invitation);
 
       $invitation->save();
 
-      $user->notify(new InviteForInterview());
+      $user->notify(new InviteForInterview($invitation));
 
       Session::flash('success', 'The invitation was sent!');
 
-      return redirect()->route('application.profile', [$user->id,$user->slug,$job->id] );
+      return redirect()->route('application.profile', [$user->id,$user->slug,$job->id]);
 
    }
 

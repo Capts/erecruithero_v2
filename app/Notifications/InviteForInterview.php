@@ -14,11 +14,11 @@ class InviteForInterview extends Notification
 {
     use Queueable;
 
-    
+    protected $invitation;
 
-    public function __construct()
+    public function __construct($invitation)
     {
-        //
+        $this->invitation=$invitation;
     }
 
     /**
@@ -34,9 +34,10 @@ class InviteForInterview extends Notification
 
 
     public function toDatabase($notifiable){
-
+        // dd($notifiable);
         return [
-            'inviteTime'=> Carbon::now()
+            'invitation'=> $this->invitation,
+            'user'=>$notifiable
         ];
     }
 
