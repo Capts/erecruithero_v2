@@ -48,7 +48,9 @@ Route::get('employer/job/search', 'JobController@search')->name('employer.search
 
 	//resource routes for employer
 
-	Route::get('employer/applicants/show/applicant/id/{id}/{slug}', 'ApplicationController@getApp')->name('application.profile');
+	Route::get('employer/applicants/show/applicant/id/{id}/{slug}/job/{job_id}', 'ApplicationController@getApp')->name('application.profile');
+	Route::post('employer/applicants/show/applicant/id/{id}', 'ApplicationController@inviteApplicant')->name('application.invite');
+	Route::DELETE('employer/applicants/show/applicant/id/{id}/{user_id}', 'ApplicationController@destroy')->name('application.cancel');
 
 	Route::resource('employer/job', 'JobController', ['except'=> ['edit','create']]);
 	// Route::resource('employer/applicants', 'ApplicationController@');

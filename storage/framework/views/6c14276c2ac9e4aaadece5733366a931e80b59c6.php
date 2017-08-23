@@ -107,10 +107,12 @@
 								</div>
 
 								<div class="box-body">
+									<?php $__currentLoopData = $searchjobs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $searchjob): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 									<?php $__currentLoopData = $qualified; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $q): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 										<div class="box-footer">
 											
-											<i class="fa fa-check-circle pull-right" style="color:green;">&nbsp; </i><small class="pull-right" style="color:silver;">matched!</small><a href="<?php echo e(route('application.profile', [$q->user->id, $q->user->slug])); ?>"><?php echo e(ucfirst($q->user->firstname) .' ' .ucfirst($q->user->lastname)); ?></a> <br>
+											<i class="fa fa-check-circle pull-right" style="color:green;">&nbsp; </i><small class="pull-right" style="color:silver;">matched!</small><a href="<?php echo e(route('application.profile', [$q->user->id, $q->user->slug, $searchjob->id])); ?>"><?php echo e(ucfirst($q->user->firstname) .' ' .ucfirst($q->user->lastname)); ?></a> <br>
 										</div>
 								
 									<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

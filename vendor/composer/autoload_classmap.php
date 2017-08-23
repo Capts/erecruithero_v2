@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Address' => $baseDir . '/app/Address.php',
+    'App\\Application' => $baseDir . '/app/Application.php',
     'App\\CharacterReference' => $baseDir . '/app/CharacterReference.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Country' => $baseDir . '/app/Country.php',
@@ -34,6 +35,8 @@ return array(
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Invitation' => $baseDir . '/app/Invitation.php',
+    'App\\Invite' => $baseDir . '/app/Invite.php',
     'App\\Job' => $baseDir . '/app/Job.php',
     'App\\JobUser' => $baseDir . '/app/JobUser.php',
     'App\\Notifications\\InviteForInterview' => $baseDir . '/app/Notifications/InviteForInterview.php',

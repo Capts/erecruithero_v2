@@ -22,6 +22,7 @@ class JobController extends Controller
         $search = \Request::get('search');
         
         $searchjobs = Job::where('job_title', 'like','%'.$search.'%')->whereNull('status')->orderBy('created_at', 'desc')->paginate(15);
+        // dd($searchjobs);
         // $searchQualified = Skill::where('skill_name', 'like', '%' .$search.'%')->get();
 
 

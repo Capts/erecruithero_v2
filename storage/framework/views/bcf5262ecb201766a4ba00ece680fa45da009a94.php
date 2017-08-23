@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'E-recruit Hero | ' . $job->job_title); ?>
+<?php $__env->startSection('title', 'E-recruit Hero | ' . ucfirst($job->job_title)); ?>
 
 <?php $__env->startSection('content'); ?>
 

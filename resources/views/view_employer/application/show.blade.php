@@ -24,6 +24,26 @@
 		<section class="content">
 
 			<div class="row">
+				<div class="col-md-12">
+					@if (Session::has('success'))
+
+					  <div class="alert alert-success" role="alert">
+					    <div class="box-tools pull-right">
+					      {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}
+
+					    </div>
+					    <i class="fa fa-check"></i>&nbsp;{{ Session::get('success')}} 
+					  </div>
+					@elseif (Session::has('danger'))
+					  <div class="alert alert-danger" role="alert">
+					    <div class="box-tools pull-right">
+					      {{-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button> --}}
+
+					    </div>
+					    <i class="fa fa-times"></i>&nbsp;{{ Session::get('danger')}} 
+					  </div>
+					@endif
+				</div>
 				<div class="col-md-3">
 					<div class="box box-primary">
 						<div class="box-header"></div>
@@ -246,12 +266,6 @@
 
 
 
-
-
-
-
-
-
 						</div>
 					</div>
 				</div>
@@ -262,12 +276,45 @@
 			</div>
 			
 		
+			@if (is_null($getStatus))
 			<div class="col-md-4 col-md-offset-8">
+				{!! Form::open(['route' => ['application.invite', $thisUser->id], 'method' => 'POST']) !!}
+				
+				   <div class="row">
+				   	<div class="col-md-6">
+				   		 <div class="form-group{{ $errors->has('job_id') ? ' has-error' : '' }}">
+				        {{-- {!! Form::label('job_id', 'Job Id') !!} --}}
+				        {!! Form::hidden('job_id', $getJobId->id, ['class' => 'form-control', 'required' => 'required']) !!}
+				        <small class="text-danger">{{ $errors->first('job_id') }}</small>
+				    </div>
+				   	</div>
+				   	<div class="col-md-6">
+				   		<div class="form-group{{ $errors->has('user_id') ? ' has-error' : '' }}">
+				        {{-- {!! Form::label('user_id', 'user id') !!} --}}
+				        {!! Form::hidden('user_id', $thisUser->id, ['class' => 'form-control', 'required' => 'required']) !!}
+				        <small class="text-danger">{{ $errors->first('user_id') }}</small>
+				    </div>
+				   	</div>
+				   </div>
+
+				    
 				
 					<button class="btn btn-flat btn-primary btn-lg btn-block"><i class="fa fa-calendar pull-left">&nbsp;</i>Invite for interview</button>
 				
+				{!! Form::close() !!}
+				
 			</div>
-			<br><br>
+			@else
+
+
+				{!! Form::open(['route'=> ['application.cancel', $getStatus->id, $thisUser->id], 'method' => 'POST']) !!}
+					{{ method_field('delete') }}
+			    	{!! Form::submit('Cancel Invitation', ["class" => 'btn btn-flat btn-danger btn-lg pull-right']) !!}
+
+	    		{!! Form::close() !!}
+
+			@endif
+			<br><br><br><br>
 			
 
 		</section>

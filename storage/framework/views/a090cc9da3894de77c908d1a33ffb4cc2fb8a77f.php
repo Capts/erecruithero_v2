@@ -46,7 +46,7 @@
               <div class="row">
                 <div class="col-md-10">
                   <div class="input-group">
-                    <input type="text" name="search" class="form-control input-lg" placeholder="Search jobs">
+                    <input type="text" name="search" class="form-control input-lg" placeholder="Search skilled applicants">
                     <span class="input-group-btn">
                       <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
                       </button>

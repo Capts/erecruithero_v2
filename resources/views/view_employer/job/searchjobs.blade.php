@@ -108,10 +108,12 @@
 								</div>
 
 								<div class="box-body">
+									@foreach ($searchjobs as $searchjob)
+									@endforeach
 									@foreach ($qualified as $q)
 										<div class="box-footer">
 											
-											<i class="fa fa-check-circle pull-right" style="color:green;">&nbsp; </i><small class="pull-right" style="color:silver;">matched!</small><a href="{{ route('application.profile', [$q->user->id, $q->user->slug]) }}">{{ ucfirst($q->user->firstname) .' ' .ucfirst($q->user->lastname) }}</a> <br>
+											<i class="fa fa-check-circle pull-right" style="color:green;">&nbsp; </i><small class="pull-right" style="color:silver;">matched!</small><a href="{{ route('application.profile', [$q->user->id, $q->user->slug, $searchjob->id]) }}">{{ ucfirst($q->user->firstname) .' ' .ucfirst($q->user->lastname) }}</a> <br>
 										</div>
 								
 									@endforeach

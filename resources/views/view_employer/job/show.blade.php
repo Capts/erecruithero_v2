@@ -1,7 +1,7 @@
 @extends('view_employer.layouts.app')
 
 
-@section('title', 'E-recruit Hero | ' . $job->job_title)
+@section('title', 'E-recruit Hero | ' . ucfirst($job->job_title))
 
 @section('content')
 
