@@ -44,14 +44,14 @@
 						<?php echo Form::close(); ?>
 
 							
-							  <?php echo Form::open(['route'=> ['skill.destroy', $skill->id], 'method' => 'POST']); ?>
+							<?php echo Form::open(['route'=> ['skill.destroy', $skill->id], 'method' => 'POST']); ?>
 
 								<?php echo e(method_field('delete')); ?>
 
 						    	<?php echo Form::submit('delete skill', ["class" => 'btn btn-flat btn-danger pull-left']); ?>
 
 
-				    			<?php echo Form::close(); ?>
+				    		<?php echo Form::close(); ?>
 
 
 					</div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Skill;
 use App\Invitation;
+
 use App\Job;
 use DB;
 use Session;
@@ -55,6 +56,8 @@ class ApplicationController extends Controller
       $invitation->job_id = $request->job_id;
 
       $invitation->save();
+
+    
 
       Session::flash('success', 'The invitation was sent!');
 

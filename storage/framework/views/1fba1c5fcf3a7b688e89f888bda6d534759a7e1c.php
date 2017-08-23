@@ -37,7 +37,7 @@
 				                		<fieldset>
 				                			<legend><h5 style="margin-left: 10px;color:#40a04d;"><b>Basic information</b></h5></legend>
 				                				
-				                					<div class="col-xs-6">
+				                					<div class="col-md-6">
 				                						<div class="form-group<?php echo e($errors->has('firstname') ? ' has-error' : ''); ?>">
 				                						    <?php echo Form::label('firstname', 'First name'); ?>
 
@@ -46,7 +46,7 @@
 				                						    <small class="text-danger"><?php echo e($errors->first('firstname')); ?></small>
 				                						</div>
 				                					</div>
-				                					<div class="col-xs-6">
+				                					<div class="col-md-6">
 				                						<div class="form-group<?php echo e($errors->has('lastname') ? ' has-error' : ''); ?>">
 				                						    <?php echo Form::label('lastname', 'Last name'); ?>
 
@@ -59,9 +59,7 @@
 		                						   
 
 		                						
-		                							<div class="col-xs-6">
-		                								<!-- Date -->
-		                								
+		                							<div class="col-md-6">
 		                								<div class="form-group<?php echo e($errors->has('bday') ? ' has-error' : ''); ?>">
 		                								    <?php echo Form::label('bday', 'Birthday'); ?>
 
@@ -70,16 +68,12 @@
 		                								    <small class="text-danger"><?php echo e($errors->first('bday')); ?></small>
 		                								</div>
 		                							</div>
-		                							<div class="col-xs-2">
-		                								<div class="form-group<?php echo e($errors->has('age') ? ' has-error' : ''); ?>">
-		                								    <?php echo Form::label('age', 'Age'); ?>
-
-		                								    <?php echo Form::text('age', ( isset($users->profile->age) ? $users->profile->age : null ), ['class' => 'form-control', 'required' => 'required', 'id' => 'age', 'max' => '2' , 'readonly', 'step' => ' ']); ?>
+		                							
+		                								    <?php echo Form::hidden('age', ( isset($users->profile->age) ? $users->profile->age : null ), ['class' => 'form-control', 'required' => 'required', 'id' => 'age', 'max' => '2' , 'readonly', 'step' => ' ']); ?>
 
 		                								    <small class="text-danger"><?php echo e($errors->first('age')); ?></small>
-		                								</div>
-		                							</div>
-		                							<div class="col-xs-4">
+		                								
+		                							<div class="col-md-6">
 		                								<div class="form-group<?php echo e($errors->has('civil_status') ? ' has-error' : ''); ?>">
 		                								    <?php echo Form::label('civil_status', 'Civil Status'); ?>
 
@@ -94,7 +88,7 @@
 											<fieldset>
 												<legend><h5 style="margin-left: 10px;color:#40a04d;"><b>Contact Details</b></h5></legend>
 													
-		                							<div class="col-xs-6">
+		                							<div class="col-md-6">
 		                								<div class="form-group<?php echo e($errors->has('telephone') ? ' has-error' : ''); ?>">
 		                								    <?php echo Form::label('telephone', 'Telephone'); ?>
 
@@ -103,7 +97,7 @@
 		                								    <small class="text-danger"><?php echo e($errors->first('telephone')); ?></small>
 		                								</div>
 		                							</div>
-		                							<div class="col-xs-6">
+		                							<div class="col-md-6">
 		                								<div class="form-group<?php echo e($errors->has('mobile') ? ' has-error' : ''); ?>">
 		                								    <?php echo Form::label('mobile', 'Mobile'); ?>
 
@@ -118,7 +112,7 @@
 		                						<legend>
 		                							<h5 style="margin-left:10px;color:#40a04d;"><b>Address</b></h5>
 		                						</legend>
-		                						<div class="col-xs-6">
+		                						<div class="col-md-6">
 		                							<div class="form-group<?php echo e($errors->has('street') ? ' has-error' : ''); ?>">
 		                							    <?php echo Form::label('street', 'Street'); ?>
 
@@ -127,7 +121,7 @@
 		                							    <small class="text-danger"><?php echo e($errors->first('street')); ?></small>
 		                							</div>
 		                						</div>
-		                						<div class="col-xs-6">
+		                						<div class="col-md-6">
 		                							<div class="form-group<?php echo e($errors->has('barangay') ? ' has-error' : ''); ?>">
 		                							    <?php echo Form::label('barangay', 'Barangay'); ?>
 
@@ -136,7 +130,7 @@
 		                							    <small class="text-danger"><?php echo e($errors->first('barangay')); ?></small>
 		                							</div>
 		                						</div>
-		                						<div class="col-xs-6">
+		                						<div class="col-md-6">
 		                							<div class="form-group<?php echo e($errors->has('city') ? ' has-error' : ''); ?>">
 		                							    <?php echo Form::label('city', 'City'); ?>
 
@@ -145,7 +139,7 @@
 		                							    <small class="text-danger"><?php echo e($errors->first('city')); ?></small>
 		                							</div>
 		                						</div>
-		                						<div class="col-xs-6">
+		                						<div class="col-md-6">
 		                							<div class="form-group<?php echo e($errors->has('province') ? ' has-error' : ''); ?>">
 		                							    <?php echo Form::label('province', 'Province'); ?>
 
@@ -154,7 +148,7 @@
 		                							    <small class="text-danger"><?php echo e($errors->first('province')); ?></small>
 		                							</div>
 		                						</div>
-		                						<div class="col-xs-6">
+		                						<div class="col-md-12">
 		                							<div class="form-group<?php echo e($errors->has('country') ? ' has-error' : ''); ?>">
 		                							    <?php echo Form::label('country', 'Country'); ?>
 
@@ -169,7 +163,7 @@
 				                	
 								</div>
 								<div class="col-md-6">
-									<div class="col-xs-12">
+									<div class="col-md-12">
 										
 									</div>
 

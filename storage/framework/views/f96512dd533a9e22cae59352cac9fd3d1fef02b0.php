@@ -56,16 +56,12 @@
 		                								    <small class="text-danger"><?php echo e($errors->first('bday')); ?></small>
 		                								</div>
 												</div>
-												<div class="col-xs-2">
-													<div class="form-group<?php echo e($errors->has('age') ? ' has-error' : ''); ?>">
-													    <?php echo Form::label('age', 'Age'); ?>
-
-													    <?php echo Form::text('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']); ?>
+												
+													    <?php echo Form::hidden('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']); ?>
 
 													    <small class="text-danger"><?php echo e($errors->first('age')); ?></small>
-													</div>
-												</div>
-												<div class="col-xs-4">
+													
+												<div class="col-xs-6">
 													<div class="form-group<?php echo e($errors->has('civil_status') ? ' has-error' : ''); ?>">
 													    <?php echo Form::label('civil_status', 'Civil Status'); ?>
 

@@ -46,21 +46,20 @@
 			                					    <small class="text-danger">{{ $errors->first('lastname') }}</small>
 			                				
 
-												<div class="col-xs-6">
+												<div class="col-md-6">
 													<div class="form-group{{ $errors->has('bday') ? ' has-error' : '' }}">
 		                								    {!! Form::label('bday', 'Birthday') !!}
 		                								    {!! Form::text('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control manual', 'placeholder'=>'mm/dd/yyyy', 'required' => 'required']) !!}
 		                								    <small class="text-danger">{{ $errors->first('bday') }}</small>
 		                								</div>
 												</div>
-												<div class="col-xs-2">
-													<div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
-													    {!! Form::label('age', 'Age') !!}
-													    {!! Form::text('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']) !!}
+												{{-- <div class="col-xs-2">
+													<div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}"> --}}
+													    {!! Form::hidden('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']) !!}
 													    <small class="text-danger">{{ $errors->first('age') }}</small>
-													</div>
-												</div>
-												<div class="col-xs-4">
+													{{-- </div>
+												</div> --}}
+												<div class="col-md-6">
 													<div class="form-group{{ $errors->has('civil_status') ? ' has-error' : '' }}">
 													    {!! Form::label('civil_status', 'Civil Status') !!}
 													    {!! Form::select('civil_status', ['single' => 'single','married' => 'married'], null, ['selected', 'placeholder' => 'I am', 'class' => 'form-control', 'required']) !!}
