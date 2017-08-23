@@ -7,6 +7,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+
+use Carbon\Carbon;
+
 class InviteForInterview extends Notification
 {
     use Queueable;
@@ -26,24 +29,18 @@ class InviteForInterview extends Notification
      */
     public function via($notifiable)
     {
-        return ['database','broadcast'];
+        return ['database'];
     }
 
 
     public function toDatabase($notifiable){
 
         return [
-            'inviteTime'=> \Carbon::now()
+            'inviteTime'=> Carbon::now()
         ];
     }
 
-     public function toBroadcast($notifiable){
-
-        return  new Broadcast([
-            'inviteTime'=> \Carbon::now()
-        ]);
-    }
-
+     
 
 
 

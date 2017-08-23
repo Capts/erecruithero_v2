@@ -184,7 +184,14 @@
 				        <?php echo Form::close(); ?>
 
 			                	
-								
+							<div class="box box-primary">
+								<div class="box-header">
+									
+								</div>
+								<div class="box-body">
+									asfasf
+								</div>
+							</div>
 			            </div>
 			        </div>
 			    </div>

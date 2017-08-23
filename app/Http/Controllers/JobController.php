@@ -51,7 +51,7 @@ class JobController extends Controller
 
         $countJob = Job::count();
         $countArchive = Job::where('status', 'archived')->count();
-        $countAvailable = Job::where('status', '')->count();
+        $countAvailable = Job::where('status', null)->count();
 
 
         $jobs = Job::whereNull('status')->orderBy('created_at', 'desc')->paginate(15);

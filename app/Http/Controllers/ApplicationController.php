@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Notifications\InviteForInterview;
 
 use App\User;
 use App\Skill;
 use App\Invitation;
-
 use App\Job;
 use DB;
 use Session;
@@ -57,7 +57,7 @@ class ApplicationController extends Controller
 
       $invitation->save();
 
-    
+      auth()->user()->notify(new InviteForInterview());
 
       Session::flash('success', 'The invitation was sent!');
 

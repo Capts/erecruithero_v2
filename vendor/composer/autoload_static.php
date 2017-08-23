@@ -281,7 +281,6 @@ class ComposerStaticInitd79e368c10c9aecf758ad19d150ca95a
 
     public static $classMap = array (
         'App\\Address' => __DIR__ . '/../..' . '/app/Address.php',
-        'App\\Application' => __DIR__ . '/../..' . '/app/Application.php',
         'App\\CharacterReference' => __DIR__ . '/../..' . '/app/CharacterReference.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Country' => __DIR__ . '/../..' . '/app/Country.php',
@@ -310,7 +309,6 @@ class ComposerStaticInitd79e368c10c9aecf758ad19d150ca95a
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Invitation' => __DIR__ . '/../..' . '/app/Invitation.php',
-        'App\\Invite' => __DIR__ . '/../..' . '/app/Invite.php',
         'App\\Job' => __DIR__ . '/../..' . '/app/Job.php',
         'App\\JobUser' => __DIR__ . '/../..' . '/app/JobUser.php',
         'App\\Notifications\\InviteForInterview' => __DIR__ . '/../..' . '/app/Notifications/InviteForInterview.php',
