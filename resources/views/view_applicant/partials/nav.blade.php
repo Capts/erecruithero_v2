@@ -25,18 +25,24 @@
                     <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span>
                 </a>
                 <ul class="dropdown-menu" >
-                    <li class="header">You have 10 notifications</li>
+                    @if (count(auth()->user()->unreadNotifications) <= 1 )
+                         <li class="header">You have {{ count(auth()->user()->unreadNotifications) }} notification</li>
                     <li>
+                    @else
+                        <li class="header">You have {{ count(auth()->user()->unreadNotifications) }} notifications</li>
+                        <li>
+                    @endif
+                    
                         <!-- inner menu: contains the actual data -->
                         <ul class="menu">
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                </a>
+                                @foreach (auth()->user()->unreadNotifications as $notif)
+                                    <a href="#">{{ $notif->type }}</a>
+                                @endforeach
                             </li>
                         </ul>
                     </li>
-                    <li class="footer"><a href="#">View all</a></li>
+                    {{-- <li class="footer"><a href="#">View all</a></li> --}}
                 </ul>
             </li>
             <!-- Tasks: style can be found in dropdown.less -->

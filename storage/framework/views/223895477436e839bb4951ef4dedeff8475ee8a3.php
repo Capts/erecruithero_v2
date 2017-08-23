@@ -25,18 +25,24 @@
                     <span class="label label-danger"><?php echo e(count(auth()->user()->unreadNotifications)); ?></span>
                 </a>
                 <ul class="dropdown-menu" >
-                    <li class="header">You have 10 notifications</li>
+                    <?php if(count(auth()->user()->unreadNotifications) <= 1 ): ?>
+                         <li class="header">You have <?php echo e(count(auth()->user()->unreadNotifications)); ?> notification</li>
                     <li>
+                    <?php else: ?>
+                        <li class="header">You have <?php echo e(count(auth()->user()->unreadNotifications)); ?> notifications</li>
+                        <li>
+                    <?php endif; ?>
+                    
                         <!-- inner menu: contains the actual data -->
                         <ul class="menu">
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                </a>
+                                <?php $__currentLoopData = auth()->user()->unreadNotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notif): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <a href="#"><?php echo e($notif->type); ?></a>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </li>
                         </ul>
                     </li>
-                    <li class="footer"><a href="#">View all</a></li>
+                    
                 </ul>
             </li>
             <!-- Tasks: style can be found in dropdown.less -->

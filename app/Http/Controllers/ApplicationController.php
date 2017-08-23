@@ -57,7 +57,7 @@ class ApplicationController extends Controller
 
       $invitation->save();
 
-      auth()->user()->notify(new InviteForInterview());
+      $user->notify(new InviteForInterview());
 
       Session::flash('success', 'The invitation was sent!');
 
