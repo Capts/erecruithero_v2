@@ -127,5 +127,57 @@ class SkillTableSeeder extends Seeder
         $app_skills5->save();
 
         
+
+        $taylorSkill1 = new Skill();
+        $taylorSkill1->user_id = 5;
+        $taylorSkill1->skill_name = 'Professional singer';
+        $taylorSkill1->save();
+
+        $taylorSkill2 = new Skill();
+        $taylorSkill2->user_id = 5;
+        $taylorSkill2->skill_name = 'Singer';
+        $taylorSkill2->save();
+
+        $taylorSkill3 = new Skill();
+        $taylorSkill3->user_id = 5;
+        $taylorSkill3->skill_name = 'Song writer';
+        $taylorSkill3->save();
+
+        $taylorSkill4 = new Skill();
+        $taylorSkill4->user_id = 5;
+        $taylorSkill4->skill_name = 'Professional dancer';
+        $taylorSkill4->save();
+
+        $taylorSkill5 = new Skill();
+        $taylorSkill5->user_id = 5;
+        $taylorSkill5->skill_name = 'Sales and marketing';
+        $taylorSkill5->save();
+
+
+
+        $tonySkill1 = new Skill();
+        $tonySkill1->user_id = 6;
+        $tonySkill1->skill_name = 'Licensed dentist';
+        $tonySkill1->save();
+
+        $tonySkill2 = new Skill();
+        $tonySkill2->user_id = 6;
+        $tonySkill2->skill_name = 'registered nurse';
+        $tonySkill2->save();
+
+        $tonySkill3 = new Skill();
+        $tonySkill3->user_id = 6;
+        $tonySkill3->skill_name = 'Singer';
+        $tonySkill3->save();
+
+        $tonySkill4 = new Skill();
+        $tonySkill4->user_id = 6;
+        $tonySkill4->skill_name = 'English teacher';
+        $tonySkill4->save();
+
+        $tonySkill5 = new Skill();
+        $tonySkill5->user_id = 6;
+        $tonySkill5->skill_name = 'teacher';
+        $tonySkill5->save();
     }
 }

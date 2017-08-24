@@ -97,16 +97,104 @@ class ApplicantSchoolController extends Controller
  
     public function edit($id)
     {
-        //
+
+        
+
+      
+
+        // return view('view_applicant.school.edit_schoolT', compact('schoolT'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $schoolT = SchoolTertiary::find($id);
+        $schoolS = SchoolSecondary::find($id);
+        $schoolP = SchoolPrimary::find($id);
+        // dd($schoolP);
+       
+
+        if ($request->invi == 'tertiary') {
+            $this->validate($request, [
+                'ter_school' => 'required|max:60',
+                'ter_degree' => 'required|max:25',
+                'ter_field_of_study' => 'required|max:50',
+                'ter_major' => 'required|max:25',
+                'ter_start_year' => 'required|max:25',
+                'ter_end_year' => 'required|max:25'
+                ]);
+
+         
+            $schoolT->user_id = Auth::user()->id;
+            $schoolT->ter_school = $request->input('ter_school');
+            $schoolT->ter_address = $request->input('ter_address');
+            $schoolT->ter_degree = $request->input('ter_degree');
+            $schoolT->ter_field_of_study = $request->input('ter_field_of_study');
+            $schoolT->ter_major = $request->input('ter_major');
+            $schoolT->ter_start_year = $request->input('ter_start_year');
+            $schoolT->ter_end_year = $request->input('ter_end_year');
+
+            $schoolT->save();
+            Session::flash('success', 'You successfully edited a tertiary school.');
+            return redirect()->route('profile.index', [Auth::user()->id, Auth::user()->slug]);
+
+        }
+        if($request->invi == 'secondary'){
+            $this->validate($request, [
+                'sec_school' => 'required|max:60',
+                'sec_address' => 'required|max:60',
+                'sec_start' => 'required|max:25',
+                'sec_end' => 'required|max:25'
+                ]);
+
+          
+            $schoolS->user_id = Auth::user()->id;
+            $schoolS->sec_school = $request->input('sec_school');
+            $schoolS->sec_address = $request->input('sec_address');
+            $schoolS->sec_start = $request->input('sec_start');
+            $schoolS->sec_end = $request->input('sec_end');
+
+            $schoolS->save();
+            Session::flash('success', 'You successfully edited a secondary school.');
+            return redirect()->route('profile.index', [Auth::user()->id, Auth::user()->slug]);
+
+        }
+        if($request->invi == 'primary'){
+            $this->validate($request, [
+                'pri_school' => 'required|max:60',
+                'pri_address' => 'required|max:60',
+                'pri_start' => 'required|max:25',
+                'pri_end' => 'required|max:25'
+                ]);
+
+        
+            $schoolP->user_id = Auth::user()->id;
+            $schoolP->pri_school = $request->input('pri_school');
+            $schoolP->pri_address = $request->input('pri_address');
+            $schoolP->pri_start = $request->input('pri_start');
+            $schoolP->pri_end = $request->input('pri_end');
+
+            $schoolP->save();
+            Session::flash('success', 'You successfully edited a primary school.');
+            return redirect()->route('profile.index', [Auth::user()->id, Auth::user()->slug]);
+        }
     }
 
     public function destroy($id)
     {
-        //
+
+
+        $schoolT = SchoolTertiary::find($id);
+        $schoolS = SchoolSecondary::find($id);
+        $schoolP = SchoolPrimary::find($id);
+        // dd($schoolT);
+
+        $schoolT->delete();
+        $schoolS->delete();
+        $schoolP->delete();
+
+        
+
+        // Session::flash('danger', 'You successfully removed your school');
+        // return redirect()->route('profile.index', [Auth::user()->id,Auth::user()->slug]);
     }
 }

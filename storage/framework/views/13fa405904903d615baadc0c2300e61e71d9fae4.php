@@ -201,7 +201,9 @@
 						</div>
 						<div class="box-body">
 
-
+							<?php if($applicant->schoolTertiary->isEmpty() and $applicant->schoolSecondary->isEmpty() and $applicant->schoolPrimary->isEmpty() ): ?>
+								<small style="color: silver">nothing to show here</small>
+							<?php else: ?>
 								<?php if(is_null($applicant->schoolTertiary)): ?>
 									<small style="color: silver">nothing to show here</small>
 								<?php else: ?>
@@ -265,7 +267,7 @@
 								</div>
 								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 								<?php endif; ?>
-
+							<?php endif; ?>
 
 
 						</div>

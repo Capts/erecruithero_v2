@@ -7,8 +7,9 @@
 							<?php $__currentLoopData = $loopExp; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $exp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								
 									<div class="box-body">
-										<a href="#"><?php echo e($exp->exp_title); ?> </a>at  <?php echo e($exp->exp_company); ?> <br>
-										<?php echo e($exp->exp_activities); ?> <br>
+										<?php echo e($exp->exp_title); ?> at<a href="#">  <?php echo e($exp->exp_company); ?></a>
+										<span><a href="<?php echo e(route('experience.edit', $exp->id)); ?>"><i class="fa fa-pencil pull-right"></i></a></span> <br>
+										<?php echo e(ucfirst(str_limit($exp->exp_activities, 30) )); ?> <br>
 										<?php echo e($exp->exp_span_time); ?>
 
 									</div>

@@ -14,6 +14,7 @@ class CreateSchoolTertiariesTable extends Migration
     public function up()
     {
         Schema::create('school_tertiaries', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id');
             $table->string('ter_school')->nullable();
             $table->string('ter_address')->nullable();

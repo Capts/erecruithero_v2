@@ -63,6 +63,27 @@ class UserTableSeeder extends Seeder
         $applicant2->save();
         $applicant2->roles()->attach($role_applicant);
 
+        $taylor = new User();
+        $taylor->firstname = 'Taylor';
+        $taylor->lastname = 'Swift';
+        $taylor->email = 'taylor@gmail.com';
+        $taylor->password = bcrypt('secret');
+        $taylor->avatar = 'public/default/avatars/female.png';
+        $taylor->slug = str_slug('taylor-swift');
+        $taylor->gender = "female";
+        $taylor->save();
+        $taylor->roles()->attach($role_applicant);
+
+        $tony = new User();
+        $tony->firstname = 'Tony';
+        $tony->lastname = 'Chopper';
+        $tony->email = 'tony@gmail.com';
+        $tony->password = bcrypt('secret');
+        $tony->avatar = 'public/default/avatars/male.png';
+        $tony->slug = str_slug('tony-chopper');
+        $tony->gender = "male";
+        $tony->save();
+        $tony->roles()->attach($role_applicant);
 
     }
 

@@ -153,6 +153,7 @@
 										<h5 class="text-center"><i class="fa fa-graduation-cap">&nbsp;</i>
 										<b>EDUCATION</b>
 										<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add school" data-toggle="modal" data-target="#school_modal-<?php echo e(Auth::user()->id); ?>"><i class="fa fa-plus"></i></a>
+										
 										</h5>
 									</div>
 									<?php echo $__env->make('view_applicant.school.tab_index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

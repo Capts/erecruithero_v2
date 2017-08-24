@@ -7,8 +7,9 @@
 							@foreach ($loopExp as $exp)
 								
 									<div class="box-body">
-										<a href="#">{{ $exp->exp_title }} </a>at  {{$exp->exp_company}} <br>
-										{{ $exp->exp_activities}} <br>
+										{{ $exp->exp_title }} at<a href="#">  {{$exp->exp_company}}</a>
+										<span><a href="{{ route('experience.edit', $exp->id) }}"><i class="fa fa-pencil pull-right"></i></a></span> <br>
+										{{ ucfirst(str_limit($exp->exp_activities, 30) )}} <br>
 										{{ $exp->exp_span_time}}
 									</div>
 

@@ -200,7 +200,9 @@
 						</div>
 						<div class="box-body">
 
-
+							@if ($applicant->schoolTertiary->isEmpty() and $applicant->schoolSecondary->isEmpty() and $applicant->schoolPrimary->isEmpty() )
+								<small style="color: silver">nothing to show here</small>
+							@else
 								@if (is_null($applicant->schoolTertiary))
 									<small style="color: silver">nothing to show here</small>
 								@else
@@ -263,7 +265,7 @@
 								</div>
 								@endforeach
 								@endif
-
+							@endif
 
 
 						</div>

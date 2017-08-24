@@ -14,6 +14,7 @@ class CreateSchoolPrimariesTable extends Migration
     public function up()
     {
         Schema::create('school_primaries', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('user_id');
             //elementary
             $table->string('pri_school')->nullable();

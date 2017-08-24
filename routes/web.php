@@ -27,7 +27,7 @@ Route::get('applicant/profile/id/{id}/{slug}', 'ApplicantProfileController@index
 
 Route::resource('applicant/profile', 'ApplicantProfileController', ['except' => ['index', 'show', 'destroy', 'store', 'create']]);
 Route::resource('applicant/address', 'ApplicantAddressController', ['except' =>  ['index', 'destroy']]);
-Route::resource('applicant/school', 'ApplicantSchoolController', ['except' =>  ['index', 'destroy', 'create']]);
+Route::resource('applicant/school', 'ApplicantSchoolController', ['except' =>  ['index', 'create']]);
 Route::resource('applicant/skill', 'SkillController', ['except' =>  ['index', 'show', 'create']]);
 Route::resource('applicant/experience', 'ExperienceController');
 Route::get('applicants/jobs', 'ApplicantJobController@searchAJob')->name('searchjob');

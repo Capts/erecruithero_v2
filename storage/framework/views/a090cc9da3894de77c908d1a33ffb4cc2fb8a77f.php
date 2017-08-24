@@ -42,11 +42,11 @@
             <div class="col-md-10 col-md-offset-2">
             <br><br><br><br>
               <h1>Welcome, <?php echo e(Auth::user()->firstname); ?>!</h1>
-              <h3 class="weight-300">search a skilled applicants</h3>
+              <h3 class="weight-300">search for a qualified  applicants</h3>
               <div class="row">
                 <div class="col-md-10">
                   <div class="input-group">
-                    <input type="text" name="search" class="form-control input-lg" placeholder="Search skilled applicants">
+                    <input type="text" name="search" class="form-control input-lg" placeholder="Search for a qualified  applicants">
                     <span class="input-group-btn">
                       <button type="submit"  id="search-btn" class="btn btn-flat bg-olive btn-lg"><i class="fa fa-search"></i>
                       </button>
@@ -165,27 +165,28 @@
       <br><br><br><br>
       <div id="content">
         <div class="row">
-          <div class="col-md-4">
-            <div class="well">
-              <legend class="text-center">About Us</legend>
-              <fieldset>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ea debitis. Rem cupiditate expedita ut harum, minima iure et eveniet architecto, quos mollitia officiis totam excepturi vitae, commodi sapiente tempora!
-              </fieldset>
-            </div>
-          </div>
+         
           <div class="col-md-4">
             <div class="well">
               <legend class="text-center">Contact Us</legend>
               <fieldset>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ea debitis. Rem cupiditate expedita ut harum, minima iure et eveniet architecto, quos mollitia officiis totam excepturi vitae, commodi sapiente tempora!
+                For inqueries, email us at erecruithero@gmail.com. or send contact us via phone through +63977572473
               </fieldset>
             </div>
           </div>
           <div class="col-md-4">
             <div class="well">
-              <legend class="text-center">Learn more</legend>
+              <legend class="text-center">Learn More</legend>
               <fieldset>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ea debitis. Rem cupiditate expedita ut harum, minima iure et eveniet architecto, quos mollitia officiis totam excepturi vitae, commodi sapiente tempora!
+                Want to learn more?? Make a free account and find the job you want and apply! It's easy as one-two-tree.
+              </fieldset>
+            </div>
+          </div>
+           <div class="col-md-4">
+            <div class="well">
+              <legend class="text-center">About Us</legend>
+              <fieldset>
+                E-recruit hero is a human resource system that helps both employers and applicants find and match jobs with qualified applicants. With simply steps, the employer can find qualified applicants without looking at all the resumes.
               </fieldset>
             </div>
           </div>
