@@ -76,11 +76,11 @@
 
 								{!! Form::close() !!}
 
-								{!! Form::open(['route'=> ['school.destroy', $schoolT->id], 'method' => 'POST']) !!}
+								{{-- {!! Form::open(['route'=> ['school.destroy', $schoolT->id], 'method' => 'POST']) !!}
 								{{ method_field('delete') }}
 								{!! Form::button("<i class='fa fa-trash'>&nbsp;</i>Remove this school", ['type' => 'submit',  "class" => 'btn btn-flat btn-danger']) !!}
 
-								{!! Form::close() !!}
+								{!! Form::close() !!} --}}
 
 	      			
 	      		</div>

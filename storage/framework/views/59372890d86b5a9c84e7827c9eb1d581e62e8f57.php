@@ -7,7 +7,7 @@
 					<?php if(is_null($schoolT) and is_null($schoolS) and is_null($schoolP) ): ?>
 						<h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add a school</em></h6>
 					<?php else: ?>
-						<?php if(is_null($schoolT) or $getAndLoopT->isEmpty()): ?>
+						<?php if(is_null($schoolT)): ?>
 							
 						<?php else: ?>
 						<h4>
