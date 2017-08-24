@@ -6,7 +6,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-language fa-2x">&nbsp;</i>Add some skill or qualifications</h4>
+	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-language fa-2x">&nbsp;</i>Add some skills or qualifications</h4>
 	      </div>
 	      <div class="modal-body">
 	      	<div class="row">
@@ -17,7 +17,7 @@
 						{!! Form::open(['method' => 'POST', 'route' => 'skill.store']) !!}
 
 						    <div class="form-group{{ $errors->has('skill_name') ? ' has-error' : '' }}">
-						        {!! Form::label('skill_name', 'Skill') !!}
+						        {!! Form::label('skill_name', 'Skills or qualifications') !!}
 						        {!! Form::text('skill_name', null, ['class' => 'form-control', 'autofocus' => 'autofocus','required' => 'required']) !!}
 						        <small class="text-danger">{{ $errors->first('skill_name') }}</small>
 						    </div>

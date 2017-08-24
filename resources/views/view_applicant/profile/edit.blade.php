@@ -94,7 +94,7 @@
 			                					<div class="col-xs-4">
 			                						<div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
 			                						    {!! Form::label('street', 'Street') !!}
-			                						    {!! Form::text('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+			                						    {!! Form::number('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']) !!}
 			                						    <small class="text-danger">{{ $errors->first('street') }}</small>
 			                						</div>
 			                					</div>

@@ -47,7 +47,7 @@
 			                					    <small class="text-danger"><?php echo e($errors->first('lastname')); ?></small>
 			                				
 
-												<div class="col-xs-6">
+												<div class="col-md-6">
 													<div class="form-group<?php echo e($errors->has('bday') ? ' has-error' : ''); ?>">
 		                								    <?php echo Form::label('bday', 'Birthday'); ?>
 
@@ -61,7 +61,7 @@
 
 													    <small class="text-danger"><?php echo e($errors->first('age')); ?></small>
 													
-												<div class="col-xs-6">
+												<div class="col-md-6">
 													<div class="form-group<?php echo e($errors->has('civil_status') ? ' has-error' : ''); ?>">
 													    <?php echo Form::label('civil_status', 'Civil Status'); ?>
 
@@ -103,7 +103,7 @@
 			                						<div class="form-group<?php echo e($errors->has('street') ? ' has-error' : ''); ?>">
 			                						    <?php echo Form::label('street', 'Street'); ?>
 
-			                						    <?php echo Form::text('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']); ?>
+			                						    <?php echo Form::number('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']); ?>
 
 			                						    <small class="text-danger"><?php echo e($errors->first('street')); ?></small>
 			                						</div>
@@ -174,7 +174,7 @@
 			    </div>
 			</div>
 		
-			
+		
 				
 
 		</section>
@@ -187,5 +187,8 @@
 <!-- ./wrapper -->
 
 <?php $__env->stopSection(); ?>
+
+
+
 
 <?php echo $__env->make('view_applicant.layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
