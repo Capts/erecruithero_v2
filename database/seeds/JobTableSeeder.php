@@ -14,7 +14,7 @@ class JobTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\Job');
-        for ($i=1; $i <= 500; $i++) { 
+        for ($i=1; $i <= 100; $i++) { 
         	DB::table('jobs')->insert([
                 'user_id' => 1,
 	        	'job_title' => $faker->word,
