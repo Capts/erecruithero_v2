@@ -6,7 +6,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        
+
 	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-graduation-cap fa-2x"></i>Edit education from <small><a href="#"><?php echo e($schoolT->ter_school); ?></a></small></h4>
 	      </div>
 	      <div class="modal-body">
@@ -87,22 +87,14 @@
 									</div>
 								</div>
 
-								<?php echo Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']); ?>
+								<?php echo Form::submit('Update', ['class' => 'btn btn-success btn-flat pull-right']); ?>
 
 
 
 								<?php echo Form::close(); ?>
 
 
-								<?php echo Form::open(['route'=> ['school.destroy', $schoolT->id], 'method' => 'POST']); ?>
-
-								<?php echo e(method_field('delete')); ?>
-
-								<?php echo Form::button("<i class='fa fa-trash'>&nbsp;</i>Remove this school", ['type' => 'submit',  "class" => 'btn btn-flat btn-danger']); ?>
-
-
-								<?php echo Form::close(); ?>
-
+								
 
 	      			
 	      		</div>

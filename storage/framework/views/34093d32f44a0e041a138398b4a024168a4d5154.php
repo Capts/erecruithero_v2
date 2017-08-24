@@ -63,22 +63,13 @@
 	      						   </div>
 	      						    <div class="section">
 	      						    	
-	      						    	<?php echo Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']); ?>
+	      						    	<?php echo Form::submit('Update', ['class' => 'btn btn-success btn-flat pull-right']); ?>
 
 	      						    </div>
 	      						    <br>
 	      						    <br>
 	      						<?php echo Form::close(); ?>
 
-
-	      						<?php echo Form::open(['route'=> ['school.destroy', $schoolS->id], 'method' => 'POST']); ?>
-
-								<?php echo e(method_field('delete')); ?>
-
-								<?php echo Form::button("<i class='fa fa-trash'>&nbsp;</i>Remove this school", ['type' => 'submit',  "class" => 'btn btn-flat btn-danger']); ?>
-
-
-								<?php echo Form::close(); ?>
 
 	      					
 

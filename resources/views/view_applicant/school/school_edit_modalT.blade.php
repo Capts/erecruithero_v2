@@ -6,7 +6,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        
+
 	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-graduation-cap fa-2x"></i>Edit education from <small><a href="#">{{ $schoolT->ter_school }}</a></small></h4>
 	      </div>
 	      <div class="modal-body">
@@ -71,7 +71,7 @@
 									</div>
 								</div>
 
-								{!! Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']) !!}
+								{!! Form::submit('Update', ['class' => 'btn btn-success btn-flat pull-right']) !!}
 
 
 								{!! Form::close() !!}

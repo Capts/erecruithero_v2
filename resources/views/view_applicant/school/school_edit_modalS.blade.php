@@ -53,18 +53,18 @@
 	      						   </div>
 	      						    <div class="section">
 	      						    	
-	      						    	{!! Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']) !!}
+	      						    	{!! Form::submit('Update', ['class' => 'btn btn-success btn-flat pull-right']) !!}
 	      						    </div>
 	      						    <br>
 	      						    <br>
 	      						{!! Form::close() !!}
 
-	      						{!! Form::open(['route'=> ['school.destroy', $schoolS->id], 'method' => 'POST']) !!}
+	      					{{-- 	{!! Form::open(['route'=> ['school.destroy', $schoolS->id], 'method' => 'POST']) !!}
 								{{ method_field('delete') }}
 								{!! Form::button("<i class='fa fa-trash'>&nbsp;</i>Remove this school", ['type' => 'submit',  "class" => 'btn btn-flat btn-danger']) !!}
 
 								{!! Form::close() !!}
-	      					
+	      					 --}}
 
 	      		</div>
 

@@ -64,7 +64,7 @@
 	      						   </div>
 	      						    <div class="section">
 	      						    	
-	      						    	<?php echo Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']); ?>
+	      						    	<?php echo Form::submit('Update', ['class' => 'btn btn-success btn-flat pull-right']); ?>
 
 	      						    </div>
 	      						    <br>

@@ -54,7 +54,7 @@
 	      						   </div>
 	      						    <div class="section">
 	      						    	
-	      						    	{!! Form::submit('save', ['class' => 'btn btn-success btn-flat pull-right']) !!}
+	      						    	{!! Form::submit('Update', ['class' => 'btn btn-success btn-flat pull-right']) !!}
 	      						    </div>
 	      						    <br>
 	      						    <br>
