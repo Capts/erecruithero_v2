@@ -56,7 +56,7 @@
           </a>
           
         </li>
-      
+         <br>
 
          <li class="treeview">
             <a href="<?php echo e(route('logout')); ?>"

@@ -7,6 +7,7 @@
     <div id="app">
         
         <?php echo $__env->yieldContent('content'); ?>
+        <?php echo $__env->make('view_applicant.partials.notification.areyousure', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     </div>
 
       <!-- Scripts -->
@@ -32,6 +33,7 @@
      
       <script src="/bower_components/moment/min/moment.min.js"></script>
       <script src="/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+      <script src="/applicant/js/accept.js"></script>
 
 
 

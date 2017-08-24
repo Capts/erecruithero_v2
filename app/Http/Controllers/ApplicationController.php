@@ -74,7 +74,6 @@ class ApplicationController extends Controller
     $user = User::where('id', $user_id)->first();
       // dd($user);
     $invitation = Invitation::where('id', $id)->first();
-
         // dd($invitation);
       
         if (is_null($invitation)) {

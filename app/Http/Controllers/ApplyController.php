@@ -15,6 +15,8 @@ use Auth;
 
 class ApplyController extends Controller
 {
+
+    
     
     public function index()
     {

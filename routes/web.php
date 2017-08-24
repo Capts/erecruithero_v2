@@ -35,6 +35,8 @@ Route::resource('applicant/jobs', 'ApplicantJobController', ['except' => ['creat
 
 Route::resource('applicant/job/apply', 'ApplyController');
 
+Route::resource('notification/', 'NotificationController');
+
 // application route
 
 

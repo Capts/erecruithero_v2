@@ -7,6 +7,7 @@
     <div id="app">
         
         @yield('content')
+        @include('view_applicant.partials.notification.areyousure')
     </div>
 
       <!-- Scripts -->
@@ -32,6 +33,7 @@
      
       <script src="/bower_components/moment/min/moment.min.js"></script>
       <script src="/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+      
 
 
 

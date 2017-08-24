@@ -67,7 +67,7 @@
                             </div>
                         </div>
                          <div class="row">
-                            <div class="col-xs-4 pull-right">
+                            <div class="col-xs-12">
                                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                             </div>
 
@@ -88,14 +88,14 @@
         </div>
         <!-- /.col -->
       </div> --}}
-
+{{-- 
     <div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
         Facebook</a>
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
         Google+</a>
-    </div>
+    </div> --}}
     <!-- /.social-auth-links -->
 
     <a href="/register" class="text-center">No account yet? Sign up here</a>

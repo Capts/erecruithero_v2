@@ -317,7 +317,7 @@
 				
 			</div>
 			<?php else: ?>
-
+				<input type="text" value="<?php echo e($notification->data['invitation']['invited_by']); ?>">
 
 				<?php echo Form::open(['route'=> ['application.cancel', $getStatus->id, $thisUser->id], 'method' => 'POST']); ?>
 

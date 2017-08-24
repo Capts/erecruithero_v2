@@ -114,22 +114,16 @@
                             
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-flat btn-primary">
+                        <div class="form-group" style="padding:0px 0px;">
+                            <div class="col-md-12" style="padding:0px 0px;">
+                                <button type="submit" class="btn btn-flat btn-block btn-primary">
                                     Register
                                 </button>
                             </div>
                         </div>
                     </form>
 
-            <div class="social-auth-links text-center">
-                <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-                    Facebook</a>
-                    <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
-                        Google+</a>
-                    </div>
+            
 
                     <a href="/login" class="text-center">I already have an account</a>
                 </div>

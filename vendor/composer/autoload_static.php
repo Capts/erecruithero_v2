@@ -280,6 +280,7 @@ class ComposerStaticInitd79e368c10c9aecf758ad19d150ca95a
     );
 
     public static $classMap = array (
+        'App\\AcceptInterview' => __DIR__ . '/../..' . '/app/AcceptInterview.php',
         'App\\Address' => __DIR__ . '/../..' . '/app/Address.php',
         'App\\CharacterReference' => __DIR__ . '/../..' . '/app/CharacterReference.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',

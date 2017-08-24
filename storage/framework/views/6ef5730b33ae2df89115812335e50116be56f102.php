@@ -28,7 +28,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header"><h4>APPLICANT NAVIGATION</h4></li>
        
         <li class="treeview">
           <a href="#">

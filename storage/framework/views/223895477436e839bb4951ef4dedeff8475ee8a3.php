@@ -1,3 +1,5 @@
+
+
 <a href="<?php echo e(url('/')); ?>" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>:)</b></span>
@@ -19,7 +21,7 @@
             <!-- Messages: style can be found in dropdown.less-->
             
             <!-- Notifications: style can be found in dropdown.less -->
-            <li class="dropdown notifications-menu">
+            <li class="dropdown notifications-menu" id="markasread" onclick="markNotificationAsRead()">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <?php if(count(auth()->user()->unreadNotifications) < 1): ?>
                         <span class="fa fa-bell-o"></span>
