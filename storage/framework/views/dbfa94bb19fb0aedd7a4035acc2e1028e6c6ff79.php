@@ -1,6 +1,6 @@
 
 				<?php if(Auth::user()->skill->isEmpty()): ?>
-					<h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add a skill.</em></h6>
+					<h6 class="text-center" style="color:silver;"><em>click the <b>plus</b> sign to add a skill/qualifications.</em></h6>
 				<?php else: ?>
 
 					<?php $__currentLoopData = $loopSkills; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $skill): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

@@ -135,7 +135,7 @@
 					<div class="box box-primary">
 						<div class="box-header with-border ">
 							<h5 class="text-center"><i class="fa fa-language">&nbsp;</i>
-							<b>SKILLS</b>
+							<b>SKILLS & QUALIFICATIONS</b>
 							<a class="pull-right btn btn-xs btn-flat" style="color: #d0d0d0" title="add skill" data-toggle="modal" data-target="#skill_modal-<?php echo e(Auth::user()->id); ?>"><i class="fa fa-plus"></i></a>
 							</h5>
 						</div>

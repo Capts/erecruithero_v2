@@ -25,7 +25,7 @@
 			<div class="col-md-7 col-md-offset-3">
 				<div class="box box-default">
 					<div class="box-header with-border">
-						<h4><i class="fa fa-language">&nbsp;</i>Edit your skill</h4>
+						<h4><i class="fa fa-language">&nbsp;</i>Edit your skill or qualifications</h4>
 					</div>
 					<div class="box-body">
 

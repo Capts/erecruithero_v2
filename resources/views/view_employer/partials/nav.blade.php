@@ -23,12 +23,22 @@
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span>
-            </a>
+            @if (count(auth()->user()->unreadNotifications) < 1)
+                 <span class="fa fa-bell-o"></span>
+                 {{-- <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span> --}}
+             @else
+                 <span class="fa fa-bell-o"></span>
+                 <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span>
+             @endif
+             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              @if (count(auth()->user()->unreadNotifications) <= 1 )
+                   <li class="header">You have {{ count(auth()->user()->unreadNotifications) }} notification</li>
               <li>
+              @else
+                  <li class="header">You have {{ count(auth()->user()->unreadNotifications) }} notifications</li>
+                  <li>
+              @endif
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li>

@@ -21,7 +21,7 @@
             <!-- Messages: style can be found in dropdown.less-->
             
             <!-- Notifications: style can be found in dropdown.less -->
-            <li class="dropdown notifications-menu" id="markasread" onclick="markNotificationAsRead()">
+            <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <?php if(count(auth()->user()->unreadNotifications) < 1): ?>
                         <span class="fa fa-bell-o"></span>

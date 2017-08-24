@@ -120,7 +120,7 @@
 					<div class="box box-primary">
 						<div class="box-header with-border">
 							<h4 class="text-center"><i class="fa fa-language">&nbsp;</i>
-								<b>SKILLS</b>
+								<b>SKILLS AND QUALIFICATIONS </b>
 
 							</h4>
 						</div>

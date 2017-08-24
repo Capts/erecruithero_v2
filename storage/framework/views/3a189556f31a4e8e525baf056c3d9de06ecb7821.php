@@ -23,12 +23,22 @@
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-danger"><?php echo e(count(auth()->user()->unreadNotifications)); ?></span>
-            </a>
+            <?php if(count(auth()->user()->unreadNotifications) < 1): ?>
+                 <span class="fa fa-bell-o"></span>
+                 
+             <?php else: ?>
+                 <span class="fa fa-bell-o"></span>
+                 <span class="label label-danger"><?php echo e(count(auth()->user()->unreadNotifications)); ?></span>
+             <?php endif; ?>
+             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
+              <?php if(count(auth()->user()->unreadNotifications) <= 1 ): ?>
+                   <li class="header">You have <?php echo e(count(auth()->user()->unreadNotifications)); ?> notification</li>
               <li>
+              <?php else: ?>
+                  <li class="header">You have <?php echo e(count(auth()->user()->unreadNotifications)); ?> notifications</li>
+                  <li>
+              <?php endif; ?>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                   <li>
