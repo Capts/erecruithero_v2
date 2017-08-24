@@ -43,6 +43,9 @@ Route::resource('applicant/job/apply', 'ApplyController', ['except' => ['create'
 Route::get('/markasread', function(){
 	auth()->user()->unreadNotifications->markAsRead();
 });
+Route::get('/markasreadEmployer', function(){
+	auth()->user()->unreadNotifications->markAsRead();
+});
 
 
 //Employer Route

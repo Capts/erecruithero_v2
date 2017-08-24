@@ -8,13 +8,15 @@
 			    <div class="modal-content">
 			      <div class="modal-header">
 			        {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> --}}
-			        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-question-circle fa-2x pull-left" style="color:#2e7489;"></i> &nbsp;Accept interview invitation?</h4>
+			        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-question-circle fa-2x pull-left" style="color:#2e7489;"></i> &nbsp;Set an interview?</h4>
 			      </div>
 			      <div class="modal-body">
 			      	<div class="row">
-						
+						<div class="text-left" style="padding :20px 20px">
+							<p>The applicant will receive an email with the details of the interview.</p>
+						</div>
 						<div class="btn-group pull-right">
-							<a href="" class="btn-flat btn bg-olive" style="margin-right: 20px;"  >Accept</a>
+							<a href="" class="btn-flat btn bg-olive" style="margin-right: 20px;"  >Yes</a>
 							<button class="btn-flat btn btn-danger" data-dismiss="modal" style="margin-right: 30px;">No</button>
 						</div>
 						

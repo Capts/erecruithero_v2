@@ -46,6 +46,9 @@ class ApplyController extends Controller
 
        $applying->job_id = $request->job_id;
        $applying->user_id = $request->user_id;
+       $applying->invited_by = auth()->user()->id;
+       $applying->invited_by_name = auth()->user()->firstname;
+       $applying->invited_by_avatar = auth()->user()->avatar;
        // dd($getJobId->user_id);
        $applying->save();
 

@@ -6,6 +6,7 @@
 <body class="hold-transition skin-green sidebar-mini">
     <div id="app">
         @include('view_employer.job.create_job_modal')
+        @include('view_employer.partials.notification.areyousure')
         
         
         @yield('content')
@@ -35,6 +36,7 @@
     <script src="/bower_components/moment/min/moment.min.js"></script>
     <script src="/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/employer/js/accept.js"></script>
 
   <script>
     $(function () {

@@ -6,6 +6,7 @@
 <body class="hold-transition skin-green sidebar-mini">
     <div id="app">
         <?php echo $__env->make('view_employer.job.create_job_modal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->make('view_employer.partials.notification.areyousure', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         
         
         <?php echo $__env->yieldContent('content'); ?>
@@ -35,6 +36,7 @@
     <script src="/bower_components/moment/min/moment.min.js"></script>
     <script src="/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/employer/js/accept.js"></script>
 
   <script>
     $(function () {

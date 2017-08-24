@@ -21,7 +21,7 @@
         <ul class="nav navbar-nav">
          
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu" >
+          <li class="dropdown notifications-menu" id="markasreadEmployer" onclick="markNotificationAsRead()">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             @if (count(auth()->user()->unreadNotifications) < 1)
                  <span class="fa fa-bell-o"></span>
@@ -47,7 +47,7 @@
                        <p class="text-center" style="color:red;padding-top:1px;background-color: #3e6e8e;color:white;">Unread notification &nbsp; <i class="fa fa-star"></i> </p>
                        <li style="cursor: pointer;">
                            @foreach (auth()->user()->unreadNotifications as $notif)
-                               {{-- @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type))) --}}
+                               @include('view_employer.partials.notification.'.snake_case(class_basename($notif->type)))
                            @endforeach
                            
                        </li>
@@ -58,7 +58,7 @@
                            <p class="text-center" style="color:silver; padding-top:1px;background-color: #0ea346;color:white;">All notifications &nbsp; <i class="fa fa-bell-o"></i> </p>
                            <li style="cursor: pointer;">
                                @foreach (auth()->user()->notifications as $notif)
-                                   {{-- @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type))) --}}
+                                   @include('view_employer.partials.notification.'.snake_case(class_basename($notif->type)))
                                @endforeach
                            </li>
                           
@@ -68,7 +68,7 @@
                         <p class="text-center" style="color:silver; padding-top:1px;background-color: #0ea346;color:white;">All notifications &nbsp; <i class="fa fa-bell-o"></i> </p>
                        <li style="cursor: pointer;">
                            @foreach (auth()->user()->notifications as $notif)
-                               {{-- @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type))) --}}
+                               @include('view_employer.partials.notification.'.snake_case(class_basename($notif->type)))
                            @endforeach
                        </li>
                    @endif

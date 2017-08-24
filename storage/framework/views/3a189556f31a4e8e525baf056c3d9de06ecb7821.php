@@ -21,7 +21,7 @@
         <ul class="nav navbar-nav">
          
           <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu" >
+          <li class="dropdown notifications-menu" id="markasreadEmployer" onclick="markNotificationAsRead()">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <?php if(count(auth()->user()->unreadNotifications) < 1): ?>
                  <span class="fa fa-bell-o"></span>
@@ -47,7 +47,7 @@
                        <p class="text-center" style="color:red;padding-top:1px;background-color: #3e6e8e;color:white;">Unread notification &nbsp; <i class="fa fa-star"></i> </p>
                        <li style="cursor: pointer;">
                            <?php $__currentLoopData = auth()->user()->unreadNotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notif): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                               
+                               <?php echo $__env->make('view_employer.partials.notification.'.snake_case(class_basename($notif->type)), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                            
                        </li>
@@ -58,7 +58,7 @@
                            <p class="text-center" style="color:silver; padding-top:1px;background-color: #0ea346;color:white;">All notifications &nbsp; <i class="fa fa-bell-o"></i> </p>
                            <li style="cursor: pointer;">
                                <?php $__currentLoopData = auth()->user()->notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notif): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                   
+                                   <?php echo $__env->make('view_employer.partials.notification.'.snake_case(class_basename($notif->type)), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                            </li>
                           
@@ -68,7 +68,7 @@
                         <p class="text-center" style="color:silver; padding-top:1px;background-color: #0ea346;color:white;">All notifications &nbsp; <i class="fa fa-bell-o"></i> </p>
                        <li style="cursor: pointer;">
                            <?php $__currentLoopData = auth()->user()->notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notif): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                               
+                               <?php echo $__env->make('view_employer.partials.notification.'.snake_case(class_basename($notif->type)), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                        </li>
                    <?php endif; ?>
