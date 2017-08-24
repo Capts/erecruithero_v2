@@ -8,8 +8,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
 
-use Carbon\Carbon;
-
 class InviteForInterview extends Notification
 {
     use Queueable;
@@ -21,12 +19,7 @@ class InviteForInterview extends Notification
         $this->invitation=$invitation;
     }
 
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
+    
     public function via($notifiable)
     {
         return ['database'];

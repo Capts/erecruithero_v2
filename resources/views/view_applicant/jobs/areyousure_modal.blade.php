@@ -27,9 +27,11 @@
 									        {!! Form::hidden('job_id', $job->id, ['class' => 'form-control', 'required' => 'required']) !!}
 									        <small class="text-danger">{{ $errors->first('job_id') }}</small>
 									    </div>
+
+									    
 									
 									    
-										<a href="" class="btn btn-flat btn-danger btn-block" data-dismiss="modal">No</a> <br>
+										<a class="btn btn-flat btn-danger btn-block" data-dismiss="modal">No</a> <br>
 										<button type="submit" class="btn btn-flat bg-olive btn-block">Yes</button>
 									
 									{!! Form::close() !!}

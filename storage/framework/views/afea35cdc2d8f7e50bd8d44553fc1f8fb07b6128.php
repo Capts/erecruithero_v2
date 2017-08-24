@@ -49,7 +49,7 @@
 
         <li>
           <a href="<?php echo e(route('employer.arc')); ?>">
-            <i class="fa fa-key"></i> <span>Archive</span>
+            <i class="fa fa-archive"></i> <span>Archive</span>
             <span class="pull-right-container">
               
             </span>

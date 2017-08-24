@@ -30,7 +30,7 @@
              
               <div class="box-body">
 
-                 <h1 class="text-center" style="color: silver"><i class="fa fa-columns">&nbsp;</i>Archive folder is empty</h1>
+                 <h1 class="text-center" style="color: silver"><i class="fa fa-archive">&nbsp;</i>Archive folder is empty</h1>
 
               </div>
             </div>

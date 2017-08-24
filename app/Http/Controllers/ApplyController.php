@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Notifications\AcceptInvite;
 
 use App\User;
 use App\Application;
@@ -30,10 +31,14 @@ class ApplyController extends Controller
 
     public function store(Request $request)
     {
-      
-        // 
+        
+        
+
        $getJobId = Job::where('id', $request->job_id)->first();
         // dd($getJobId);
+       
+       $user = User::where('id', $getJobId->user_id)->first();
+     
 
 
 
@@ -41,9 +46,10 @@ class ApplyController extends Controller
 
        $applying->job_id = $request->job_id;
        $applying->user_id = $request->user_id;
-       // dd($applying);
+       // dd($getJobId->user_id);
        $applying->save();
 
+       $user->notify(new AcceptInvite($applying));
        
        Session::flash('success', 'Your application was sent!');
        return redirect()->route('jobs.show', [$applying->job_id]);
@@ -66,17 +72,25 @@ class ApplyController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy($id, $user_id)
     {
+     
         $job = JobUser::where('id', $id)->first();
-
         // dd($job);
+
+        $getJobAuthorId = Job::where('id', $id)->first();
+        // dd($getJobAuthorId);
+        $users = User::where('id', $user_id)->first();
+        // dd($user);
       
         if (is_null($job)) {
              return redirect()->route('jobs.show', $job->job_id);
         }else{
-
-            $job->delete();
+            
+            $users->notifications()->delete();
+            // dd($users);
+             $job->delete();
+            
 
             Session::flash('danger', 'You canceled your application');
             return redirect()->route('jobs.show', $job->job_id);

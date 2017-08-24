@@ -53,7 +53,7 @@
 
         <li>
           <a href="{{ route('employer.arc') }}">
-            <i class="fa fa-key"></i> <span>Archive</span>
+            <i class="fa fa-archive"></i> <span>Archive</span>
             <span class="pull-right-container">
               {{-- <i class="fa fa-angle-right pull-right"></i> --}}
             </span>

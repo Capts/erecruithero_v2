@@ -21,36 +21,65 @@
             <!-- Messages: style can be found in dropdown.less-->
             
             <!-- Notifications: style can be found in dropdown.less -->
-            <li class="dropdown notifications-menu">
+            <li class="dropdown notifications-menu"  id="markasread" onclick="markNotificationAsRead()">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     @if (count(auth()->user()->unreadNotifications) < 1)
                         <span class="fa fa-bell-o"></span>
-                        {{-- <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span> --}}
+
+
                     @else
                         <span class="fa fa-bell-o"></span>
                         <span class="label label-danger">{{ count(auth()->user()->unreadNotifications) }}</span>
                     @endif
                     
                 </a>
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                     @if (count(auth()->user()->unreadNotifications) <= 1 )
-                         <li class="header">You have {{ count(auth()->user()->unreadNotifications) }} notification</li>
+                         <li class="header" >You have {{ count(auth()->user()->unreadNotifications) }} new notification</li>
                     <li>
                     @else
-                        <li class="header">You have {{ count(auth()->user()->unreadNotifications) }} notifications</li>
+                        <li class="header">You have {{ count(auth()->user()->unreadNotifications) }} new notifications</li>
                         <li>
+                  
                     @endif
                     
                         <!-- inner menu: contains the actual data -->
                         <ul class="menu">
-                            <li>
-                                @foreach (auth()->user()->unreadNotifications as $notif)
-                                    @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type)))
-                                @endforeach
-                            </li>
+                            @if (count(auth()->user()->unreadNotifications) >= 1 )
+                                <p class="text-center" style="color:red;padding-top:1px;background-color: #3e6e8e;color:white;">Unread notification &nbsp; <i class="fa fa-star"></i> </p>
+                                <li style="cursor: pointer;">
+                                    @foreach (auth()->user()->unreadNotifications as $notif)
+                                        @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type)))
+                                    @endforeach
+                                    
+                                </li>
+
+                                @if (count(auth()->user()->notifications) > 0 and count(auth()->user()->unreadNotifications) >= 1)
+                                    <br>
+                                @else
+                                    <p class="text-center" style="color:silver; padding-top:1px;background-color: #0ea346;color:white;">All notifications &nbsp; <i class="fa fa-bell-o"></i> </p>
+                                    <li style="cursor: pointer;">
+                                        @foreach (auth()->user()->notifications as $notif)
+                                            @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type)))
+                                        @endforeach
+                                    </li>
+                                   
+                                @endif
+
+                            @elseif (count(auth()->user()->notifications) > 0 )
+                                 <p class="text-center" style="color:silver; padding-top:1px;background-color: #0ea346;color:white;">All notifications &nbsp; <i class="fa fa-bell-o"></i> </p>
+                                <li style="cursor: pointer;">
+                                    @foreach (auth()->user()->notifications as $notif)
+                                        @include('view_applicant.partials.notification.'.snake_case(class_basename($notif->type)))
+                                    @endforeach
+                                </li>
+                            @endif
+                            
+
+                           
                         </ul>
                     </li>
-                    {{-- <li class="footer"><a href="#">View all</a></li> --}}
+                    <li class="footer" ><a href="#">View all</a></li>
                 </ul>
             </li>
             <!-- Tasks: style can be found in dropdown.less -->

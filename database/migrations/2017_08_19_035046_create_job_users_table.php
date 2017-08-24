@@ -17,6 +17,7 @@ class CreateJobUsersTable extends Migration
             $table->increments('id');
             $table->integer('job_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            // $table->integer('author_id')->unsigned();
             $table->timestamps();
         });
     }

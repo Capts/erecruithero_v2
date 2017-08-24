@@ -82,7 +82,7 @@ class ApplicationController extends Controller
         }else{
 
             $invitation->delete();
-
+            $user->notifications()->delete();
             Session::flash('danger', 'You canceled your application');
             return redirect()->route('application.profile', [$user->id,$user->slug,$invitation->id]);
 

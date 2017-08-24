@@ -39,7 +39,7 @@
 															<button type="submit" class="btn btn-flat bg-olive btn-block">Yes</button>
 														
 														{!! Form::close() !!} --}}
-													{!! Form::open(['route'=> ['apply.destroy', $getApply->id], 'method' => 'POST']) !!}
+													{!! Form::open(['route'=> ['apply.destroy', $getApply->id,$job->user_id], 'method' => 'POST']) !!}
 														{{ method_field('delete') }}
 												    	{!! Form::submit('cancel application', ["class" => 'btn btn-flat btn-danger pull-left']) !!}
 

@@ -30,9 +30,11 @@
 
 									        <small class="text-danger"><?php echo e($errors->first('job_id')); ?></small>
 									    </div>
+
+									    
 									
 									    
-										<a href="" class="btn btn-flat btn-danger btn-block" data-dismiss="modal">No</a> <br>
+										<a class="btn btn-flat btn-danger btn-block" data-dismiss="modal">No</a> <br>
 										<button type="submit" class="btn btn-flat bg-olive btn-block">Yes</button>
 									
 									<?php echo Form::close(); ?>

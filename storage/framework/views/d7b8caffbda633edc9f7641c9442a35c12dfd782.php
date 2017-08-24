@@ -6,7 +6,7 @@
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-language fa-2x">&nbsp;</i>Add some skill or qualifications</h4>
+	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-language fa-2x">&nbsp;</i>Add some skills or qualifications</h4>
 	      </div>
 	      <div class="modal-body">
 	      	<div class="row">
@@ -18,7 +18,7 @@
 
 
 						    <div class="form-group<?php echo e($errors->has('skill_name') ? ' has-error' : ''); ?>">
-						        <?php echo Form::label('skill_name', 'Skill'); ?>
+						        <?php echo Form::label('skill_name', 'Skills or qualifications'); ?>
 
 						        <?php echo Form::text('skill_name', null, ['class' => 'form-control', 'autofocus' => 'autofocus','required' => 'required']); ?>
 

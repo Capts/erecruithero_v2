@@ -33,13 +33,16 @@ Route::resource('applicant/experience', 'ExperienceController');
 Route::get('applicants/jobs', 'ApplicantJobController@searchAJob')->name('searchjob');
 Route::resource('applicant/jobs', 'ApplicantJobController', ['except' => ['create', 'store', 'edit','destroy', 'update']]);
 
-Route::resource('applicant/job/apply', 'ApplyController');
-
-Route::resource('notification/', 'NotificationController');
-
-// application route
 
 
+
+Route::DELETE('applicant/job/apply/remove/{id}/{user_id}', 'ApplyController@destroy')->name('apply.destroy');
+Route::resource('applicant/job/apply', 'ApplyController', ['except' => ['create','index','update','edit','show','destroy']]);
+
+//ajax for read notif
+Route::get('/markasread', function(){
+	auth()->user()->unreadNotifications->markAsRead();
+});
 
 
 //Employer Route

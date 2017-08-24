@@ -23,7 +23,7 @@
 										
 														
 														
-													<?php echo Form::open(['route'=> ['apply.destroy', $getApply->id], 'method' => 'POST']); ?>
+													<?php echo Form::open(['route'=> ['apply.destroy', $getApply->id,$job->user_id], 'method' => 'POST']); ?>
 
 														<?php echo e(method_field('delete')); ?>
 

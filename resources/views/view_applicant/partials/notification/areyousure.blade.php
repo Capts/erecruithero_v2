@@ -14,7 +14,7 @@
 			      	<div class="row">
 						
 						<div class="btn-group pull-right">
-							<a href="" class="btn-flat btn bg-olive" style="margin-right: 20px;">Accept</a>
+							<a href="" class="btn-flat btn bg-olive" style="margin-right: 20px;"  >Accept</a>
 							<button class="btn-flat btn btn-danger" data-dismiss="modal" style="margin-right: 30px;">No</button>
 						</div>
 						

@@ -11,22 +11,15 @@ class AcceptInvite extends Notification
 {
     use Queueable;
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct()
+ 
+    protected $applying;
+
+    public function __construct($applying)
     {
-        //
+        $this->applying=$applying;
     }
 
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
+    
     public function via($notifiable)
     {
         return ['database'];
@@ -35,7 +28,8 @@ class AcceptInvite extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            //
+            'applying'=> $this->applying,
+            'user'=>$notifiable
         ];
     }
 
