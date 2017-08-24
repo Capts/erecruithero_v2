@@ -310,7 +310,7 @@
 				
 			</div>
 			@else
-				<input type="text" value="{{ $notification->data['invitation']['invited_by'] }}">
+				
 
 				{!! Form::open(['route'=> ['application.cancel', $getStatus->id, $thisUser->id], 'method' => 'POST']) !!}
 					{{ method_field('delete') }}
