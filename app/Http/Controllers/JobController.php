@@ -54,7 +54,7 @@ class JobController extends Controller
         $countAvailable = Job::where('status', null)->count();
 
 
-        $jobs = Job::whereNull('status')->orderBy('updated_at', 'desc')->paginate(15);
+        $jobs = Job::whereNull('status')->orderBy('created_at', 'desc')->paginate(15);
 
         return view('view_employer.job.index', compact('jobs', 'countJob', 'countArchive', 'countAvailable'));
     }

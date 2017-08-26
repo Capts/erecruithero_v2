@@ -183,14 +183,14 @@ class ApplicantSchoolController extends Controller
     {
 
 
-        $schoolT = SchoolTertiary::find($id);
-        $schoolS = SchoolSecondary::find($id);
-        $schoolP = SchoolPrimary::find($id);
-        // dd($schoolT);
+        // $schoolT = SchoolTertiary::find($id);
+        // $schoolS = SchoolSecondary::find($id);
+        // $schoolP = SchoolPrimary::find($id);
+        // // dd($schoolT);
 
-        $schoolT->delete();
-        $schoolS->delete();
-        $schoolP->delete();
+        // $schoolT->delete();
+        // $schoolS->delete();
+        // $schoolP->delete();
 
         
 
