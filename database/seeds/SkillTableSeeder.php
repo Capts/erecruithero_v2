@@ -50,7 +50,7 @@ class SkillTableSeeder extends Seeder
 
         $app_skills1 = new Skill();
         $app_skills1->user_id = 3;
-        $app_skills1->skill_name = 'Programming';
+        $app_skills1->skill_name = 'Programmer';
         $app_skills1->save();
 
         $app_skills2 = new Skill();
@@ -60,7 +60,7 @@ class SkillTableSeeder extends Seeder
 
         $app_skills3 = new Skill();
         $app_skills3->user_id = 3;
-        $app_skills3->skill_name = 'Advertising';
+        $app_skills3->skill_name = 'Advertise';
         $app_skills3->save();
 
         $app_skills14 = new Skill();
@@ -80,7 +80,7 @@ class SkillTableSeeder extends Seeder
 
         $app_skills2 = new Skill();
         $app_skills2->user_id = 4;
-        $app_skills2->skill_name = 'Programming';
+        $app_skills2->skill_name = 'Programmer';
         $app_skills2->save();
 
         $app_skills3 = new Skill();
@@ -90,7 +90,7 @@ class SkillTableSeeder extends Seeder
 
         $app_skills4 = new Skill();
         $app_skills4->user_id = 4;
-        $app_skills4->skill_name = 'Advertising';
+        $app_skills4->skill_name = 'Advertise';
         $app_skills4->save();
 
         $app_skills5 = new Skill();
@@ -100,7 +100,7 @@ class SkillTableSeeder extends Seeder
 
         $app_skills6 = new Skill();
         $app_skills6->user_id = 4;
-        $app_skills6->skill_name = 'Designing';
+        $app_skills6->skill_name = 'Design';
         $app_skills6->save();
 
         $app_skills7 = new Skill();
@@ -113,7 +113,7 @@ class SkillTableSeeder extends Seeder
 
         $applicant_skills3 = new Skill();
         $applicant_skills3->user_id = 2;
-        $applicant_skills3->skill_name = 'Dancing';
+        $applicant_skills3->skill_name = 'Danv=cer';
         $applicant_skills3->save();
 
         $app_skills4 = new Skill();
@@ -123,7 +123,7 @@ class SkillTableSeeder extends Seeder
 
         $app_skills5 = new Skill();
         $app_skills5->user_id = 4;
-        $app_skills5->skill_name = 'Dancing';
+        $app_skills5->skill_name = 'dancer';
         $app_skills5->save();
 
         

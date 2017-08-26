@@ -1,7 +1,12 @@
 <!-- Modal for tertiary-->
 
 	<!-- Modal -->
-	<div class="modal fade" id="school_modal_editS-{{ Auth::user()->id }}" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+	@if(is_null($schoolT) and is_null($schoolS) and is_null($schoolP) )
+
+		
+	@else
+
+		<div class="modal fade" id="school_modal_editS-{{ Auth::user()->id }}" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -75,6 +80,8 @@
 	    </div>
 	  </div>
 	</div>
+	@endif
+	
 
 <!--End Modal-->
 

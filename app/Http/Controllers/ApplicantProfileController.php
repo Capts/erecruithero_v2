@@ -39,7 +39,7 @@ class ApplicantProfileController extends Controller
         //profile
         $users = User::find($id);
         $profile = Profile::where('user_id', $id)->with('user')->first();
-        // dd($schoolT);
+        // dd($profile);
         $id = User::find($id);
         $slug = User::find($slug);
 

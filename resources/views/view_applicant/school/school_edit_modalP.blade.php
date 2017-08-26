@@ -1,12 +1,17 @@
 <!-- Modal for tertiary-->
 
 	<!-- Modal -->
-	<div class="modal fade" id="school_modal_editP-{{ Auth::user()->id }}" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+
+	@if(is_null($schoolT) and is_null($schoolS) and is_null($schoolP) )
+
+		
+	@else
+		<div class="modal fade" id="school_modal_editP-{{ Auth::user()->id }}" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	     <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-graduation-cap fa-2x"></i>Edit education from <small> <a href="#">{{ $schoolS->sec_school }}</a></small></h4>
+	        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-graduation-cap fa-2x"></i>Edit education from <small> <a href="#">{{ $schoolP->pri_school }}</a></small></h4>
 	      </div>
 	      <div class="modal-body">
 	      	<div class="row">
@@ -71,6 +76,8 @@
 	    </div>
 	  </div>
 	</div>
+	@endif
+	
 
 <!--End Modal-->
 
