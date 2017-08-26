@@ -1,7 +1,11 @@
 <!-- Modal for tertiary-->
 
 	<!-- Modal -->
-	<div class="modal fade" id="school_modal_editT-<?php echo e(Auth::user()->id); ?>" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+	<?php if(is_null($schoolT) and is_null($schoolS) and is_null($schoolP) ): ?>
+
+		
+	<?php else: ?>
+		<div class="modal fade" id="school_modal_editT-<?php echo e(Auth::user()->id); ?>" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
@@ -114,6 +118,9 @@
 	    </div>
 	  </div>
 	</div>
+
+	<?php endif; ?>
+	
 
 <!--End Modal-->
 

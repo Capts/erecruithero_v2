@@ -237,6 +237,116 @@ class ProfileTableSeeder extends Seeder
         $st4->ter_start_year = '2014';
         $st4->ter_end_year = '2017';
         $st4->save();
+
+
+
+        $taylor = new Profile();
+
+        $taylor->user_id = 5;
+        $taylor->age = 20;
+        $taylor->bio = 'Hello there!, I am an Applicant';
+        $taylor->bday = '11/09/200';
+        $taylor->civil_status = 'single';
+        $taylor->telephone = "074661123";
+        $taylor->mobile =  "09999999999";
+        $taylor->save();
+
+        $taylor_add = new Address();
+        $taylor_add->user_id = 5;
+        $taylor_add->street = '#23';
+        $taylor_add->barangay = 'Kias';
+        $taylor_add->city = 'Baguio City';
+        $taylor_add->province = 'Benguet';
+        $taylor_add->country = 'Philippines';
+        $taylor_add->save();
+
+        $taylor_pri = new SchoolPrimary();
+        $taylor_pri->user_id = 5;
+
+        //elem
+        $taylor_pri->pri_school = 'Primary School';
+        $taylor_pri->pri_address = 'Address';
+        $taylor_pri->pri_start = 'started';
+        $taylor_pri->pri_end = 'graduated';
+        $taylor_pri->save();
+        
+        //sec
+        $taylor_sec = new SchoolSecondary();
+        $taylor_sec->user_id = 5;
+        
+        $taylor_sec->sec_school = 'Secondary School';
+        $taylor_sec->sec_address = 'Secondary address';
+        $taylor_sec->sec_start = 'started';
+        $taylor_sec->sec_end = 'graduated';
+        $taylor_sec->save();
+
+        $taylor_ter = new SchoolTertiary();
+        $taylor_ter->user_id = 5;
+        //ter
+               
+        $taylor_ter->ter_school = 'University of the Cordilleras';
+        $taylor_ter->ter_address = 'Gov.Pack Road, Baguio City';
+        $taylor_ter->ter_degree = 'Bachelor of Science';
+        $taylor_ter->ter_field_of_study = 'Information Technology';
+        $taylor_ter->ter_major = 'Networking';
+        $taylor_ter->ter_start_year = '2015';
+        $taylor_ter->ter_end_year = '2018';
+        $taylor_ter->save();
+
+
+
+        $tony = new Profile();
+
+        $tony->user_id = 6;
+        $tony->age = 20;
+        $tony->bio = 'Hello there!, I am an Applicant';
+        $tony->bday = '11/09/200';
+        $tony->civil_status = 'single';
+        $tony->telephone = "074661123";
+        $tony->mobile =  "09999999999";
+        $tony->save();
+
+        $tonyr_add = new Address();
+        $tonyr_add->user_id = 6;
+        $tonyr_add->street = '#23';
+        $tonyr_add->barangay = 'Kias';
+        $tonyr_add->city = 'Baguio City';
+        $tonyr_add->province = 'Benguet';
+        $tonyr_add->country = 'Philippines';
+        $tonyr_add->save();
+
+        $tony_pri = new SchoolPrimary();
+        $tony_pri->user_id = 6;
+
+        //elem
+        $tony_pri->pri_school = 'Primary School';
+        $tony_pri->pri_address = 'Address';
+        $tony_pri->pri_start = 'started';
+        $tony_pri->pri_end = 'graduated';
+        $tony_pri->save();
+        
+        //sec
+        $tony_sec = new SchoolSecondary();
+        $tony_sec->user_id = 6;
+        
+        $tony_sec->sec_school = 'Secondary School';
+        $tony_sec->sec_address = 'Secondary address';
+        $tony_sec->sec_start = 'started';
+        $tony_sec->sec_end = 'graduated';
+        $tony_sec->save();
+
+        $tony_ter = new SchoolTertiary();
+        $tony_ter->user_id = 6;
+        //ter
+               
+        $tony_ter->ter_school = 'University of the Cordilleras';
+        $tony_ter->ter_address = 'Gov.Pack Road, Baguio City';
+        $tony_ter->ter_degree = 'Bachelor of Science';
+        $tony_ter->ter_field_of_study = 'Information Technology';
+        $tony_ter->ter_major = 'Networking';
+        $tony_ter->ter_start_year = '2015';
+        $tony_ter->ter_end_year = '2018';
+        $tony_ter->save();
     }
 
 }
