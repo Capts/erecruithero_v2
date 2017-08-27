@@ -84,7 +84,10 @@
        
 
             @if (is_null($getApply))
-              <button class="btn btn-flat btn-primary pull-right" data-toggle="modal" data-target="#areyousure-{{ Auth::user()->id }}"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+
+              <button class="btn btn-flat btn-primary pull-right hidden-xs" data-toggle="modal" data-target="#areyousure-{{ Auth::user()->id }}"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
+
+              <button class="btn btn-flat btn-primary btn-block visible-xs" data-toggle="modal" data-target="#areyousure-{{ Auth::user()->id }}"><i class="fa fa-chain">&nbsp;</i>Apply for this job</button>
             @else
 
             

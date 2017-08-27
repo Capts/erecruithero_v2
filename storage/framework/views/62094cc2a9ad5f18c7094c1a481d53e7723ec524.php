@@ -6,6 +6,7 @@
 <body >
     <div id="app">
        <?php echo $__env->make('partials.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+       <?php echo $__env->make('view_employer.partials.notification.areyousure', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
         <?php echo $__env->yieldContent('content'); ?>
         <?php echo $__env->make('partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

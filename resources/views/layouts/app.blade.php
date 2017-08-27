@@ -6,6 +6,7 @@
 <body >
     <div id="app">
        @include('partials.nav')
+       @include('view_employer.partials.notification.areyousure')
 
         @yield('content')
         @include('partials.footer')
