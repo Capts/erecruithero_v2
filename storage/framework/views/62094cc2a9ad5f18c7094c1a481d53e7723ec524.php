@@ -16,5 +16,6 @@
     <script src="<?php echo e(asset('applicant/js/app.js')); ?>"></script>
     <script src="/dist/js/adminlte.min.js"></script>
 	 <script src="/plugins/iCheck/icheck.min.js"></script>
+   <script src="/employer/js/accept.js"></script>
 </body>
 </html>
