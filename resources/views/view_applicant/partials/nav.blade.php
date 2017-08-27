@@ -108,7 +108,7 @@
                     
                     <div class="">
                       
-                        <a class=" btn-block btn btn-flat btn-danger" href="{{ route('logout') }}"
+                        <a class=" btn-block btn btn-flat bg-maroon" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                             <i class="fa fa-sign-out"></i> &nbsp;Logout
