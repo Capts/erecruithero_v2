@@ -20,7 +20,7 @@
 						    <div class="form-group<?php echo e($errors->has('skill_name') ? ' has-error' : ''); ?>">
 						        <?php echo Form::label('skill_name', 'Skills or qualifications'); ?>
 
-						        <?php echo Form::text('skill_name', null, ['class' => 'form-control', 'autofocus' => 'autofocus','required' => 'required']); ?>
+						        <?php echo Form::text('skill_name', null, ['class' => 'form-control', 'autofocus' => 'autofocus'  ,'required' => 'required']); ?>
 
 						        <small class="text-danger"><?php echo e($errors->first('skill_name')); ?></small>
 						    </div>

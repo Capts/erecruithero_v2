@@ -29,7 +29,7 @@
 			@if ($searchjobs->isEmpty())
 				
 				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
+					<div class="col-md-8 col-md-offset-2">
 						<div class="box box-danger">
 							<div class="box-header with-border">
 								<h4 style="color:silver;margin:0 auto;"> <i style="color:#fc3f42;" class="fa fa-times fa-2x"></i>
@@ -46,7 +46,7 @@
 			@else
 				
 				<div class="row">
-					<div class="col-xs-8">
+					<div class="col-md-8">
 						<div class="box box-primary">
 						  <div class="box-header with-border">
 						    <h4 style="color:silver;">Match found! Keyword: <em style="color:green;">{{ $search }}</em> </h4 >
@@ -86,7 +86,7 @@
 						</div>
 						
 					</div>
-					<div class="col-xs-4">
+					<div class="col-md-4">
 						<div class="box box-primary">
 							
 							@if ($qualified->count() == 0)

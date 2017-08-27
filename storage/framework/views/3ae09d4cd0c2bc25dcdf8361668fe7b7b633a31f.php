@@ -18,8 +18,9 @@
 
   <!-- Main content -->
   <section class="content">
-    <div class="row">
-      <div class="col-md-8">
+
+  <div class="row">
+     <div class="col-sm-8 ">
         
         <div class="box box-primary">
           <div class="box-header ">
@@ -61,7 +62,8 @@
         </div>
       
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-4 ">
+       
         <div class="box box-info">
           <div class="box-header with-border">
           
@@ -84,7 +86,12 @@
           </div>
         </div>
       </div>
-    </div>
+  </div>
+
+
+  
+
+    
     
   </section>
     <!-- /.content -->

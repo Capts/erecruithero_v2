@@ -49,18 +49,20 @@
 
 												<div class="col-md-6">
 													<div class="form-group<?php echo e($errors->has('bday') ? ' has-error' : ''); ?>">
-		                								    <?php echo Form::label('bday', 'Birthday'); ?>
+	                								    <?php echo Form::label('bday', 'Birthday'); ?>
 
-		                								    <?php echo Form::text('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control manual', 'placeholder'=>'mm/dd/yyyy', 'required' => 'required']); ?>
+	                								    <?php echo Form::date('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control manual', 'placeholder'=>'mm/dd/yyyy', 'required' => 'required']); ?>
 
-		                								    <small class="text-danger"><?php echo e($errors->first('bday')); ?></small>
-		                								</div>
+	                								    <small class="text-danger"><?php echo e($errors->first('bday')); ?></small>
+		                							</div>
 												</div>
 												
-													    <?php echo Form::hidden('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']); ?>
+											
 
-													    <small class="text-danger"><?php echo e($errors->first('age')); ?></small>
-													
+											    <?php echo Form::hidden('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']); ?>
+
+													    
+
 												<div class="col-md-6">
 													<div class="form-group<?php echo e($errors->has('civil_status') ? ' has-error' : ''); ?>">
 													    <?php echo Form::label('civil_status', 'Civil Status'); ?>
@@ -101,7 +103,7 @@
 			                				<div class="col-md-12">
 			                					<div class="col-xs-4">
 			                						<div class="form-group<?php echo e($errors->has('street') ? ' has-error' : ''); ?>">
-			                						    <?php echo Form::label('street', 'Street'); ?>
+			                						    <?php echo Form::label('street', 'Street #'); ?>
 
 			                						    <?php echo Form::number('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']); ?>
 
@@ -140,7 +142,7 @@
 			                						<div class="form-group<?php echo e($errors->has('country') ? ' has-error' : ''); ?>">
 			                						    <?php echo Form::label('country', 'Country'); ?>
 
-			                						    <?php echo Form::text('country',  ( isset($users->address->country) ? $users->address->country : null ), ['class' => 'form-control', 'required' => 'required']); ?>
+			                						    <?php echo Form::text('country', $users->address->country,   ['class' => 'form-control', 'required' => 'required']); ?>
 
 			                						    <small class="text-danger"><?php echo e($errors->first('country')); ?></small>
 			                						</div>

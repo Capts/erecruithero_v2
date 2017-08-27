@@ -81,7 +81,7 @@
 					  
 					  <div class="box-body">
 					  	<div class="row">
-					  		<div class="col-xs-12">
+					  		<div class="colmd-12">
 					  			
 					  			<div class="col-md-12">
 					  				<div class="box box-primary">
@@ -215,7 +215,7 @@
 								<span class="label label-danger pull-right">70%</span>
 							</h4>
 
-							<div class="progress progress-xxs">
+							<div class="progress progress-md">
 								<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
 							</div>
 						</a>
@@ -227,7 +227,7 @@
 								<span class="label label-success pull-right">95%</span>
 							</h4>
 
-							<div class="progress progress-xxs">
+							<div class="progress progress-md">
 								<div class="progress-bar progress-bar-success" style="width: 95%"></div>
 							</div>
 						</a>
@@ -239,7 +239,7 @@
 								<span class="label label-warning pull-right">50%</span>
 							</h4>
 
-							<div class="progress progress-xxs">
+							<div class="progress progress-md">
 								<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
 							</div>
 						</a>
@@ -251,7 +251,7 @@
 								<span class="label label-primary pull-right">68%</span>
 							</h4>
 
-							<div class="progress progress-xxs">
+							<div class="progress progress-md">
 								<div class="progress-bar progress-bar-primary" style="width: 68%"></div>
 							</div>
 						</a>

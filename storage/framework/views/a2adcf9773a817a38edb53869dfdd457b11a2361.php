@@ -25,7 +25,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group<?php echo e($errors->has('company') ? ' has-error' : ''); ?>">
             					    <?php echo Form::label('company', 'Company'); ?>
 
@@ -37,7 +37,7 @@
 
 	      			    		
 	      			    	</div>
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group<?php echo e($errors->has('salary') ? ' has-error' : ''); ?>">
 	      			    		    <?php echo Form::label('salary', 'Salary'); ?>
 
@@ -49,7 +49,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		
 	      			    		 <div class="form-group<?php echo e($errors->has('work_location') ? ' has-error' : ''); ?>">
 	      			    		     <?php echo Form::label('work_location', 'Work location'); ?>
@@ -62,7 +62,7 @@
 	      			    		
 
 	      			    	</div>
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 		      			    	<!-- Date -->
 							    <div class="form-group<?php echo e($errors->has('due_date') ? ' has-error' : ''); ?>">
 							      <?php echo Form::label('due_date', 'Valid until'); ?>
@@ -84,7 +84,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-12">
+	      			    	<div class="col-md-12">
 	      			    		<div class="form-group<?php echo e($errors->has('responsibilities') ? ' has-error' : ''); ?>">
 	      			    		    <?php echo Form::label('responsibilities', 'Job description'); ?>
 
@@ -93,7 +93,7 @@
 	      			    		    <small class="text-danger"><?php echo e($errors->first('responsibilities')); ?></small>
 	      			    		</div>
 	      			    	</div>
-	      			    	<div class="col-xs-12">
+	      			    	<div class="col-md-12">
 	      			    		<div class="form-group<?php echo e($errors->has('qualifications') ? ' has-error' : ''); ?>">
 	      			    		    <?php echo Form::label('qualifications', 'Qualifications'); ?>
 

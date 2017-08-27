@@ -44,7 +44,7 @@
 	      						    
 	      						    	<div class="form-group{{ $errors->has('ter_degree') ? ' has-error' : '' }}">
 	      						    	    {!! Form::label('ter_degree', 'Degree') !!}
-	      						    	    {!! Form::select('ter_degree', ['bachelor of science' => 'bachelor of science','masteral' => 'masteral'], null, ['selected', 'placeholder' => 'select one', 'class' => 'form-control', 'required']) !!}
+	      						    	    {!! Form::select('ter_degree', ['bachelor of science' => 'Bachelor','masteral' => 'Masteral', 'doctorate' => 'Doctorate'], null, ['selected', 'placeholder' => 'Select one', 'class' => 'form-control', 'required']) !!}
 
 	      						    	    <small class="text-danger">{{ $errors->first('ter_degree') }}</small>
 	      						    	</div>

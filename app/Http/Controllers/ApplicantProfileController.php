@@ -15,6 +15,7 @@ use App\Skill;
 use App\Experience;
 use Session;
 use Auth;
+use DB;
 
 class ApplicantProfileController extends Controller
 {
@@ -25,6 +26,7 @@ class ApplicantProfileController extends Controller
     
     public function index($id, $slug)
     {       
+
 
         //school
         $schoolP = SchoolPrimary::where('user_id', $id)->first();
@@ -67,10 +69,11 @@ class ApplicantProfileController extends Controller
 
     public function edit($id)
     {
-        $users = User::where('id', $id)->first();
+        $users = User::where('id', $id)->with('address')->first();
         // dd($users);
         // $profile = Profile::find($id);
-        $countries = Country::find($id);
+        $countries = Country::pluck('name', 'id');
+        // dd($countries);
 
         return view('view_applicant.profile.update', compact('countries', 'users'));
     }

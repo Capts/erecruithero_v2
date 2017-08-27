@@ -51,7 +51,7 @@
 	      						    	<div class="form-group<?php echo e($errors->has('ter_degree') ? ' has-error' : ''); ?>">
 	      						    	    <?php echo Form::label('ter_degree', 'Degree'); ?>
 
-	      						    	    <?php echo Form::select('ter_degree', ['bachelor of science' => 'bachelor of science','masteral' => 'masteral'], null, ['selected', 'placeholder' => 'select one', 'class' => 'form-control', 'required']); ?>
+	      						    	    <?php echo Form::select('ter_degree', ['bachelor of science' => 'Bachelor','masteral' => 'Masteral', 'doctorate' => 'Doctorate'], null, ['selected', 'placeholder' => 'Select one', 'class' => 'form-control', 'required']); ?>
 
 
 	      						    	    <small class="text-danger"><?php echo e($errors->first('ter_degree')); ?></small>

@@ -114,9 +114,9 @@
 		                						</legend>
 		                						<div class="col-md-6">
 		                							<div class="form-group<?php echo e($errors->has('street') ? ' has-error' : ''); ?>">
-		                							    <?php echo Form::label('street', 'Street'); ?>
+		                							    <?php echo Form::label('street', 'Street #'); ?>
 
-		                							    <?php echo Form::text('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']); ?>
+		                							    <?php echo Form::number('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']); ?>
 
 		                							    <small class="text-danger"><?php echo e($errors->first('street')); ?></small>
 		                							</div>
@@ -152,7 +152,7 @@
 		                							<div class="form-group<?php echo e($errors->has('country') ? ' has-error' : ''); ?>">
 		                							    <?php echo Form::label('country', 'Country'); ?>
 
-		                							    <?php echo Form::text('country',  ( isset($users->address->country) ? $users->address->country : null ), ['class' => 'form-control', 'required' => 'required']); ?>
+		                							    <?php echo Form::text('country', ( isset($users->address->country) ? $users->address->country : null ), ['class' => 'form-control', 'required' => 'required']); ?>
 
 		                							    <small class="text-danger"><?php echo e($errors->first('country')); ?></small>
 		                							</div>

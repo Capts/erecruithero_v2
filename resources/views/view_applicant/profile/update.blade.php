@@ -104,8 +104,8 @@
 		                						</legend>
 		                						<div class="col-md-6">
 		                							<div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
-		                							    {!! Form::label('street', 'Street') !!}
-		                							    {!! Form::text('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+		                							    {!! Form::label('street', 'Street #') !!}
+		                							    {!! Form::number('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']) !!}
 		                							    <small class="text-danger">{{ $errors->first('street') }}</small>
 		                							</div>
 		                						</div>
@@ -133,7 +133,7 @@
 		                						<div class="col-md-12">
 		                							<div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
 		                							    {!! Form::label('country', 'Country') !!}
-		                							    {!! Form::text('country',  ( isset($users->address->country) ? $users->address->country : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+		                							    {!! Form::text('country', ( isset($users->address->country) ? $users->address->country : null ), ['class' => 'form-control', 'required' => 'required']) !!}
 		                							    <small class="text-danger">{{ $errors->first('country') }}</small>
 		                							</div>
 		                						</div>

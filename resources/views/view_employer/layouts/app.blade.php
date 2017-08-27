@@ -48,6 +48,20 @@
       $('#datepicker').datepicker({
         autoclose: true
       })
+
+      $('#datepickerLimit').datepicker({
+        startDate: '+1d',
+        autoclose: true
+      })
+
+       $('#datepickerLimitArchive').datepicker({
+        startDate: '+1d',
+        autoclose: true
+      })
+
+
+
+
       $('#reservation').daterangepicker()
     
     })

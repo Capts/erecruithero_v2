@@ -17,15 +17,15 @@
 
 	      			
 	      			    
-	      			    	<div class="col-xs-12">
-		      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-12">
+		      			    	<div class="col-md-6">
 		      			    		<div class="form-group<?php echo e($errors->has('status') ? ' has-error' : ''); ?>">
 		      			    		    <?php echo Form::hidden('status', null, ['class' => 'form-control', 'required' => 'required']); ?>
 
 		      			    		    <small class="text-danger"><?php echo e($errors->first('status')); ?></small>
 	      			    			</div>
 		      			    	</div>
-		      			    	<div class="col-xs-12">
+		      			    	<div class="col-md-12">
 			      			    	<!-- Date -->
 								    <div class="form-group<?php echo e($errors->has('due_date') ? ' has-error' : ''); ?>">
 								      <?php echo Form::label('due_date', 'Valid until'); ?>
@@ -35,7 +35,7 @@
 								        <div class="input-group-addon">
 								          <i class="fa fa-calendar"></i>
 								        </div>
-								        <?php echo Form::text('due_date', Carbon\Carbon::now()->toDateString(), ['class' => 'form-control pull-right', 'id' => 'datepicker', 'required' => 'required']); ?>
+								        <?php echo Form::text('due_date', null, ['class' => 'form-control', 'id' => 'datepickerLimitArchive']); ?>
 
 								        
 								        <small class="text-danger"><?php echo e($errors->first('due_date')); ?></small>
@@ -70,5 +70,3 @@
 	</div>
 
 <!--End Modal-->
-
-

@@ -18,7 +18,7 @@
 
 						    <div class="form-group{{ $errors->has('skill_name') ? ' has-error' : '' }}">
 						        {!! Form::label('skill_name', 'Skills or qualifications') !!}
-						        {!! Form::text('skill_name', null, ['class' => 'form-control', 'autofocus' => 'autofocus','required' => 'required']) !!}
+						        {!! Form::text('skill_name', null, ['class' => 'form-control', 'autofocus' => 'autofocus'  ,'required' => 'required']) !!}
 						        <small class="text-danger">{{ $errors->first('skill_name') }}</small>
 						    </div>
 						    

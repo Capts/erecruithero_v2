@@ -24,7 +24,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group<?php echo e($errors->has('company') ? ' has-error' : ''); ?>">
             					    <?php echo Form::label('company', 'Company'); ?>
 
@@ -36,7 +36,7 @@
 
 	      			    		
 	      			    	</div>
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group<?php echo e($errors->has('salary') ? ' has-error' : ''); ?>">
 	      			    		    <?php echo Form::label('salary', 'Salary'); ?>
 
@@ -48,7 +48,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		
 	      			    		 <div class="form-group<?php echo e($errors->has('work_location') ? ' has-error' : ''); ?>">
 	      			    		     <?php echo Form::label('work_location', 'Work location'); ?>
@@ -61,7 +61,7 @@
 	      			    		
 
 	      			    	</div>
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 		      			    	<!-- Date -->
 							    <div class="form-group<?php echo e($errors->has('due_date') ? ' has-error' : ''); ?>">
 							      <?php echo Form::label('due_date', 'Valid until'); ?>
@@ -71,7 +71,7 @@
 							        <div class="input-group-addon">
 							          <i class="fa fa-calendar"></i>
 							        </div>
-							        <?php echo Form::text('due_date', null, ['class' => 'form-control pull-right', 'id' => 'datepicker']); ?>
+							        <?php echo Form::text('due_date', null, ['class' => 'form-control pull-right', 'id' => 'datepickerLimit']); ?>
 
 							        
 							        <small class="text-danger"><?php echo e($errors->first('due_date')); ?></small>
@@ -83,7 +83,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group<?php echo e($errors->has('responsibilities') ? ' has-error' : ''); ?>">
 	      			    		    <?php echo Form::label('responsibilities', 'Job description'); ?>
 
@@ -92,7 +92,7 @@
 	      			    		    <small class="text-danger"><?php echo e($errors->first('responsibilities')); ?></small>
 	      			    		</div>
 	      			    	</div>
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group<?php echo e($errors->has('qualifications') ? ' has-error' : ''); ?>">
 	      			    		    <?php echo Form::label('qualifications', 'Qualifications'); ?>
 

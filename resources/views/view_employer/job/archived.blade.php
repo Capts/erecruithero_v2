@@ -22,7 +22,7 @@
   <!-- Main content -->
   <section class="content">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1">
+      <div class="col-md-10 col-md-offset-1">
         
         
           @if ($archived->count() == 0)
@@ -60,7 +60,7 @@
                     <td>{{ str_limit($arc->job_title, 25) }}</td>
                     <td>{{ str_limit($arc->company, 25) }}</td>
                     <td>{{ date('M j,Y', strtotime($arc->created_at)) }}</td>
-                    <td><a href="{{ route('job.show', $arc->id) }}" class="btn btn-flat btn-xs bg-olive">enable</a></td>
+                    <td><a href="{{ route('job.show', $arc->id) }}" class="btn btn-flat btn-md bg-olive">enable</a></td>
                     
                   </tr>
 

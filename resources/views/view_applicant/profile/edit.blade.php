@@ -48,17 +48,79 @@
 
 												<div class="col-md-6">
 													<div class="form-group{{ $errors->has('bday') ? ' has-error' : '' }}">
-		                								    {!! Form::label('bday', 'Birthday') !!}
-		                								    {!! Form::text('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control manual', 'placeholder'=>'mm/dd/yyyy', 'required' => 'required']) !!}
-		                								    <small class="text-danger">{{ $errors->first('bday') }}</small>
-		                								</div>
+	                								    {!! Form::label('bday', 'Birthday') !!}
+	                								    {!! Form::date('bday', ( isset($users->profile->bday) ? $users->profile->bday : null ), ['class' => 'form-control manual', 'placeholder'=>'mm/dd/yyyy', 'required' => 'required']) !!}
+	                								    <small class="text-danger">{{ $errors->first('bday') }}</small>
+		                							</div>
 												</div>
-												{{-- <div class="col-xs-2">
-													<div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}"> --}}
-													    {!! Form::hidden('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']) !!}
-													    <small class="text-danger">{{ $errors->first('age') }}</small>
-													{{-- </div>
+												{{-- age --}}
+											{{-- 	<div class="row">
+													 
+													 <div class="col-md-4">
+													 	<select class="field form-control" name="month">
+													 	  <option value="january">January</option>
+													 	  <option value="february">February</option>
+													 	  <option value="march">March</option>
+													 	  <option value="april">April</option>
+													 	  <option value="may">May</option>
+													 	  <option value="june">June</option>
+													 	  <option value="july">July</option>
+													 	  <option value="august">August</option>
+													 	  <option value="september">September</option>
+													 	  <option value="october">October</option>
+													 	  <option value="november">November</option>
+													 	  <option value="december">December</option>
+													 	</select>
+													 </div>
+													 <div class="col-md-4">
+													 	<select class="field form-control" name="month" >
+													 	  <option value="1">1</option>
+													 	  <option value="2">2</option>
+													 	  <option value="3">3</option>
+													 	  <option value="4">4</option>
+													 	  <option value="5">5</option>
+													 	  <option value="6">6</option>
+													 	  <option value="7">7</option>
+													 	  <option value="8">8</option>
+													 	  <option value="9">9</option>
+													 	  <option value="10">10</option>
+													 	  <option value="11">11</option>
+													 	  <option value="12">12</option>
+													 	  <option value="13">13</option>
+													 	  <option value="14">14</option>
+													 	  <option value="15">15</option>
+													 	  <option value="16">16</option>
+													 	  <option value="17">17</option>
+													 	  <option value="18">18</option>
+													 	  <option value="19">19</option>
+													 	  <option value="20">20</option>
+													 	  <option value="21">21</option>
+													 	  <option value="22">22</option>
+													 	  <option value="23">23</option>
+													 	  <option value="24">24</option>
+													 	  <option value="25">25</option>
+													 	  <option value="26">26</option>
+													 	  <option value="27">27</option>
+													 	  <option value="27">27</option>
+													 	  <option value="29">29</option>
+
+													 	  <option value="30">30</option>
+													 	  <option value="31">31</option>
+													 	</select>
+													 </div>
+
+													 <div class="col-md-4">
+													 	<select class="field" name="year">
+													 	  <option value="2013">2013</option>
+													 	  <option value="2014" selected="selected">2014</option>
+													 	  <option value="2015">2015</option>
+													 	</select>
+													 </div>
 												</div> --}}
+
+											    {!! Form::hidden('age', null, ['class' => 'form-control', 'required' => 'required','id' => 'age', 'readonly']) !!}
+													    
+
 												<div class="col-md-6">
 													<div class="form-group{{ $errors->has('civil_status') ? ' has-error' : '' }}">
 													    {!! Form::label('civil_status', 'Civil Status') !!}
@@ -93,7 +155,7 @@
 			                				<div class="col-md-12">
 			                					<div class="col-xs-4">
 			                						<div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
-			                						    {!! Form::label('street', 'Street') !!}
+			                						    {!! Form::label('street', 'Street #') !!}
 			                						    {!! Form::number('street',  ( isset($users->address->street) ? $users->address->street : null ), ['class' => 'form-control', 'required' => 'required']) !!}
 			                						    <small class="text-danger">{{ $errors->first('street') }}</small>
 			                						</div>
@@ -123,13 +185,13 @@
 			                					<div class="col-xs-6">
 			                						<div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
 			                						    {!! Form::label('country', 'Country') !!}
-			                						    {!! Form::text('country',  ( isset($users->address->country) ? $users->address->country : null ), ['class' => 'form-control', 'required' => 'required']) !!}
+			                						    {!! Form::text('country', $users->address->country,   ['class' => 'form-control', 'required' => 'required']) !!}
 			                						    <small class="text-danger">{{ $errors->first('country') }}</small>
 			                						</div>
 			                					</div>
 			                				</div>
 
-
+{{-- ( isset($users->address->country) ? $users->address->country : $users->countries ), --}}
 
 
 			                				<div class="col-md-12">

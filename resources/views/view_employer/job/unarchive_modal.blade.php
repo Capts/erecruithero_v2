@@ -16,14 +16,14 @@
 	      			{!! Form::model($job, ['route' => ['job.update', $job->id], 'method' => 'PUT']) !!}
 	      			
 	      			    
-	      			    	<div class="col-xs-12">
-		      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-12">
+		      			    	<div class="col-md-6">
 		      			    		<div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
 		      			    		    {!! Form::hidden('status', null, ['class' => 'form-control', 'required' => 'required']) !!}
 		      			    		    <small class="text-danger">{{ $errors->first('status') }}</small>
 	      			    			</div>
 		      			    	</div>
-		      			    	<div class="col-xs-12">
+		      			    	<div class="col-md-12">
 			      			    	<!-- Date -->
 								    <div class="form-group{{ $errors->has('due_date') ? ' has-error' : '' }}">
 								      {!! Form::label('due_date', 'Valid until') !!}
@@ -32,7 +32,7 @@
 								        <div class="input-group-addon">
 								          <i class="fa fa-calendar"></i>
 								        </div>
-								        {!! Form::text('due_date', Carbon\Carbon::now()->toDateString(), ['class' => 'form-control pull-right', 'id' => 'datepicker', 'required' => 'required']) !!}
+								        {!! Form::text('due_date', null, ['class' => 'form-control', 'id' => 'datepickerLimitArchive']) !!}
 								        {{-- <input type="text" name='due_date' class="form-control pull-right" id="datepicker"> --}}
 								        <small class="text-danger">{{ $errors->first('due_date') }}</small>
 								      </div>
@@ -64,5 +64,3 @@
 	</div>
 
 <!--End Modal-->
-
-

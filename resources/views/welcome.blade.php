@@ -22,7 +22,7 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-6 col-xs-offset-3" >
+          <div class="col-md-6 col-md-offset-3" >
             <div class="input-group">
 
               <input type="text" name="searchApp" class="form-control input-lg" placeholder="Search jobs">

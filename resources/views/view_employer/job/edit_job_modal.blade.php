@@ -22,7 +22,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
             					    {!! Form::label('company', 'Company') !!}
             					    {!! Form::select('company', ['E-recruit hero' => 'E-recruit hero'], null, ['selected', 'placeholder' => 'Select company', 'class' => 'form-control', 'required']) !!}
@@ -32,7 +32,7 @@
 
 	      			    		
 	      			    	</div>
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		<div class="form-group{{ $errors->has('salary') ? ' has-error' : '' }}">
 	      			    		    {!! Form::label('salary', 'Salary') !!}
 	      			    		    {!! Form::text('salary', null, ['class' => 'form-control', 'placeholder' => 'Leave blank if salary is to be discuss.']) !!}
@@ -42,7 +42,7 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 	      			    		
 	      			    		 <div class="form-group{{ $errors->has('work_location') ? ' has-error' : '' }}">
 	      			    		     {!! Form::label('work_location', 'Work location') !!}
@@ -53,7 +53,7 @@
 	      			    		
 
 	      			    	</div>
-	      			    	<div class="col-xs-6">
+	      			    	<div class="col-md-6">
 		      			    	<!-- Date -->
 							    <div class="form-group{{ $errors->has('due_date') ? ' has-error' : '' }}">
 							      {!! Form::label('due_date', 'Valid until') !!}
@@ -73,14 +73,14 @@
 	      			    </div>
 
 	      			    <div class="row">
-	      			    	<div class="col-xs-12">
+	      			    	<div class="col-md-12">
 	      			    		<div class="form-group{{ $errors->has('responsibilities') ? ' has-error' : '' }}">
 	      			    		    {!! Form::label('responsibilities', 'Job description') !!}
 	      			    		    {!! Form::textarea('responsibilities', null, ['class' => 'form-control', 'required' => 'required']) !!}
 	      			    		    <small class="text-danger">{{ $errors->first('responsibilities') }}</small>
 	      			    		</div>
 	      			    	</div>
-	      			    	<div class="col-xs-12">
+	      			    	<div class="col-md-12">
 	      			    		<div class="form-group{{ $errors->has('qualifications') ? ' has-error' : '' }}">
 	      			    		    {!! Form::label('qualifications', 'Qualifications') !!}
 	      			    		    {!! Form::textarea('qualifications', null, ['class' => 'form-control', 'required' => 'required']) !!}

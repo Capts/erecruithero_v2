@@ -27,7 +27,7 @@
 			<?php if($searchjobs->isEmpty()): ?>
 				
 				<div class="row">
-					<div class="col-xs-8 col-xs-offset-2">
+					<div class="col-md-8 col-md-offset-2">
 						<div class="box box-danger">
 							<div class="box-header with-border">
 								<h4 style="color:silver;"><i class="fa fa-times">&nbsp;</i>Oh! snap</h4>
@@ -44,7 +44,7 @@
 			<?php else: ?>
 				
 				<div class="row">
-					<div class="col-xs-10 col-xs-offset-1">
+					<div class="col-md-10 col-md-offset-1">
 						<div class="box box-primary">
 						  <div class="box-header with-border">
 						    <h4 style="color:silver;">Match found! Keyword: <em style="color:green;"><?php echo e($search); ?></em> </h4 >
